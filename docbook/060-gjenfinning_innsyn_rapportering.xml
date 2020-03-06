@@ -1,0 +1,1588 @@
+<chapter id="id-060-gjenfinning_innsyn_rapportering-gjenfinning-innsyn-og-rapportering">
+  <title>Gjenfinning, innsyn og rapportering</title>
+  <para>
+    En arkivkjerne skal kunne levere metadata og dokumenter basert på
+    spørringer fra brukere av løsningen, uavhengig av om spørringen
+    initieres av en personlig bruker eller fra et fag- eller forsystem.
+  </para>
+  <para>
+    For at arkivkjernen skal kunne produsere lovpålagte og ønskede
+    rapporter og statistikker, er det nødvendig at kjernen er
+    tilrettelagt med tjenester eller funksjoner for gjenfinning og
+    logiske sammenstillinger av metadata. Offentlig journal er et
+    eksempel på en slik lovpålagt rapport.
+  </para>
+  <para>
+    Noark 5 gir ingen anvisninger om typografisk utforming av
+    rapportene.
+  </para>
+  <sect1 id="id-060-gjenfinning_innsyn_rapportering-gjenfinning">
+    <title>Gjenfinning</title>
+    <para>
+      Søking i metadata skjer ved søking i enkelte metadataelementer
+      eller i en kombinasjon av metadataelementer, eller ved hjelp av
+      fritekstsøk, f.eks. søking etter en gitt tekststreng i et sett av
+      metadataelementer.
+    </para>
+    <para>
+      Gjenfinning av dokumenter skjer typisk ved søking i dokumentenes
+      metadata, f.eks. i dokumentbeskrivelsesmetadata. Hvis formatet
+      legger til rette for det, kan fritekstsøking gjennomføres i
+      dokumenter.
+    </para>
+    <para>
+      Søkeresultat skal ta hensyn til tilgangen til dokumentene i
+      kjernen og til skjerming av opplysninger.
+    </para>
+    <table>
+      <title>
+        Funksjonelle krav til gjenfinning
+      </title>
+      <tgroup cols="4">
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <thead>
+          <row>
+            <entry>
+              Krav nr.
+            </entry>
+            <entry>
+              Funksjonelle krav til gjenfinning
+            </entry>
+            <entry>
+              Type
+            </entry>
+            <entry>
+              Merknad
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              5.1.1
+            </entry>
+            <entry>
+              Det skal finnes tjenester/funksjoner for å gjenfinne/søke
+              fram metadata.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              5.1.2
+            </entry>
+            <entry>
+              Ved søking skal det være mulig å lage logiske
+              sammenstillinger av metadata.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              5.1.3
+            </entry>
+            <entry>
+              Ved søk i metadata skal det være mulig å benytte venstre-
+              og høyretrunkering samt markering av ett eller flere tegn
+              i søkekriteriene.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              5.1.4
+            </entry>
+            <entry>
+              I metadataelementer som representerer datoer, skal det
+              være mulig å søke på datointervaller.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              5.1.5
+            </entry>
+            <entry>
+              I metadataelementer som representerer datoer, skal det
+              være mulig å søke på perioder som ligger før eller etter
+              en gitt dato.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              5.1.6
+            </entry>
+            <entry>
+              Det skal være mulig å utføre fritekstsøk i metadata.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              5.1.7
+            </entry>
+            <entry>
+              Ved fritekstsøk i metadata, skal det være mulig å søke
+              kombinert på flere søkeord ved hjelp av boolske
+              operatorer.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              5.1.8
+            </entry>
+            <entry>
+              Det skal finnes tjenester/funksjoner for å gjenfinne/søke
+              fram dokumenter.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              5.1.9
+            </entry>
+            <entry>
+              Det skal være mulig å gjenfinne dokumenter ut fra
+              dokumentmetadata.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              5.1.10
+            </entry>
+            <entry>
+              Det skal være mulig å utføre fritekstsøk i et dokument
+              hvis formatet legger til rette for det.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              5.1.11
+            </entry>
+            <entry>
+              Søkeresultat skal avspeile aktuell tilgang.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              5.1.12
+            </entry>
+            <entry>
+              Søkeresultat skal være nødvendig skjermet.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              5.1.13
+            </entry>
+            <entry>
+              Det skal være mulighet for at store og små bokstaver kan
+              behandles som ekvivalente ved søk.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              5.1.14
+            </entry>
+            <entry>
+              Det bør finnes en tjeneste/funksjon for å avbryte søk som
+              er satt i gang.
+            </entry>
+            <entry>
+              V
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              5.1.15
+            </entry>
+            <entry>
+              Søkefunksjonene bør være innrettet slik at en ved søk på
+              et ord i bokmålsform også får treff for de tilsvarende
+              nynorskformene og omvendt.
+            </entry>
+            <entry>
+              V
+            </entry>
+            <entry>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </sect1>
+  <sect1 id="id-060-gjenfinning_innsyn_rapportering-journalrapporter-og-innsyn">
+    <title>Journalrapporter og innsyn</title>
+    <para>
+      En gjennomsiktig forvaltning og innsyn i prosesser og dokumenter,
+      er en forutsetning for offentlig diskusjon og dermed for
+      demokratiet. Ved hjelp av offentlige journaler kan borgerne finne
+      fram i saker og gå rett til kildene.
+    </para>
+    <para>
+      I arkivsammenheng er journal navnet på et register over
+      saksdokument i et organ. I elektroniske arkiv er journal eller
+      postliste brukt om periodiske, kronologiske rapporter over
+      inngående og utgående dokumenter, samt organinterne dokumenter som
+      journalføres.
+    </para>
+    <sect2 id="id-060-gjenfinning_innsyn_rapportering-løpende-journal">
+      <title>Løpende journal</title>
+      <para>
+        Hensikten med rapporten Løpende <emphasis>journal</emphasis> er
+        å gi en oversikt over alle journalførte dokumenter for hver dag.
+        Rapporten skal inneholde opplysninger fra saksmappe og
+        journalpost, også de opplysningene som er avskjermet i
+        løsningen.
+      </para>
+      <para>
+        Bestemmelsene om journaler finnes i arkivforskriften §§ 9 og 10.
+      </para>
+      <table>
+        <title>
+          Krav til rapporten løpende journal
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til rapporten <emphasis>Løpende journal</emphasis>
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                5.2.1
+              </entry>
+              <entry>
+                <para>
+                  <emphasis>Selektering:</emphasis>
+                </para>
+                <para>
+                  Rapporten skal valgfritt kunne selekteres på følgende
+                  metadataelementer (fra
+                  <emphasis>journalpost</emphasis> dersom ikke annet er
+                  angitt):
+                </para>
+                <itemizedlist spacing="compact">
+                  <listitem>
+                    <para>
+                      <emphasis>journaldato</emphasis> (intervall skal
+                      kunne angis), eller
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      <emphasis>løpenummer</emphasis> (intervall skal
+                      kunne angis)
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      <emphasis>journalposttype</emphasis> (en eller
+                      flere skal kunne velges)
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      <emphasis>journalenhet</emphasis> til
+                      saksbehandler
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      <emphasis>administrativEnhet</emphasis> til
+                      saksbehandler
+                    </para>
+                  </listitem>
+                </itemizedlist>
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for sakarkiv
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.2
+              </entry>
+              <entry>
+                <para>
+                  <emphasis>Rapportens innhold:</emphasis>
+                </para>
+                <para>
+                  Følgende metadataelementer skal være med i rapporten,
+                  så fremt de finnes i løsningen:
+                  <emphasis role="strong">Saksmappeinformasjon</emphasis>
+                </para>
+                <para>
+                  Fra <emphasis>Saksmappe:</emphasis>
+                </para>
+                <para>
+                  <emphasis>mappeID</emphasis>
+                </para>
+                <para>
+                  <emphasis>tittel</emphasis>
+                </para>
+                <para>
+                  <emphasis>administrativEnhet</emphasis>
+                </para>
+                <para>
+                  <emphasis>Saksansvarlig</emphasis>
+                </para>
+                <para>
+                  <emphasis>referanseArkivdel</emphasis>
+                </para>
+                <para>
+                  Fra <emphasis>klasse</emphasis>
+                </para>
+                <para>
+                  <emphasis>klasseID og tittel</emphasis>
+                </para>
+                <para>
+                  <emphasis role="strong">Journalpostinformasjon</emphasis>
+                </para>
+                <para>
+                  Fra <emphasis>Journalpost</emphasis>:
+                </para>
+                <para>
+                  <emphasis>løpenummer</emphasis>
+                </para>
+                <para>
+                  <emphasis>registreringsID</emphasis>
+                </para>
+                <para>
+                  <emphasis>journaldato</emphasis>
+                </para>
+                <para>
+                  <emphasis>dokumentetsDato</emphasis> (tekst «Udatert»
+                  hvis dato mangler)
+                </para>
+                <para>
+                  <emphasis>tittel</emphasis>
+                </para>
+                <para>
+                  <emphasis>tilgangsrestriksjon</emphasis>
+                </para>
+                <para>
+                  <emphasis>skjermingshjemmel</emphasis>
+                </para>
+                <para>
+                  <emphasis>antallVedlegg</emphasis>
+                </para>
+                <para>
+                  <emphasis>offentlighetsvurdertDato</emphasis>
+                </para>
+                <para>
+                  <emphasis>korrespondanseparttype</emphasis>
+                </para>
+                <para>
+                  <emphasis>korrespondansepartnavn</emphasis>
+                </para>
+                <para>
+                  <emphasis>administrativEnhet</emphasis>
+                </para>
+                <para>
+                  <emphasis>saksbehandler</emphasis>
+                </para>
+                <para>
+                  <emphasis>journalenhet</emphasis>
+                </para>
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for sakarkiv
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-060-gjenfinning_innsyn_rapportering-offentlig-journal">
+      <title>Offentlig journal</title>
+      <para>
+        Hensikten med rapporten <emphasis>Offentlig journal</emphasis>
+        er å gi informasjon om organets journalførte dokumenter til
+        allmennheten. Journalen utformes i hovedsak som rapporten
+        <emphasis>Journal,</emphasis> men skal avskjerme opplysninger
+        som er unntatt offentlighet.
+      </para>
+      <para>
+        Kravene til rapporten er utformet i henhold til offentleglovas
+        bestemmelser og
+      </para>
+      <para>
+        arkivforskriften § 10.
+      </para>
+      <para>
+        Kravene under er obligatoriske for sakarkivløsninger eller andre
+        løsninger underlagt Offentleglova sine bestemmelser om offentlig
+        journal.
+      </para>
+      <table>
+        <title>
+          Krav til rapporten Offentlig journal
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til rapporten <emphasis>Offentlig
+                journal</emphasis>
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                5.2.5
+              </entry>
+              <entry>
+                Rapporten skal inneholde alle journalposttyper.
+                Registrering skal ikke være med.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for arkiv underlagt Offentleglova
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.6
+              </entry>
+              <entry>
+                Metadataelementet <emphasis>skjermingMetadata</emphasis>
+                inneholder informasjon om hvilke elementer som skal
+                skjermes. Metadatafeltet
+                <emphasis>offentligTittel</emphasis> er en kopi av
+                tittel, men alle ord som skal skjermes er her fjernet
+                (for eksempel erstattet av *****)
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for arkiv underlagt Offentleglova
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.7
+              </entry>
+              <entry>
+                <para>
+                  <emphasis>Selektering:</emphasis>
+                </para>
+                <para>
+                  Rapporten skal kunne selekteres på følgende
+                  metadataelementer (fra
+                  <emphasis>Journalpost</emphasis> hvis ikke annet er
+                  angitt):
+                </para>
+                <itemizedlist spacing="compact">
+                  <listitem>
+                    <para>
+                      <emphasis>journaldato</emphasis> (intervall skal
+                      kunne angis)
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      <emphasis>journalenhet</emphasis>
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      <emphasis>administrativEnhet</emphasis> til
+                      saksbehandler
+                    </para>
+                  </listitem>
+                </itemizedlist>
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for arkiv underlagt Offentleglova
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.8
+              </entry>
+              <entry>
+                <para>
+                  For virksomheter som har tatt i bruk funksjonalitet
+                  for midlertidig sperring, skal rapporten som et
+                  alternativ til selektering etter journaldato, kunne
+                  selekteres etter metadataelementet:
+                </para>
+                <itemizedlist spacing="compact">
+                  <listitem>
+                    <para>
+                      <emphasis>offentlighetsvurdert</emphasis> (jf.
+                      <emphasis>Journalpost</emphasis>).
+                    </para>
+                  </listitem>
+                </itemizedlist>
+                <para>
+                  Intervall skal kunne angis.
+                </para>
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for arkiv underlagt Offentleglova
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.9
+              </entry>
+              <entry>
+                <para>
+                  <emphasis>Rapportens innhold:</emphasis>
+                </para>
+                <para>
+                  Følgende metadataelementer skal være med i rapporten,
+                  så fremt de finnes i løsningen:
+                  <emphasis role="strong">Saksmappeinformasjon</emphasis>
+                </para>
+                <para>
+                  Fra <emphasis>Saksmappe:</emphasis>
+                </para>
+                <para>
+                  <emphasis>mappeID</emphasis>
+                </para>
+                <para>
+                  <emphasis>offentligTittel</emphasis>
+                </para>
+                <para>
+                  Fra <emphasis>klasse</emphasis> (tilleggsklassering
+                  skal ikke være med):
+                </para>
+                <para>
+                  <emphasis>klasseID</emphasis> (skrives ikke ut hvis
+                  markert som avskjermet i løsningen)
+                </para>
+                <para>
+                  <emphasis role="strong">Journalpostinformasjon</emphasis>
+                </para>
+                <para>
+                  Fra <emphasis>Journalpost</emphasis>:
+                </para>
+                <para>
+                  <emphasis>løpenummer</emphasis>
+                </para>
+                <para>
+                  <emphasis>registreringsID</emphasis>
+                </para>
+                <para>
+                  <emphasis>journaldato</emphasis>
+                </para>
+                <para>
+                  <emphasis>dokumentetsDato</emphasis> (tekst «Udatert»
+                  hvis dato mangler)
+                </para>
+                <para>
+                  <emphasis>offentligTittel</emphasis>
+                </para>
+                <para>
+                  <emphasis>korrespondanseparttype</emphasis>
+                </para>
+                <para>
+                  <emphasis>korrespondansepartNavn</emphasis> (Skrives
+                  ikke ut i offentlig journal hvis navnet skal unntas
+                  offentlighet)
+                </para>
+                <para>
+                  <emphasis>avskrivningsmåte</emphasis>
+                </para>
+                <para>
+                  <emphasis>avskrivningsdato</emphasis>
+                </para>
+                <para>
+                  <emphasis>referanseAvskrivesAvJournalpost</emphasis>
+                </para>
+                <para>
+                  <emphasis>referanseAvskriverJournalpost</emphasis>
+                </para>
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for arkiv underlagt Offentleglova
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.10
+              </entry>
+              <entry>
+                <para>
+                  Rapporten bør i tillegg valgfritt kunne inneholde en
+                  eller flere av opplysningene nedenfor (så fremt de
+                  finnes i løsningen):
+                </para>
+                <para>
+                  <emphasis role="strong">Saksmappeinformasjon</emphasis>
+                </para>
+                <para>
+                  Fra <emphasis>Saksmappe:</emphasis>
+                </para>
+                <para>
+                  <emphasis>administrativEnhet</emphasis>
+                </para>
+                <para>
+                  <emphasis>saksansvarlig</emphasis>
+                </para>
+                <para>
+                  <emphasis>tilgangsrestriksjon</emphasis>
+                </para>
+                <para>
+                  <emphasis>skjermingshjemmel</emphasis>
+                </para>
+                <para>
+                  <emphasis role="strong">Journalpostinformasjon</emphasis>
+                </para>
+                <para>
+                  Fra <emphasis>Journalpost</emphasis> (sortert etter
+                  <emphasis>registreringsID</emphasis> hvis ikke annet
+                  er angitt):
+                </para>
+                <para>
+                  <emphasis>tilgangsrestriksjon</emphasis>
+                </para>
+                <para>
+                  <emphasis>skjermingsHjemmel</emphasis>
+                </para>
+                <para>
+                  <emphasis>administrativEnhet</emphasis>,
+                </para>
+                <para>
+                  <emphasis>saksbehandler</emphasis>
+                </para>
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para>
+        Utgangspunktet etter offentleglova er at postjournaler er
+        offentlige. Allmennheten har rett til innsyn. Arkivforskriften §
+        10 hjemler imidlertid skjerming av opplysninger i elektronisk
+        journal. Vilkåret er at opplysningene er undergitt taushetsplikt
+        i lov eller medhold av lov, eller at de av andre grunner kan
+        unntas fra offentlig innsyn i medhold av unntaksbestemmelser i
+        offentleglova. Tilgangskoder er Noark-standardens primære
+        mekanisme for å skjerme journalopplysninger. Angivelse av en
+        tilgangskode medfører at skjermingsfunksjoner blir iverksatt,
+        slik at bestemte opplysninger om mappen eller registreringen
+        ikke vises i offentlig journal.
+      </para>
+      <para>
+        Å skjerme opplysningene i offentlig journal er et tiltak som
+        skal hindre at visse opplysninger røpes ved å gjøres kjent i
+        journalen som sådan. Men hjemmelen for skjerming av
+        journalopplysninger bør ikke angis slik i offentlig journal at
+        den automatisk framstår som en forhåndsklassifisering av det
+        bakenforliggende dokumentet som unntatt fra offentlighet.
+        Spørsmålet om helt eller delvis innsyn i selve dokumentet skal
+        forvaltningsorganet vurdere på det tidspunkt et eventuelt
+        innsynskrav mottas, uavhengig av om visse opplysninger er
+        skjermet i journalen.
+      </para>
+      <para>
+        Noen ganger vil det likevel være helt klart på forhånd at det
+        ikke blir aktuelt å gi fullt innsyn i dokumentet. Da kan det
+        være behov for å markere dette i den offentlige journalen ved å
+        vise til den aktuelle unntakshjemmelen i offentleglova. Slik
+        forhåndsklassifisering av dokumentet kan være aktuell også i en
+        del tilfeller der det ikke er hjemmel for å skjerme
+        journalopplysninger, for eksempel når dokumentet, men ingen av
+        journalopplysningene, inneholder taushetsbelagt informasjon.
+        Derfor er det i Noark 5 lagt opp til at offentlig journal skal
+        inneholde separate felter for henholdsvis skjermingshjemmel og
+        forhåndsklassifisering.
+      </para>
+      <table>
+        <title>
+          Krav til tilgangskoder for unntak fra offentlig journal
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til tilgangskoder for unntak fra offentlig journal
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                5.2.14
+              </entry>
+              <entry>
+                Det skal kunne registreres tilgangskode på mapper,
+                registreringer og dokumentbeskrivelser. Den angir at
+                registrerte opplysninger eller arkiverte dokumenter skal
+                skjermes mot offentlighetens innsyn
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for løsninger hvor informasjon skal unntas
+                fra offentlighet
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.15
+              </entry>
+              <entry>
+                Alle tilgangskoder som skal brukes må være
+                forhåndsdefinert i kjernen. Tilgangskodene er globale,
+                det vil si at de samme kodene brukes for hele arkivet
+                uavhengig av hvilke eksterne moduler som gjør bruk av
+                arkivet
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for løsninger hvor informasjon skal unntas
+                fra offentlighet
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.16
+              </entry>
+              <entry>
+                Kjernen skal inneholde full historikk over alle
+                tilgangskoder som er eller har vært gyldige i arkivet
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for løsninger hvor informasjon skal unntas
+                fra offentlighet
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.17
+              </entry>
+              <entry>
+                For hver tilgangskode skal det kunne registreres en
+                indikasjon på hvorvidt et dokument som er merket med
+                denne tilgangskoden kan unntas fra offentlighet i sin
+                helhet, eller om det bare er anledning til å unnta
+                bestemte opplysninger fra dokumentet i tråd med det som
+                er angitt i offentleglovas hjemmelsbestemmelse
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for løsninger hvor informasjon skal unntas
+                fra offentlighet
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.18
+              </entry>
+              <entry>
+                Det bør finnes en dedikert tilgangskode for «midlertidig
+                unntatt», som kan brukes inntil skjermingsbehov er
+                vurdert
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.19
+              </entry>
+              <entry>
+                <para>
+                  I tilknytning til en tilgangskode, skal følgende
+                  opplysninger knyttet til <emphasis>mappe</emphasis> i
+                  kjernen kunne markeres som «skjermet» slik at eksterne
+                  moduler som leser fra arkivet får følgende
+                  begrensninger når tilgangskoden benyttes:
+                </para>
+                <itemizedlist spacing="compact">
+                  <listitem>
+                    <para>
+                      Deler av mappetittelen: Løsningen skal enten
+                      tillate skjerming av alt unntatt første del av
+                      tittelen (for eksempel første linje), eller
+                      alternativt skjerming av enkeltord som bruker
+                      markerer
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Klassifikasjon: Dette er primært beregnet på
+                      skjerming av objektkoder som er personnavn eller
+                      fødselsnummer
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Opplysninger som identifiserer parter i saken
+                    </para>
+                  </listitem>
+                </itemizedlist>
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for løsninger hvor informasjon skal unntas
+                fra offentlighet
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.20
+              </entry>
+              <entry>
+                <para>
+                  I tilknytning til en tilgangskode, skal følgende
+                  opplysninger knyttet til
+                  <emphasis>registreringer</emphasis> i kjernen kunne
+                  markeres som «skjermet» slik at eksterne moduler som
+                  leser fra arkivet får følgende begrensninger når
+                  tilgangskoden benyttes:
+                </para>
+                <itemizedlist spacing="compact">
+                  <listitem>
+                    <para>
+                      Deler av innholdsbeskrivelsen: Løsningen skal
+                      enten tillate skjerming av alt unntatt første del
+                      av innholdsbeskrivelsen (for eksempel første
+                      linje), eller alternativt skjerming av enkeltord
+                      som bruker markerer
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Opplysninger som identifiserer avsender og/eller
+                      mottaker
+                    </para>
+                  </listitem>
+                </itemizedlist>
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.21
+              </entry>
+              <entry>
+                <emphasis>Dokumentbeskrivelser</emphasis> knyttet til en
+                registrering* skal kunne <emphasis>skjermes. Det skal
+                fremgå at</emphasis>registreringen* inneholder
+                <emphasis>dokumentbeskrivelser</emphasis> som er
+                skjermet i journalen
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.22
+              </entry>
+              <entry>
+                <para>
+                  Følgende opplysninger om elektroniske dokumenter skal
+                  kunne skjermes ved hjelp av tilgangskode:
+                </para>
+                <itemizedlist spacing="compact">
+                  <listitem>
+                    <para>
+                      alle opplysninger om et dokument, innbefattet
+                      ulike formater og versjoner av dokumentet
+                    </para>
+                  </listitem>
+                </itemizedlist>
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.23
+              </entry>
+              <entry>
+                Dersom tilgangskoden er merket med indikasjon på at det
+                bare er anledning til å unnta visse opplysninger i
+                dokumentet fra innsyn, kan det opprettes en «offentlig
+                variant» av dokumentet der disse opplysningene ikke
+                finnes, som derfor kan unntas fra skjerming
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <table>
+        <title>
+          Krav til skjermingsfunksjoner og – metoder for unntak fra
+          offentlig journal
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til skjermingsfunksjoner og – metoder for unntak
+                fra offentlig journal
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                5.2.24
+              </entry>
+              <entry>
+                Det bør synliggjøres i journalen om en registrering med
+                en tilgangskode inneholder ett eller flere dokumenter
+                som ikke er merket med tilgangskode
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.25
+              </entry>
+              <entry>
+                Dersom tilgangskoden er merket med indikasjon på at det
+                bare er anledning til å unnta visse opplysninger i
+                dokumentet fra innsyn, kan det opprettes en «offentlig
+                variant» av dokumentet der disse opplysningene ikke
+                finnes, som derfor kan unntas fra skjerming
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.26
+              </entry>
+              <entry>
+                Løsningen bør vise hvilke opplysningstyper som er angitt
+                at skal skjermes. Det at en gitt opplysning er avkrysset
+                for skjerming bør vises både for de som har tilgang til
+                å se de skjermede opplysningene og for de som ikke har
+                tilgang til å se dem
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.27
+              </entry>
+              <entry>
+                Dokumentbeskrivelsen bør arve registreringens
+                tilgangskode som standardverdi, dersom ikke
+                dokumentbeskrivelsen har tilgangskode fra før, og dersom
+                den ikke fra før er tilknyttet en annen registrering
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-060-gjenfinning_innsyn_rapportering-tilgjengeliggjøring-av-offentlig-journal-på-internett">
+      <title>Tilgjengeliggjøring av offentlig journal på
+      Internett</title>
+      <para>
+        Offentlige organ plikter å føre journal, og de plikter å legge
+        frem en versjon av journalen på forespørsel, hvor opplysninger
+        som skal eller kan unntas fra offentlighet ikke framgår. Dette
+        følger av arkivforskriften §§ 9 og 10, samt offentleglova § 10,
+        og er dekket av kravene i kapittel 5.2.2 Offentlig journal.
+      </para>
+      <para>
+        I tillegg kan en offentlig versjon av journalen gjøres
+        tilgjengelig på Internett. Enkelte organ skal gjøre journalen
+        tilgjengelig på Internett, jf. offentlegforskrifta § 6. Utover
+        dette kan ethvert organ velge å tilgjengeliggjøre offentlig
+        journal på egne nettsider.
+      </para>
+      <para>
+        Tilgjengeliggjøring av offentlig journal på egne nettsider er en
+        frivillig tjeneste. Utformingen kan derfor den enkelte tilbyder
+        i stor grad utforme selv. Man kan for eksempel velge kun å
+        tilgjengeliggjøre deler av den journalføringspliktige
+        informasjonen. Dersom journalen som tilgjengeliggjøres ikke er
+        komplett bør organet opplyse om hvilke deler av journalen som er
+        utelatt. Det å tilgjengeliggjøre hele eller deler av offentlig
+        journal på nett opphever ikke adgangen til å kreve innsyn med
+        hjemmel i offentleglova § 3.
+      </para>
+      <para>
+        Innholdet i journalen skal være i samsvar med arkivforskriften §
+        10 første ledd annet punktum, dvs. journalføringsdato, saks- og
+        dokumentnummer, avsender og/eller mottaker, opplysninger om sak,
+        innhold eller emne og datering på dokumentet, samt arkivkode,
+        ekspedisjons- eller avskrivningsdato og avskrivningsmåte dersom
+        disse er ført inn på tilgjengeliggjøringstidspunktet. I tillegg
+        skal journalen opplyse om kontaktpunkt for den enkelte sak hos
+        organet.
+      </para>
+      <para>
+        Opplysninger som skal unntas fra offentlighet skal aldri gå frem
+        av offentlig journal, hverken den versjonen som publiseres eller
+        den versjonen man gir ut på direkte forespørsel. I tillegg
+        gjelder at visse opplysninger som ikke kan unntas fra
+        offentlighet, og som dermed skal være med på den versjonen av
+        journalen man gir ut på direkte forespørsel etter offentleglova
+        § 3, allikevel ikke skal være med i den versjonen av journalen
+        som gjøres tilgjengelig på Internett. Dette gjelder opplysninger
+        nevnt i personopplysningsloven § 2 nr. 8, samt fødselsnummer,
+        personnummer og nummer med tilsvarende funksjon, opplysninger om
+        lønn og godtgjøring til fysiske personer (med visse unntak), og
+        materiale som tredjepart har immaterielle rettigheter til. Dette
+        er altså opplysninger som ikke er underlagt reglene for
+        skjerming i standarden, men som allikevel skal merkes på en slik
+        måte at publiseringsløsningen som gjør offentlig journal
+        tilgjengelig på Internett kan gjenkjenne dette som opplysninger
+        som ikke skal tilgjengeliggjøres.
+      </para>
+      <para>
+        I tillegg gjelder at personnavn som gjøres tilgjengelig på
+        offentlig elektronisk postjournal (oep.no) ikke skal være
+        søkbare når de er eldre enn ett år. Dette betyr altså at
+        personnavn, som ikke allerede er skjermet eller utelatt fra
+        journalen etter reglene nevnt over, må merkes slik at
+        tilgjengeliggjøringsløsningen vet at dette er opplysninger som
+        ikke skal være søkbare.
+      </para>
+      <para>
+        Et annet aspekt er søking på navn gjennom søketjenester som
+        Google, Bing, Yahoo! etc. Det er ikke ønskelig å finne
+        journalposter knyttet til en bestemt person ved søk på
+        personnavn i slike søketjenester. Tilgjengeliggjøringsløsningene
+        kan benytte merking av personnavn til å legge ut merker i
+        nettsidene som anmoder indekseringstjenerne om å ekskludere
+        navnet fra sine indekser. De største indekseringstjenestene
+        respekterer slike merker.
+      </para>
+      <para>
+        Det er også åpning for å tilgjengeliggjøre selve dokumentene på
+        Internett, jf. offentlegforskrifta § 7, hvor det også stilles
+        krav om at man i så fall skal opplyse om hvilke kriterium som
+        ligger til grunn for utvalget som tilgjengeliggjøres. Her er det
+        ikke tilstrekkelig å si at alle dokumenter som ikke en unntatt
+        fra offentlighet skal tilgjengeliggjøres, da det også her
+        gjelder at visse opplysninger ikke skal gjøres tilgjengelig på
+        Internett selv om de ikke skal eller kan unntas fra
+        offentlighet. Det betyr at man som hovedregel aktiv bør ta
+        stilling til hvilke dokumenter som tilgjengeliggjøres, og ikke
+        legge inn dette som automatikk i tilgjengeliggjøringsløsningen.
+      </para>
+      <table>
+        <title>
+          Krav til tilgjengeliggjøring av offentlig journal på Internett
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til tilgjengeliggjøring av offentlig journal på
+                Internett
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                5.2.28
+              </entry>
+              <entry>
+                Det bør være mulig å eksportere uttrekk for
+                tilgjengeliggjøring av offentlig journal.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.29
+              </entry>
+              <entry>
+                Innholdet i offentlig journal tilgjengeliggjort på
+                Internett skal samsvare med arkivforskriften § 10 første
+                ledd annet punktum. I tillegg skal det være med et
+                kontakt­punkt som publikum kan henvende seg til hos
+                organet. Se for øvrig offentlegforskrifta § 6
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk hvis løsningen muliggjør
+                tilgjengeliggjøring på Internett
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.30
+              </entry>
+              <entry>
+                Offentlig journal på Internett skal ikke inneholde
+                informasjon som er unntatt fra offentlighet. Denne
+                informasjonen skal allerede være skjermet i løsningen.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk hvis løsningen muliggjør
+                tilgjengeliggjøring på Internett
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.31
+              </entry>
+              <entry>
+                <para>
+                  Følgende informasjon skal aldri gjøres tilgjengelig på
+                  Internett, selv om informasjonen ikke er unntatt
+                  offentlighet:
+                </para>
+                <itemizedlist spacing="compact">
+                  <listitem>
+                    <para>
+                      Opplysninger nevnt i personvernforordningen
+                      artikkel 9 og 10
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Fødselsnummer, personnummer og nummer med
+                      tilsvarende funksjon
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Opplysninger om lønn og godtgjøring til fysiske
+                      personer, bortsett fra opplysninger om lønn og
+                      godtgjøring til personer i ledende stillinger
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Materiale som tredjepart har immaterielle
+                      rettigheter til (bortsett fra søknader,
+                      argumentasjonsskriv, høringsuttalelser og lignende
+                      vanlig materiale sendt i forbindelse med en sak).
+                    </para>
+                  </listitem>
+                </itemizedlist>
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk hvis løsningen muliggjør
+                tilgjengeliggjøring på Internett
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.32
+              </entry>
+              <entry>
+                Personnavn som tilgjengeliggjøres direkte på en webside
+                bør merkes for utelukking fra indeksering av
+                indekseringstjenester.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.33
+              </entry>
+              <entry>
+                Personnavn som tilgjengeliggjøres bør ikke være søkbare
+                etter ett år.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.34
+              </entry>
+              <entry>
+                Personnavn bør merkes med XML-taggene &lt;personnavn&gt;
+                &lt;/personnavn&gt; før de eksporteres.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.35
+              </entry>
+              <entry>
+                Det bør være mulig å tilgjengeliggjøre arkivdokumenter
+                knyttet til de enkelte journalpostene i offentlig
+                journal på Internett.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.36
+              </entry>
+              <entry>
+                Arkivdokumenter som inneholder informasjon nevnt i
+                offentlegforskrifta § 7, skal ikke tilgjengeliggjøres på
+                Internett. (Dette betyr normalt at tilgjengeliggjøring
+                av dokumenter ikke kan automatiseres, en må ta stilling
+                til tilgjengeliggjøring i hvert enkelt tilfelle.)
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk dersom løsningen muliggjør
+                tilgjengeliggjøring av arkiv­dokumenter på Internett
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.37
+              </entry>
+              <entry>
+                Dersom arkivdokumenter tilgjengeliggjøres på Internett,
+                skal det i Internettløsningen opplyses om hvilket
+                kriterium som ligger til grunn for utvalget av
+                dokumenter, jf. Offentlegforskrifta § 7 siste ledd.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk dersom løsningen muliggjør
+                tilgjengeliggjøring av arkiv­dokumenter på Internett
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.38
+              </entry>
+              <entry>
+                Tilgjengeliggjøring av offentlig journal og eventuelle
+                arkivdokumenter på Internett bør etableres med hindre
+                mot automatisert indeksering fra eksterne aktører,
+                f.eks. søkemotorer.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-060-gjenfinning_innsyn_rapportering-sikring-av-innsyn-og-tilgjengelighet">
+      <title>Sikring av innsyn og tilgjengelighet</title>
+      <para>
+        Forvaltningsloven og personopplysningsloven gir (med visse
+        begrensninger) særskilte innsynsrettigheter til den som er part
+        i en sak, og til den som er registrert i organets
+        informasjonssystem. Det elektroniske arkivet må kunne realisere
+        individuell innsynsrett for den enkelte part/registrerte uten at
+        vedkommende trenger å ha detaljkunnskaper om organets
+        organisering og autorisasjonsbeslutninger.
+      </para>
+      <table>
+        <title>
+          Krav til sikring av partsinnsyn
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til sikring av partsinnsyn
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                5.2.39
+              </entry>
+              <entry>
+                For en part som krever innsyn etter forvaltningsloven
+                skal det kunne gis utskrift av alle metadata og
+                dokumenter i den bestemte saken. Opplysninger skal vises
+                selv om de er påført tilgangskoder
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.40
+              </entry>
+              <entry>
+                For en person som krever innsyn etter
+                personopplysningsloven skal det kunne gis utskrift av
+                alle metadata om de saker hvor vedkommende er part i
+                saken, og de registreringer med tilhørende dokumenter og
+                merknader der vedkommende selv er avsender eller
+                mottaker. Eventuelle skjermede opplysninger om andre
+                parter i saken skal skjermes i utskriften
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                5.2.41
+              </entry>
+              <entry>
+                Dersom en person er autentisert som ekstern bruker, bør
+                vedkommende selv kunne hente ut de opplysninger
+                vedkommende har rett til innsyn i som part eller som
+                registrert person gjennom tilrettelagt fagsystem eller
+                innsynsløsning
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+  </sect1>
+</chapter>

@@ -1,0 +1,3281 @@
+<chapter id="id-030-noark-5-datamodell-noark-5-datamodell">
+  <title>Noark 5 datamodell</title>
+  <para>
+    Et <emphasis>arkivdokument</emphasis> består av elementene innhold,
+    struktur, kontekst og presentasjon. Innholdet finnes i ett eller
+    flere elektroniske eller fysiske dokumenter som gjengir dokumentets
+    «budskap». Dokumentene skal oppbevares på en måte som gjør at
+    framtidige brukere kan forstå både budskapet og sammenhengen
+    (konteksten) budskapet inngår i.
+  </para>
+  <para>
+    En arkivkjerne skal oppfylle grunnleggende krav til arkivering. Det
+    betyr:
+  </para>
+  <itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        Arkivdokumenter kommer inn i arkivet, dvs. arkiveres, gjennom
+        <emphasis>dokumentfangst</emphasis>.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Dokumentene skal organiseres i en
+        <emphasis>arkivstruktur</emphasis> som viser sammenhengen mellom
+        dokumentene. Dette innebærer at dokumenter må plasseres på
+        riktig sted i arkivet. Når dokumenter arkiveres, skal de fryses
+        for all videre redigering.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Dokumentfangst innebærer også at dokumentene tilføres
+        <emphasis>metadata</emphasis>, dvs. informasjon om dokumentenes
+        innhold, kontekst (sammenheng) og struktur. En viktig funksjon
+        til metadata er å opprettholde tilliten til dokumentenes
+        autentisitet og troverdighet over tid. Det må ikke være tvil om
+        at et dokument er ekte, og at det er skapt av den som utgir seg
+        for å ha skapt det.
+      </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Datamodellene som presenteres i dette dokumentet er en visuell
+    presentasjon av det som fremgår av vedlegg 2 <emphasis>Metadata
+    gruppert på objekter.</emphasis> Hvis det er konflikt mellom den
+    visuelle presentasjonen av objektene og relasjonene mellom dem i
+    dette dokumentet, og det som står i vedlegg 2, er det vedlegg 2 som
+    skal oppfattes som «fasit.»
+  </para>
+  <sect1 id="id-030-noark-5-datamodell-overordnet-datamodell">
+    <title>Overordnet datamodell</title>
+    <para>
+      Arkivstrukturen kan vi gjerne kalle den indre ordningen av
+      arkivet. Denne strukturen er hierarkisk med flere nivåer fra topp
+      til bunn. Som en fellesbetegnelse på disse nivåene brukes begrepet
+      arkivenhet.
+    </para>
+    <para>
+      I et fysisk arkiv vil arkivstrukturen gjenspeiles i
+      papirdokumentenes sortering og fysiske oppstilling i omslag,
+      mapper, arkivbokser, skap osv. I et elektronisk arkiv kan også
+      dokumentene presenteres som om de ligger i mapper, og en
+      hierarkisk arkivstruktur kan representeres ved at mapper ligger i
+      andre mapper i flere nivåer.
+    </para>
+    <para>
+      Modellene i Noark 5 er <emphasis>konseptuelle modeller</emphasis>
+      som skal vise sammenhengen mellom forskjellige metadata, og mellom
+      metadata og fysiske eller elektroniske dokumenter. De konseptuelle
+      modellene i Noark 5 sier noe om hvordan informasjonen prinsipielt
+      skal organiseres. De vil også være utgangspunktet for definisjonen
+      av datastrukturer ved elektronisk kommunikasjon, integrasjon med
+      andre systemer, migrering fra et system til et annet og for
+      deponering/avlevering.
+    </para>
+    <sect2 id="id-030-noark-5-datamodell-overordnet-skisse-av-den-konseptuelle-modellen-for-noark-5">
+      <title>Overordnet skisse av den konseptuelle modellen for Noark
+      5</title>
+      <figure>
+        <title><emphasis>Figur 2.1 arkivstruktur</emphasis></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="./media/uml-arkivstruktur-diagram.png" width="100.0%" />
+          </imageobject>
+          <textobject><phrase><emphasis>Figur 2.1
+          arkivstruktur</emphasis></phrase></textobject>
+        </mediaobject>
+      </figure>
+      <para>
+        Nivåene for <emphasis>mappe</emphasis> og
+        <emphasis>registrering</emphasis> er bygd ut ved hjelp av
+        spesialisering av klassene. Eksempler på slike spesialiseringer
+        er <emphasis>saksmappe</emphasis> og
+        <emphasis>journalpost</emphasis>. Den arkivstrukturen som er
+        skissert gjennom den konseptuelle modellen i dette kapitlet,
+        utgjør hovedstrukturen i Noark 5 og er obligatorisk for
+        sakarkiver.
+      </para>
+      <para>
+        I enkelte system kan det være behov for en forenklet struktur,
+        og visse nivå i strukturen kan utgå dersom det ikke er behov for
+        nivået.
+      </para>
+      <figure>
+        <title><emphasis>Figur 2.2 forenklet
+        arkivstruktur</emphasis></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="./media/uml-forenklet-arkivstruktur-diagram.png" width="100.0%" />
+          </imageobject>
+          <textobject><phrase><emphasis>Figur 2.2 forenklet
+          arkivstruktur</emphasis></phrase></textobject>
+        </mediaobject>
+      </figure>
+      <para>
+        I et elektronisk arkiv eksisterer ikke mappene som fysiske
+        enheter. Arkivstrukturen i et elektronisk arkiv er bygd opp av
+        forskjellige metadata. Hver enhet i strukturen har sine bestemte
+        metadata, og de forskjellige nivåene er også koblet sammen med
+        metadata. Metadata er altså aggregert på flere nivåer, slik at
+        metadata på øverste nivå vil være knyttet til alle dokumenter i
+        arkivet, mens metadata på laveste nivå bare er knyttet til et
+        enkeltdokument.
+      </para>
+      <table>
+        <title>
+          <emphasis role="strong">Overordnede krav til
+          arkivstrukturen</emphasis>
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Overordnede krav til arkivstrukturen
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                2.1.1
+              </entry>
+              <entry>
+                For at en løsning skal kunne godkjennes etter Noark 5 må
+                den konseptuelle modellen av arkivstrukturen og de
+                funksjonelle muligheter den gir, kunne implementeres i
+                det aktuelle systemets (fysiske) datastrukturer.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+                Innebærer at det må implementeres slik at data skal
+                kunne presenteres og hentes ut på den måten.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.1.2
+              </entry>
+              <entry>
+                <para>
+                  Arkivdokumenter skal inngå i en arkivstruktur som
+                  minst inneholder følgende arkivenheter:
+                </para>
+                <para>
+                  <emphasis>arkiv</emphasis>,
+                  <emphasis>arkivdel</emphasis>, <emphasis>registrering,
+                  dokumentbeskrivelse</emphasis> og
+                  <emphasis>dokumentobjekt</emphasis>.
+                </para>
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.1.3
+              </entry>
+              <entry>
+                <para>
+                  Journalføringspliktige saksdokumenter skal inngå i et
+                  sakarkiv, med en arkivstruktur som minst skal
+                  inneholde følgende arkivenheter:
+                </para>
+                <para>
+                  <emphasis>arkiv</emphasis>,
+                  <emphasis>arkivdel</emphasis>,
+                  <emphasis>klassifikasjonssystem</emphasis>,
+                  <emphasis>klasse</emphasis>, <emphasis>mappe,
+                  registrering, dokumentbeskrivelse</emphasis> og
+                  <emphasis>dokumentobjekt</emphasis>.
+                </para>
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for sakarkiver.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.1.4
+              </entry>
+              <entry>
+                For fysiske arkiver kan
+                <emphasis>dokumentobjekt</emphasis> utgå.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+  </sect1>
+  <sect1 id="id-030-noark-5-datamodell-metadata">
+    <title>Metadata</title>
+    <para>
+      Metadata er informasjon som beskriver dokumentene i arkivet, både
+      fysiske og elektroniske dokumenter. Metadata tilføres dokumentene
+      først og fremst under dokumentfangsten. Noe av dette vil skje
+      manuelt, men mye skjer også automatisk. En del metadata skal
+      fryses straks de er registrert, og etter at dokumentene er endelig
+      arkivert skal de fleste metadata bare kunne endres av spesielt
+      autoriserte brukere.
+    </para>
+    <para>
+      Metadata har flere viktige funksjoner. Det er metadataene som
+      binder dokumentene til den konteksten de er skapt i. Metadataene
+      sikrer de elektroniske dokumentenes autentisitet og dermed deres
+      bevisverdi. Uten metadata vil ikke dokumenter ha verdi som
+      <emphasis>arkivdokumenter</emphasis>. Metadata er også viktig for
+      fremfinning, tilgangsstyring og skjerming, i tillegg til å styre
+      bevaring og kassasjon, dvs. en kontrollert sletting av alle
+      dokumenter som har en begrenset oppbevaringstid.
+    </para>
+    <para>
+      Det er viktig at metadataene som benyttes faktisk reflekterer
+      måten man utfører saksbehandlingen på og hva man reelt sett har
+      behov for å dokumentere. I Noark 5 er det svært stor fleksibilitet
+      når det gjelder spesifisering av de metadata man trenger for å
+      dokumentere arbeidsoppgavene slik de faktisk er utført. Standarden
+      definerer metadata for uttrekket, og er ikke til hinder for at
+      andre metadata brukes i løsningen. Metadatakatalogen skal ikke
+      være begrensende for hvordan virksomheten spesifiserer sine egne
+      dokumentasjonsbehov og -krav, men et grunnlag å bygge videre på.
+      Dersom man bruker andre metadata må man definere hvordan de
+      eventuelt skal inngå i uttrekket, om de lar seg passe inn i
+      strukturen som virksomhetsspesifikke metadata.
+    </para>
+    <para>
+      I Noark 5 blir det definert metadata for alle nivåer i
+      arkivstrukturen. Disse metadataene er nærmere spesifisert i
+      vedlegg 1, <emphasis>Metadatakatalog.</emphasis> Mange av de samme
+      meta­dataene vil opptre på forskjellige nivåer i arkivstrukturen,
+      men de vil bare bli spesifisert én gang i katalogen.
+    </para>
+    <para>
+      Vedlegg 2 <emphasis>Metadata gruppert på objekter</emphasis>
+      spesifiserer hvilke metadata som brukes på de ulike nivåene og
+      objektene i arkivstrukturen, om de er obligatoriske eller
+      valgfrie, og om de kan forekomme 0, 1 eller mange gang på et
+      objekt. I den visuelle presentasjonen i dette dokumentet er
+      obligatoriske metadata skrevet med fet skrift, mens valgfrie er
+      skrevet med tynn skrift. Dersom det er konflikt mellom dette
+      dokumentet og vedlegg 2, er det vedlegg 2 som er «fasiten.»
+    </para>
+    <para>
+      En arkivkjerne som kun dekker obligatoriske objekt i datamodellen
+      og de obligatoriske metadata på disse objektene, kan dermed
+      fremstilles slik:
+    </para>
+    <figure>
+      <title><emphasis>Figur 2.3 arkivkjerne med
+      obligatoriskekrav</emphasis></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="./media/uml-arkivkjerne-diagram.png" width="100.0%" />
+        </imageobject>
+        <textobject><phrase><emphasis>Figur 2.3 arkivkjerne med
+        obligatoriskekrav</emphasis></phrase></textobject>
+      </mediaobject>
+    </figure>
+    <para>
+      Utgangspunktet for definisjonen av metadata har vært kravet til
+      hva som skal inngå i et arkivuttrekk. Men det er også tatt hensyn
+      til metadata som skal kunne utveksles elektronisk sammen med
+      dokumenter, metadata som skal kunne deles ved integrasjon med
+      fagsystemer, og metadata som skal kunne migreres til andre
+      systemer sammen med tilhørende dokumenter.
+    </para>
+    <para>
+      Metadata blir navngitt på en entydig måte som er nærmere forklart
+      i metadatakatalogen. Metadatanavnene er obligatoriske ved eksport
+      og utveksling av data. Noen metadataelementer skal kunne
+      <emphasis>arves</emphasis> fra en overordnet enhet til en
+      underordnet.
+    </para>
+    <para>
+      Det er ikke noe krav at alle metadata i katalogen nødvendigvis må
+      lagres i kjernen. I en del løsninger er det mer hensiktsmessig å
+      lagre deler av metadata i fagsystemet. Men det er et krav at ved
+      eksport eller utveksling skal alle obligatoriske metadata inngå i
+      en felles struktur. Slike strukturer vil bl.a. bli beskrevet i
+      form av XML-skjema i Noark 5.
+    </para>
+    <table>
+      <title>
+        <emphasis role="strong">Overordnede krav til metadata</emphasis>
+      </title>
+      <tgroup cols="4">
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <thead>
+          <row>
+            <entry>
+              Krav nr.
+            </entry>
+            <entry>
+              Overordnede krav til metadata
+            </entry>
+            <entry>
+              Type
+            </entry>
+            <entry>
+              Merknad
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              2.2.1
+            </entry>
+            <entry>
+              En Noark 5-løsning skal ha tjenester/funksjoner for å
+              <emphasis>lagre, gjenfinne, endre og slette</emphasis>
+              data og utvalg av data i henhold til metadatabeskrivelsene
+              i alle <emphasis>arkivenheter</emphasis> og tilhørende
+              klasser som er dokumentert i de konseptuelle modellene og
+              metadatatabellene i Noark 5.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+              Funksjonelle enkeltkrav i de forskjellige kapitlene kan
+              overstyre dette kravet.
+            </entry>
+          </row>
+          <row>
+            <entry>
+              2.2.2
+            </entry>
+            <entry>
+              En arkivenhet skal kunne identifiseres entydig innenfor
+              det arkivskapende organet. I et arkivuttrekk skal denne
+              identifikasjonen hete systemID, og være entydig på tvers
+              av alle uttrekk som organet produserer, dermed også på
+              tvers av alle systemer organet benytter. Også arkivenheter
+              som dupliseres i et arkivuttrekk, skal identifiseres
+              entydig, slik at identiske arkivenheter har ulik systemID.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </sect1>
+  <sect1 id="id-030-noark-5-datamodell-arkiv-og-arkivdel">
+    <title>Arkiv og arkivdel</title>
+    <para>
+      Forskjellige virksomheter vil ha forskjellig behov for definering
+      av arkiv og arkivdeler. Både arkiv og arkivdel obligatoriske nivå
+      i arkivstrukturen.
+    </para>
+    <sect2 id="id-030-noark-5-datamodell-konseptuell-modell-for-arkiv-og-arkivdel">
+      <title>Konseptuell modell for <emphasis>arkiv</emphasis> og
+      <emphasis>arkivdel</emphasis></title>
+      <figure>
+        <title><emphasis>Figur 2.4 arkiv og arkivdel</emphasis></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="./media/uml-arkiv-arkivdel-diagram.png" width="100.0%" />
+          </imageobject>
+          <textobject><phrase><emphasis>Figur 2.4 arkiv og
+          arkivdel</emphasis></phrase></textobject>
+        </mediaobject>
+      </figure>
+    </sect2>
+    <sect2 id="id-030-noark-5-datamodell-arkiv">
+      <title>Arkiv</title>
+      <para>
+        Et arkiv består normalt av dokumenter som blir til som ledd i én
+        virksomhet, dvs. dokumenter som mottas eller produseres av en
+        enkelt arkivskaper og samles som resultat av dennes virksomhet.
+        Arkiv er det øverste nivået i arkivstrukturen. De fleste
+        virksomheter vil kun ha behov for å opprette ett arkiv i sin
+        Noark 5-løsning. Men det skal være mulig å opprette flere
+        arkiver. Det kan være aktuelt dersom flere organ deler samme
+        løsning. En Noark-løsning kan derfor omfatte ett eller flere
+        arkiver.
+      </para>
+      <para>
+        Arkiv er obligatorisk i et arkivuttrekk.
+      </para>
+    </sect2>
+    <sect2 id="id-030-noark-5-datamodell-arkivskaper">
+      <title>Arkivskaper</title>
+      <para>
+        Tradisjonelt har et arkiv blitt definert etter
+        <emphasis>organisasjon</emphasis>. En arkivskaper er en
+        organisatorisk enhet eller en person som danner arkiv som ledd i
+        sin virksomhet. En arkivskaper kan være et offentlig organ, en
+        bedrift, en organisasjon, en institusjon, en stiftelse osv.,
+        eller en del av en slik enhet. Et offentlig organ kan være én
+        arkivskaper og dermed ha ett arkiv (sentralisert arkiv), eller
+        det kan utgjøre flere arkivskapere (avdelinger, etater i en
+        kommune) som skaper hvert sitt arkiv (desentralisert arkiv).
+      </para>
+      <para>
+        Digitaliseringen har ført til at det blir stadig vanligere at
+        flere arkivskapere sammen skaper ett arkiv. Arkivet vil da være
+        definert etter <emphasis>funksjon</emphasis>, ikke organisasjon.
+        I en Noark 5-løsning skal det derfor være mulig å knytte en
+        eller flere arkivskapere til ett arkiv.
+      </para>
+      <para>
+        Informasjon om arkivskapere er obligatorisk i arkivuttrekk.
+      </para>
+    </sect2>
+    <sect2 id="id-030-noark-5-datamodell-underarkiv">
+      <title>Underarkiv</title>
+      <para>
+        Det er i enkelte tilfeller behov for et ekstra nivå mellom arkiv
+        og arkivdel. Det er særlig for fysiske arkiver innenfor
+        kommunesektoren at det kan være behov for å dele opp arkiver i
+        flere (fysiske) deler. Dette er løst ved å innføre såkalte
+        underarkiv i den konseptuelle modellen. Underarkiv er en
+        hierarkisk struktur innenfor arkivet og kan således defineres i
+        flere nivåer. I praksis vil det vanligvis være ett nivå.
+      </para>
+      <para>
+        Underarkiv er ikke obligatorisk i arkivstrukturen.
+      </para>
+    </sect2>
+    <sect2 id="id-030-noark-5-datamodell-arkivdel">
+      <title>Arkivdel</title>
+      <para>
+        Et arkiv skal kunne deles opp i arkivdeler for å gruppere
+        arkivet etter overordnede kriterier. De viktigste kriteriene for
+        oppdeling i arkivdeler er:
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Skille mellom aktivt arkiv og avsluttede arkivperioder.
+            Funksjoner for periodisering og produksjon av arkivuttrekk
+            er knyttet til en arkivdel.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Skille mellom mapper som skal periodiseres etter
+            forskjellige prinsipper.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Skille mellom saksmapper som er klassifisert etter
+            forskjellige prinsipper.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Skille mellom elektronisk arkiv og fysisk arkiv.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Skille mellom sakarkivet og andre typer arkiver, f.eks.
+            arkiver tilknyttet fagsystemer. Noen vil ha behov for et
+            klart skille mellom de administrative sakene og fagsakene.
+            Det kan også være et behov for å skille ut møtedokumenter.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Skille mellom mapper, registreringer eller dokumenttyper som
+            skal bevares eller som skal kasseres.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Skille mellom mapper, registreringer eller dokumenttyper som
+            er offentlige eller som skal skjermes.
+          </para>
+        </listitem>
+      </itemizedlist>
+      <table>
+        <title>
+          <emphasis role="strong">Funksjonelle krav til arkiv</emphasis>
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Funksjonelle krav til <emphasis>arkiv</emphasis>
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                2.3.1
+              </entry>
+              <entry>
+                Dersom <emphasis>arkiv</emphasis> er registrert som
+                «avsluttet», skal det ikke være mulig å legge til flere
+                underliggende <emphasis>arkivdeler</emphasis>.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk dersom arkivstatus brukes.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.3.2
+              </entry>
+              <entry>
+                Når en tjeneste/funksjon sletter et helt
+                <emphasis>arkiv</emphasis> med alle underliggende nivå,
+                skal dette logges.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <table>
+        <title>
+          <emphasis role="strong">Funksjonelle krav til
+          underarkiv</emphasis>
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Funksjonelle krav til <emphasis>underarkiv</emphasis>
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                2.3.3
+              </entry>
+              <entry>
+                Systemet bør ha en tjeneste/funksjon for å angi et
+                <emphasis>arkiv</emphasis> som
+                <emphasis>underarkiv</emphasis> til et
+                <emphasis>arkiv</emphasis>.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.3.4
+              </entry>
+              <entry>
+                Et <emphasis>underarkiv</emphasis> skal kun opprettes og
+                endres gjennom Administrasjonssystemet for Noark 5.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk dersom underarkiv brukes.
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <table>
+        <title>
+          <emphasis role="strong">Funksjonelle krav til
+          arkivdel</emphasis>
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Funksjonelle krav til <emphasis>arkivdel</emphasis>
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                2.3.5
+              </entry>
+              <entry>
+                Når en tjeneste/funksjon sletter en
+                <emphasis>arkivdel,</emphasis> skal dette logges.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.3.6
+              </entry>
+              <entry>
+                Dersom <emphasis>arkivdel</emphasis> er registrert som
+                avsluttet (avsluttetDato er satt) skal det
+                <emphasis>ikke</emphasis> være mulig å legge til flere
+                tilhørende <emphasis>mapper</emphasis> eller
+                <emphasis>registreringer</emphasis>
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+  </sect1>
+  <sect1 id="id-030-noark-5-datamodell-klassifikasjonssystem-og-klasse">
+    <title>Klassifikasjonssystem og klasse</title>
+    <sect2 id="id-030-noark-5-datamodell-klassifikasjonssystem">
+      <title>Klassifikasjonssystem</title>
+      <para>
+        Alle offentlige organ skal lage en oversikt over sine
+        saksområder, og ordne og beskrive disse i et
+        klassifikasjonssystem. Et klassifikasjonssystem består med andre
+        ord av klasser som først og fremst beskriver arkivskapers
+        funksjoner, prosesser og aktiviteter. Men det kan også brukes
+        til å beskrive emner eller objekter. I norsk arkivtradisjon har
+        klassifikasjonssystem normalt vært omtalt som arkivnøkler, dvs.
+        system for ordning av sakarkiv, og hovedsystemet har vært
+        ordning etter emne.
+      </para>
+      <para>
+        I henhold til ISO 15489 og 30300 er klassifikasjon den
+        systematiske identifikasjonen og ordningen av
+        forretningsaktiviteter og/eller registreringer
+        (informasjonsobjekter) i kategorier i henhold til logisk
+        strukturerte konvensjoner, metoder og prosedyreregler fremstilt
+        i et klassifikasjonssystem.
+      </para>
+      <para>
+        Alle virksomheter utøver et bestemt antall
+        <emphasis>funksjoner</emphasis>. Disse er ofte stabile over tid,
+        men funksjoner kan overføres fra en virksomhet til en annen.
+        Funksjoner/underfunksjoner består av ulike prosesser (eller
+        grupper av prosesser), som igjen kan deles inn i
+        <emphasis>aktiviteter</emphasis>. I motsetning til en funksjon,
+        har en prosess en begynnelse og en slutt. En prosess har ofte
+        også deltakere, og den fører til et resultat. Alle dokumenter
+        som produseres når en prosess utføres, skal normalt tilhøre
+        samme (saks)mappe. Prosesser kan deles opp i forskjellige
+        aktiviteter, eller <emphasis>transaksjoner</emphasis>. Det er
+        transaksjoner som skaper arkivdokumenter (records). Typiske
+        transaksjoner er mottak av en søknad i form av et inngående
+        dokument, og vedtaket i form av et utgående dokument.
+      </para>
+      <para>
+        Dette hierarkiet av funksjoner, prosesser og aktiviteter skal
+        gjenspeiles i et funksjonsbasert klassifikasjonssystem. Stort
+        sett vil dette kunne tilsvare det som kalles
+        &quot;emnebasert&quot; klassifikasjon. Men det er litt feil å
+        snakke om emne i stedet for funksjon. Et emne vil si noe om
+        <emphasis>hva et objekt inneholder</emphasis> eller
+        <emphasis>handler om</emphasis>, mens en funksjon vil si noe om
+        <emphasis>hvorfor et objekt har blitt til</emphasis>.
+      </para>
+      <para>
+        Det er mange grunner til å organisere et arkiv etter et
+        funksjonsbasert klassifikasjonssystem:
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Dokumenter som har blitt til som resultat av aktiviteter som
+            hører sammen (prosessene) blir knyttet sammen. Dette
+            tilfører dokumentene viktig kontekstuell informasjon.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Gjenfinning av mapper og dokumenter forenkles.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Kan styre tilgangen til dokumentene. Bestemte klasser kan
+            f.eks. inneholde dokumenter som må skjermes.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Kan være et utgangspunkt for bevaring og kassasjon. Det er i
+            dag allment akseptert at kassasjonsvedtak bør baseres på
+            virksomhetens funksjoner, prosesser og aktiviteter, og ikke
+            på dokumentenes innhold.
+          </para>
+        </listitem>
+      </itemizedlist>
+      <para>
+        Den andre hovedtypen av klassifikasjonssystemer er
+        <emphasis>objektbasert</emphasis> klassifikasjon.
+        &quot;Objektene&quot; vil ofte være personer, men kan også være
+        virksomheter, eiendommer o.l. I motsetning til funksjonsbaserte
+        klassifikasjonssystemer, er objektbaserte systemer ofte flate -
+        dvs. de består av bare ett nivå.
+      </para>
+      <para>
+        Funksjonsbasert klassifikasjon og objektbasert klassifikasjon
+        vil oftest tilhøre to forskjellige klassifikasjonssystemer. Men
+        det er også tillatt å blande disse to i ett og samme
+        klassifikasjonssystem.
+      </para>
+      <para>
+        Ved fysisk arkivering skal klassifikasjonssystemet gjenspeile
+        dokumentenes fysiske ordning. Her fungerer
+        klassifikasjonssystemet som et hjelpemiddel til å finne fram i
+        papirdokumentene.
+      </para>
+    </sect2>
+    <sect2 id="id-030-noark-5-datamodell-klasse">
+      <title>Klasse</title>
+      <para>
+        Et klassifikasjonssystem er bygd opp av klasser. Ved
+        funksjonsbasert (emnebasert) klassifikasjon vil klassene
+        vanligvis inngå i et hierarki, hvor tre eller fire nivåer er det
+        vanlige. I den konseptuelle modellen er undernivåene kalt
+        underklasser, og fremkommer som en egenrelasjon i klasse.
+      </para>
+      <para>
+        Klassene skal ha en egen identifikasjon som er unik innenfor
+        klassifikasjonssystemet. Dette tilsvarer det som er kalt
+        <emphasis>ordningsverdi</emphasis> eller
+        <emphasis>arkivkode</emphasis> i Noark-4. Identifikasjoner fra
+        overordnede klasser skal arves nedover i hierarkiet, slik at det
+        er lett å si hvilket nivå en befinner seg på.
+      </para>
+      <para>
+        Ved objektbasert klassifikasjon med bare ett nivå, kan
+        identifikasjonen f.eks. være fødselsnummer eller gårds- og
+        bruksnummer.
+      </para>
+      <para>
+        Det skal være mulig å klassifisere en saksmappe med mer enn en
+        klasse, dvs. med en eller flere <emphasis>sekundære
+        klassifikasjoner.</emphasis> Dette muliggjør da bruk av
+        sekundære arkivkoder og mangefasettert klassifikasjon, f.eks.
+        K-kodene som brukes i mange kommuner. I den konseptuelle
+        modellen for mappe er dette illustrert med en egen klasse. Men
+        all arv av metadata kan kun gå gjennom den <emphasis>primære
+        klassifikasjonen</emphasis>.
+      </para>
+      <para>
+        Klassene vil ofte legges inn før en Noark 5-løsning tas i bruk.
+        Men det skal også være mulig for autoriserte brukere å opprette
+        nye klasser. Det er særlig aktuelt ved objektbasert
+        klassifikasjon. Klasser skal også kunne avsluttes, slik at det
+        ikke lenger er mulig å knytte nye mapper til dem.
+      </para>
+    </sect2>
+    <sect2 id="id-030-noark-5-datamodell-konseptuell-modell-for-klassifikasjonssystem">
+      <title>Konseptuell modell for klassifikasjonssystem</title>
+      <figure>
+        <title><emphasis>Figur 2.5
+        klassifikasjonssystem</emphasis></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="./media/uml-klassifikasjonssystem-diagram.png" width="100.0%" />
+          </imageobject>
+          <textobject><phrase><emphasis>Figur 2.5
+          klassifikasjonssystem</emphasis></phrase></textobject>
+        </mediaobject>
+      </figure>
+      <sect3 id="id-030-noark-5-datamodell-klassifikasjonssystem-1">
+        <title>Klassifikasjonssystem</title>
+        <para>
+          Klassifikasjonssystemet beskriver den overordnede strukturen
+          for mappene i én eller flere arkivdeler.
+        </para>
+      </sect3>
+      <sect3 id="id-030-noark-5-datamodell-klasse-1">
+        <title>Klasse</title>
+        <para>
+          Et klassifikasjonssystem er bygd opp av klasser. En klasse
+          skal bestå av en <emphasis>klasseID,</emphasis> som angir
+          tillatte verdier i klassifikasjonssystemet og en
+          <emphasis>klassetittel</emphasis>, som er en tekstlig
+          beskrivelse av funksjonen eller prosessen.
+        </para>
+        <table>
+          <title>
+            <emphasis role="strong">Funksjonelle krav til
+            klassifikasjonssystem</emphasis>
+          </title>
+          <tgroup cols="4">
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <thead>
+              <row>
+                <entry>
+                  Krav nr.
+                </entry>
+                <entry>
+                  Funksjonelle krav til
+                  <emphasis>klassifikasjonssystem</emphasis>
+                </entry>
+                <entry>
+                  Type
+                </entry>
+                <entry>
+                  Merknad
+                </entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  2.4.1
+                </entry>
+                <entry>
+                  Det skal være mulig å etablere hierarkiske
+                  klassifikasjonssystem.
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for sakarkiv
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.4.2
+                </entry>
+                <entry>
+                  <para>
+                    Det skal være mulig å etablere fasetterte,
+                    hierarkiske klassifikasjonssystem. Følgende er
+                    standard:
+                  </para>
+                  <itemizedlist spacing="compact">
+                    <listitem>
+                      <para>
+                        K-kodenøkkelen
+                      </para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for sakarkiver i kommunesektoren.
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.4.3
+                </entry>
+                <entry>
+                  <para>
+                    Det skal være mulig å etablere endimensjonale
+                    klassifikasjonssystem. Følgende er standard:
+                  </para>
+                  <itemizedlist spacing="compact">
+                    <listitem>
+                      <para>
+                        Juridisk person (privatperson eller næring)
+                      </para>
+                    </listitem>
+                    <listitem>
+                      <para>
+                        Gårds- og bruksnummer
+                      </para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for sakarkiv
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+        <table>
+          <title>
+            <emphasis role="strong">Funksjonelle krav til
+            klasse</emphasis>
+          </title>
+          <tgroup cols="4">
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <thead>
+              <row>
+                <entry>
+                  Krav nr.
+                </entry>
+                <entry>
+                  Funksjonelle krav til <emphasis>klasse</emphasis>
+                </entry>
+                <entry>
+                  Type
+                </entry>
+                <entry>
+                  Merknad
+                </entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  2.4.4
+                </entry>
+                <entry>
+                  For at en <emphasis>klasse</emphasis> skal kunne
+                  tilordnes en <emphasis>mappe</emphasis>, må den ligge
+                  på nederste nivå i klassehierarkiet.
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for sakarkiv.
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.4.5
+                </entry>
+                <entry>
+                  Dersom verdien i <emphasis>klasse</emphasis> er
+                  registrert som avsluttet (avsluttetDato), skal det
+                  ikke være mulig å tilordne nye
+                  <emphasis>mapper</emphasis> til
+                  <emphasis>klassen.</emphasis>
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk dersom det er mulig å avslutte klasser.
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.4.6
+                </entry>
+                <entry>
+                  Bare autorisert personale kan opprette klasser. Andre
+                  brukere kan gis tillatelse til å opprette klasser.
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for sakarkiv.
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sect3>
+    </sect2>
+  </sect1>
+  <sect1 id="id-030-noark-5-datamodell-mappe">
+    <title>Mappe</title>
+    <para>
+      En mappe grupperer dokument som på en eller annen måte hører
+      sammen.
+    </para>
+    <para>
+      Noark 5 legger til rette for en fleksibel bruk av mapper. Grunnen
+      til dette er at det skal være mulig å innpasse dokument som mottas
+      og skapes i de fleste typer system i kjernen.
+    </para>
+    <para>
+      En <emphasis>sak</emphasis> i Noark-4 utgjør en bestemt mappetype
+      i Noark 5, nemlig <emphasis>saksmappe</emphasis>. Dersom et system
+      basert på Noark 5 bare skal brukes for sakarkiver, er det ikke noe
+      i veien for å bruke begrepet &quot;sak&quot; i alle grensesnitt
+      mot brukerne, på samme måte som i Noark-4. Men i denne standarden
+      er mappe det generelle begrepet for arkivenheten på dette nivået.
+    </para>
+    <sect2 id="id-030-noark-5-datamodell-konseptuell-modell-for-mappe">
+      <title>Konseptuell modell for mappe</title>
+      <figure>
+        <title><emphasis>Figur 2.6 mappestrukturen</emphasis></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="./media/uml-mappestrukturen-diagram.png" width="100.0%" />
+          </imageobject>
+          <textobject><phrase><emphasis>Figur 2.6
+          mappestrukturen</emphasis></phrase></textobject>
+        </mediaobject>
+      </figure>
+      <sect3 id="id-030-noark-5-datamodell-mappe-1">
+        <title>Mappe</title>
+        <para>
+          Utgangspunktet for alle mappetyper i Noark 5 er metadataene i
+          en <emphasis>mappe</emphasis>. Denne inneholder noen
+          grunnleggende metadata, men det er ikke alle metadata her som
+          er obligatoriske. En del spesialiserte system vil trenge
+          ekstra metadata i tillegg til dette. Dette kan løses enten ved
+          bruk av <emphasis>virksomhetsspesifikke metadata</emphasis>,
+          eller ved å lage andre spesialiserte av mappetyper med
+          utgangspunkt i mappe eller Saksmappe.
+        </para>
+      </sect3>
+      <sect3 id="id-030-noark-5-datamodell-undermappe">
+        <title>Undermappe</title>
+        <para>
+          En mappe kan inneholde en eller flere undermapper (spesifisert
+          som egenrelasjon i <emphasis>mappe</emphasis>). Arv fra en
+          klasse vil alltid gå til mappen på det øverste nivået. Dersom
+          mappenivået består av flere nivåer, skal registreringer bare
+          kunne knyttes til det laveste nivået. En mappe kan altså ikke
+          inneholde både andre mapper og registreringer.
+        </para>
+      </sect3>
+      <sect3 id="id-030-noark-5-datamodell-saksmappe">
+        <title>Saksmappe</title>
+        <para>
+          Journalføringspliktige dokument skal alltid legges i
+          spesialiseringen <emphasis>Saksmappe</emphasis>, og saksmapper
+          disse skal alltid være knyttet til en klasse. Mappene skal
+          også ha referanse til hvilken arkivdel de tilhører, selv om
+          dette også kan avledes av tilhørigheten til klasse og
+          klassifikasjonssystem. Saksmappen inneholder metadata fra
+          <emphasis>mappe</emphasis> i tillegg til egne metadata. En
+          saksmappe er bakoverkompatibel med en sak i Noark-4, men har
+          en del nye metadata.
+        </para>
+        <para>
+          For sakarkiver er det obligatorisk å bruke en saksmappe.
+        </para>
+      </sect3>
+      <sect3 id="id-030-noark-5-datamodell-møtemappe">
+        <title>Møtemappe</title>
+        <para>
+          Dokumenter som produseres i forbindelse med faste møter bør
+          samles i <emphasis>Møtemapper</emphasis>. Dette er mest
+          aktuelt brukt for kommunale utvalgsmøter, styremøter,
+          ledermøter, mv., hvor det er flere møtesaker som tas opp på
+          hvert møte. Enkeltstående møtereferat, mv., til møter som
+          avholdes i forbindelse med saker i den løpende
+          saksbehandlingen, kan vel så gjerne arkiveres i aktuell
+          saksmappe.
+        </para>
+        <para>
+          Metadata for møtedeltaker grupperes inn i metadata for
+          møtemappe.
+        </para>
+        <table>
+          <title>
+            Strukturelle krav til mappe
+          </title>
+          <tgroup cols="4">
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <thead>
+              <row>
+                <entry>
+                  Krav nr.
+                </entry>
+                <entry>
+                  Strukturelle krav til <emphasis>mappe</emphasis>
+                </entry>
+                <entry>
+                  Type
+                </entry>
+                <entry>
+                  Merknad
+                </entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  2.5.1
+                </entry>
+                <entry>
+                  <para>
+                    En <emphasis>mappe</emphasis> skal kunne være av
+                    forskjellig type.
+                  </para>
+                  <para>
+                    <emphasis>Dette er i den konseptuelle modellen løst
+                    gjennom spesialisering.</emphasis>
+                  </para>
+                </entry>
+                <entry>
+                  O
+                </entry>
+                <entry>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.5.2
+                </entry>
+                <entry>
+                  En <emphasis>mappe</emphasis> som inneholder
+                  <emphasis>journalposter</emphasis> skal være en
+                  <emphasis>saksmappe.</emphasis>
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for sakarkiv
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.5.3
+                </entry>
+                <entry>
+                  En <emphasis>mappe</emphasis> som inneholder
+                  møteregistreringer bør være en
+                  <emphasis>møtemappe</emphasis>
+                </entry>
+                <entry>
+                  V
+                </entry>
+                <entry>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.5.4
+                </entry>
+                <entry>
+                  Det bør være mulig å definere relevante
+                  tilleggsmetadata for <emphasis>møtemappe</emphasis> i
+                  tillegg til de metadataene som er definert i
+                  standarden.
+                </entry>
+                <entry>
+                  V
+                </entry>
+                <entry>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.5.5
+                </entry>
+                <entry>
+                  Dersom en <emphasis>mappe</emphasis> er registrert som
+                  avsluttet (avsluttetDato) skal det ikke være mulig å
+                  legge flere <emphasis>registreringer</emphasis> til
+                  <emphasis>mappen.</emphasis>
+                </entry>
+                <entry>
+                  O
+                </entry>
+                <entry>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+        <table>
+          <title>
+            <emphasis role="strong">Funksjonelle krav til
+            mappe</emphasis>
+          </title>
+          <tgroup cols="4">
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <thead>
+              <row>
+                <entry>
+                  Krav nr.
+                </entry>
+                <entry>
+                  Funksjonelle krav til <emphasis>mappe</emphasis>
+                </entry>
+                <entry>
+                  Type
+                </entry>
+                <entry>
+                  Merknad
+                </entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  2.5.6.
+                </entry>
+                <entry>
+                  Dersom det er angitt et primært klassifikasjonssystem
+                  for <emphasis>arkivdel</emphasis>, skal alle
+                  <emphasis>mapper</emphasis> i arkivdelen ha verdier
+                  fra dette klassifikasjonssystemet som primær klasse.
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk dersom primært klassifika­sjonssystem er
+                  angitt for arkivedel.
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sect3>
+    </sect2>
+  </sect1>
+  <sect1 id="id-030-noark-5-datamodell-registrering">
+    <title>Registrering</title>
+    <para>
+      En <emphasis>registrering</emphasis> tilsvarer &quot;record&quot;
+      eller &quot;dokumentasjon&quot; i ISO-standarder, og utgjør
+      arkivenes primære byggeklosser. En aktivitet kan deles opp i flere
+      trinn som vi kaller <emphasis>transaksjoner</emphasis>. En
+      transaksjon innebærer normalt at minst to personer eller enheter
+      må være involvert, men det behøver ikke alltid være tilfelle. Vi
+      bruker likevel begrepet transaksjon generelt for alle trinn en
+      aktivitet kan deles opp i. Det er transaksjoner som genererer
+      <emphasis>arkivdokumenter,</emphasis> og arkivdokumentet er
+      dokumentasjon på at transaksjonen er utført.
+    </para>
+    <sect2 id="id-030-noark-5-datamodell-konseptuell-modell-for-registrering">
+      <title>Konseptuell modell for registrering</title>
+      <figure>
+        <title><emphasis>Figur 2.7 registrering</emphasis></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="./media/uml-registrering-diagram.png" width="100.0%" />
+          </imageobject>
+          <textobject><phrase><emphasis>Figur 2.7
+          registrering</emphasis></phrase></textobject>
+        </mediaobject>
+      </figure>
+      <sect3 id="id-030-noark-5-datamodell-registrering-1">
+        <title>Registrering</title>
+        <para>
+          På samme måte som Noark 5 er fleksibel når det gjelder
+          mappenivået, er standarden også fleksibel når det gjelder
+          registreringsnivået. Det er ikke alle system som trenger like
+          mye metadata på dette nivået. En registrering inneholder de
+          metadata man anser nødvendig for å kunne arkivere dokumenter
+          og metadata i alle typer systemer. En registrering danner
+          utgangspunkt for alle andre registreringstyper.<footnote>
+            <para>
+              I denne versjonen av Noark 5 har vi slått sammen
+              registreringstypene <emphasis>registrering</emphasis> og
+              <emphasis>basisregistrering</emphasis>, slik at vi kun
+              bruker betegnelsen <emphasis>registrering</emphasis>.
+            </para>
+          </footnote>
+        </para>
+      </sect3>
+      <sect3 id="id-030-noark-5-datamodell-journalpost">
+        <title>Journalpost</title>
+        <para>
+          En <emphasis>journalpost</emphasis> representer en
+          &quot;innføring i journalen&quot;. Journalen er en kronologisk
+          fortegnelse over inn- og utgående dokumenter (dvs.
+          korrespondansedokumenter) brukt i saksbehandlingen, og
+          eventuelt også organinterne dokumenter som journalføres.
+        </para>
+        <para>
+          Registreringstypen <emphasis>journalpost</emphasis> er
+          obligatorisk for sakarkiver, og journalposter skal alltid
+          legges i saksmapper. Alle
+          <emphasis>journalføringspliktige</emphasis> dokumenter i
+          offentlig forvaltning skal registreres som journalposter og
+          inngå i et sakarkiv.
+        </para>
+      </sect3>
+      <sect3 id="id-030-noark-5-datamodell-arkivnotat">
+        <title>Arkivnotat</title>
+        <para>
+          <emphasis>Arkivnotat</emphasis> er en registreringstype som
+          brukes i sakarkiver for arkivering uten
+          journalføring.<footnote>
+            <para>
+              Arkivnotat erstatter bruken av det som tidligere var
+              standardens løsning for arkivering uten journalføring av
+              dokumenter i sakarkiver. Den nye registreringstypen gjør
+              at organinterne dokumenter får tilført de metadata og
+              egenskaper som er nødvendige for å ivareta forsvarlige
+              krav til saksbehandling når man ønsker å arkivere, men
+              ikke journalføre interne notater.
+            </para>
+          </footnote> Arkivnotat har en del fellestrekk med journalpost
+          ved at den har obligatorisk tilknytning til en saksmappe, og
+          den kan tilknyttes dokumentflyt og andre interne
+          behandlingsprosesser.
+        </para>
+        <para>
+          Arkivnotat kan benyttes på samme måte som man tidligere har
+          brukt organinterne journalposttyper, men uten at
+          registreringen skal tas med på offentlig journal.
+          Forutsetningen er selvsagt at virksomheten oppfyller
+          bestemmelsenes øvrige krav om journalføring for visse typer
+          interne dokumenter.
+        </para>
+      </sect3>
+      <sect3 id="id-030-noark-5-datamodell-møteregistrering">
+        <title>Møteregistrering</title>
+        <para>
+          En tredje type spesialisering er
+          <emphasis>møteregistrering,</emphasis> som skal knyttes til en
+          <emphasis>møtemappe</emphasis>. En møteregistrering vil
+          inneholde dokumenter produsert i forbindelse med at det har
+          blitt avholdt et møte.
+        </para>
+      </sect3>
+      <sect3 id="id-030-noark-5-datamodell-korrespondansepart">
+        <title>Korrespondansepart</title>
+        <para>
+          Korrespondansepart er obligatorisk for journalpost, og kan
+          forekomme en eller flere ganger, men kan også være aktuelt å
+          registrere på andre typer registreringer. Ved inngående
+          dokumenter registreres avsender(e), ved utgående dokumenter
+          mottaker(e). Ved organinterne dokumenter som skal følges opp,
+          registreres både avsender(e) og mottaker(e).
+        </para>
+        <table>
+          <title>
+            <emphasis role="strong">Strukturelle krav til
+            registrering</emphasis>
+          </title>
+          <tgroup cols="4">
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <thead>
+              <row>
+                <entry>
+                  Krav nr.
+                </entry>
+                <entry>
+                  Strukturelle krav til
+                  <emphasis>registrering</emphasis>
+                </entry>
+                <entry>
+                  Type
+                </entry>
+                <entry>
+                  Merknad
+                </entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  2.6.1
+                </entry>
+                <entry>
+                  <para>
+                    En <emphasis>registrering</emphasis> skal kunne være
+                    av forskjellig type.
+                  </para>
+                  <para>
+                    <emphasis>Dette er i den konseptuelle modellen løst
+                    gjennom spesialisering.</emphasis>
+                  </para>
+                </entry>
+                <entry>
+                  O
+                </entry>
+                <entry>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.6.2
+                </entry>
+                <entry>
+                  Registrering av journalføringspliktige dokumenter skal
+                  løses gjennom <emphasis>journalpost</emphasis>.
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for sakarkiver.
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.6.3
+                </entry>
+                <entry>
+                  <emphasis>Registrering</emphasis> av typen
+                  <emphasis>journalpost</emphasis> skal ha
+                  <emphasis>korrespondansepart.</emphasis>
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for sakarkiver.
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.6.4
+                </entry>
+                <entry>
+                  Arkivering av saksdokumenter som ikke skal
+                  journalføres skal løses gjennom
+                  <emphasis>registrering</emphasis> av typen
+                  <emphasis>arkivnotat.</emphasis>
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for arkivering uten journalføring i
+                  sakarkiver.
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.6.5
+                </entry>
+                <entry>
+                  Registrering av møtedokumenter bør løses gjennom
+                  <emphasis>møteregistrering.</emphasis>
+                </entry>
+                <entry>
+                  V
+                </entry>
+                <entry>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.6.6
+                </entry>
+                <entry>
+                  Det bør være mulig å definere relevante
+                  tilleggsmetadata for
+                  <emphasis>møteregistrering</emphasis> i tillegg til de
+                  metadataene som er definert i standarden.
+                </entry>
+                <entry>
+                  V
+                </entry>
+                <entry>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.6.7
+                </entry>
+                <entry>
+                  Dersom en <emphasis>registrering</emphasis> er
+                  registrert som arkivert (avsluttetDato er satt) skal
+                  det ikke være mulig å legge flere
+                  <emphasis>dokumentbeskrivelser</emphasis> til
+                  <emphasis>registreringen.</emphasis>
+                </entry>
+                <entry>
+                  O
+                </entry>
+                <entry>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sect3>
+    </sect2>
+  </sect1>
+  <sect1 id="id-030-noark-5-datamodell-dokumentbeskrivelse-og-dokumentobjekt">
+    <title>Dokumentbeskrivelse og dokumentobjekt</title>
+    <para>
+      En <emphasis>registrering</emphasis> er altså en arkivenhet som
+      består av metadata som beskriver et innhold. Det er innholdet som
+      utgjør «dokumentet». Et dokument er et informasjonsobjekt som kan
+      behandles som en enhet, men som kan bestå av ulike komponenter
+      eller ha ulike representasjoner. I Noark 5 brukes
+      <emphasis>dokumentbeskrivelse</emphasis> og
+      <emphasis>dokumentobjekt</emphasis> for å skille på dette.
+    </para>
+    <para>
+      I en relasjonsdatabase vil det typisk være et
+      mange-til-mange-forhold mellom registrering og
+      dokumentbeskrivelse. Ved deponering/avlevering skal imidlertid
+      metadata både for dokumentbeskrivelse og dokumentobjekt dupliseres
+      for hver gang det samme dokumentet er knyttet til forskjellige
+      registreringer. I tillegg skal dokumentobjektet ha informasjon om
+      når dokumentet ble knyttet til registreringen, hvilken
+      &quot;rolle&quot; dokumentet har i forhold til registreringen
+      (hoveddokument eller vedlegg), rekkefølgenummer osv. Dette vil
+      være unik informasjon for hver tilknytning (i Noark-4 ble
+      attributtene for dette beskrevet i en tabell kalt Dokumentlink).
+      Hver dokumentbeskrivelse skal derfor ha en unik
+      <emphasis>systemID</emphasis>.
+    </para>
+    <sect2 id="id-030-noark-5-datamodell-konseptuell-modell-for-dokumentbeskrivelse-og-dokumentobjekt">
+      <title>Konseptuell modell for dokumentbeskrivelse og
+      dokumentobjekt</title>
+      <figure>
+        <title><emphasis>Figur 2.8 dokumentbeskrivelse og
+        dokumentobjekt</emphasis></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="./media/uml-dokumentbeskrivelse-diagram.png" width="100.0%" />
+          </imageobject>
+          <textobject><phrase><emphasis>Figur 2.8 dokumentbeskrivelse og
+          dokumentobjekt</emphasis></phrase></textobject>
+        </mediaobject>
+      </figure>
+      <sect3 id="id-030-noark-5-datamodell-dokumentbeskrivelse">
+        <title>Dokumentbeskrivelse</title>
+        <para>
+          Den vanligste bruken av
+          <emphasis>dokumentbeskrivelse</emphasis> er for å skille
+          mellom hoveddokument og vedlegg, hvor hoveddokumentet og hvert
+          av vedleggene utgjør hvert sitt enkeltdokument.<footnote>
+            <para>
+              Dokumentbeskrivelse var ikke obligatorisk for alle typer
+              arkiver frem til versjon 4.0 av Noark 5. Muligheten for å
+              ta bort dette nivået ble fjernet ved den versjonen.
+              Dokumentbeskrivelse er dermed obligatorisk i alle Noark
+              5-løsninger.
+            </para>
+          </footnote> Ett dokument kan være knyttet til flere
+          journalposter som hoveddokument.
+        </para>
+      </sect3>
+      <sect3 id="id-030-noark-5-datamodell-dokumentobjekt">
+        <title>Dokumentobjekt</title>
+        <para>
+          Dokumentobjekt er det laveste metadatanivået i
+          arkivstrukturen. Et dokumentobjekt skal referere til én og kun
+          en <emphasis>dokumentfil.</emphasis> Dokumentfila inneholder
+          selve dokumentet. Dersom dokumentet er arkivert i flere
+          <emphasis>versjoner</emphasis>, må vi ha et dokumentobjekt og
+          en dokumentfil for hver versjon. Hver versjon av dokumentet
+          kan dessuten arkiveres i flere forskjellige
+          <emphasis>formater</emphasis>, og da må det i tillegg
+          opprettes egne dokumentobjekter og dokumentfiler for hvert
+          format. I noen tilfeller kan det også være aktuelt å lage
+          <emphasis>varianter</emphasis> av enkelte dokumenter. Den mest
+          vanlige varianten vil være et &quot;sladdet&quot; dokument
+          hvor taushetsbelagt informasjon er fjernet slik at varianten
+          kan være offentlig tilgjengelig. Dokumentobjektet inneholder
+          mer tekniske metadata enn de andre arkivenhetene, bl.a.
+          sjekksummen til bytesekvensen som representerer dokumentet.
+        </para>
+        <table>
+          <title>
+            <emphasis role="strong">Strukturelle krav til
+            dokumentbeskrivelse og dokumentobjekt</emphasis>
+          </title>
+          <tgroup cols="4">
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <thead>
+              <row>
+                <entry>
+                  Krav nr.
+                </entry>
+                <entry>
+                  Strukturelle krav til <emphasis>dokumentbeskrivelse og
+                  dokumentobjekt</emphasis>
+                </entry>
+                <entry>
+                  Type
+                </entry>
+                <entry>
+                  Merknad
+                </entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  2.7.1
+                </entry>
+                <entry>
+                  Et <emphasis>dokumentobjekt</emphasis> som er
+                  tilknyttet samme
+                  <emphasis>dokumentbeskrivelse</emphasis> skal kunne
+                  referere til forskjellige
+                  <emphasis>versjoner</emphasis> av dokumentet
+                </entry>
+                <entry>
+                  O
+                </entry>
+                <entry>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.7.2
+                </entry>
+                <entry>
+                  Et <emphasis>dokumentobjekt</emphasis> som er
+                  tilknyttet samme
+                  <emphasis>dokumentbeskrivelse</emphasis> skal kunne
+                  referere til forskjellige
+                  <emphasis>varianter</emphasis> av et dokument.
+                </entry>
+                <entry>
+                  O
+                </entry>
+                <entry>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.7.3
+                </entry>
+                <entry>
+                  Et <emphasis>dokumentobjekt</emphasis> som er
+                  tilknyttet samme
+                  <emphasis>dokumentbeskrivelse</emphasis> skal kunne
+                  referere til samme dokument lagret i forskjellig
+                  <emphasis>format</emphasis>.
+                </entry>
+                <entry>
+                  O
+                </entry>
+                <entry>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+        <table>
+          <title>
+            <emphasis role="strong">Funksjonelle krav til
+            dokumentbeskrivelse og dokumentobjekt</emphasis>
+          </title>
+          <tgroup cols="4">
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <thead>
+              <row>
+                <entry>
+                  Krav nr.
+                </entry>
+                <entry>
+                  Funksjonelle krav til
+                  <emphasis>dokumentbeskrivelse</emphasis> og
+                  <emphasis>dokumentobjekt</emphasis>
+                </entry>
+                <entry>
+                  Type
+                </entry>
+                <entry>
+                  Merknad
+                </entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  2.7.4
+                </entry>
+                <entry>
+                  Det skal finnes funksjoner som ved opprettelse av nytt
+                  dokument skal knytte dette til en
+                  <emphasis>dokumentbeskrivelse</emphasis>.
+                </entry>
+                <entry>
+                  O
+                </entry>
+                <entry>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.7.5
+                </entry>
+                <entry>
+                  Det skal være mulig å opprette en
+                  <emphasis>dokumentbeskrivelse</emphasis> uten
+                  elektronisk dokument.
+                </entry>
+                <entry>
+                  O
+                </entry>
+                <entry>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.7.6
+                </entry>
+                <entry>
+                  Det skal finnes en funksjon/tjeneste for å arkivere en
+                  eller flere versjoner/varianter/formater av et
+                  dokument.
+                </entry>
+                <entry>
+                  O
+                </entry>
+                <entry>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.7.7
+                </entry>
+                <entry>
+                  Det skal ikke være mulig å slette et arkivert
+                  dokument. Eldre versjoner av dokumentet skal likevel
+                  kunne slettes.
+                </entry>
+                <entry>
+                  O
+                </entry>
+                <entry>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.7.8
+                </entry>
+                <entry>
+                  Ved tilknytning av et dokument til en
+                  <emphasis>registrering,</emphasis> skal det kunne
+                  angis om det er et hoveddokument eller et vedlegg
+                  (tilknyttetRegistreringSom).
+                </entry>
+                <entry>
+                  O
+                </entry>
+                <entry>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sect3>
+    </sect2>
+    <sect2 id="id-030-noark-5-datamodell-konvertering-til-arkivformat">
+      <title>Konvertering til arkivformat</title>
+      <para>
+        Alle arkivdokumenter som skal avleveres må være i arkivformat.
+        Konvertering til arkivformat skal foretas senest ved avslutning
+        av mappe. Systemet skal logge alle konverteringer, og
+        informasjon om dette skal tas med ved deponering/avlevering.
+      </para>
+      <table>
+        <title>
+          <emphasis role="strong">Krav til konvertering til
+          arkivformat</emphasis>
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til konvertering til
+                <emphasis>arkivformat</emphasis>
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                2.7.9
+              </entry>
+              <entry>
+                Det skal finnes en tjeneste/funksjon som gjør det mulig
+                for arkivadministrator å angi hvilke dokumentformater
+                som er definert som arkivformater.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.7.10
+              </entry>
+              <entry>
+                Det skal finnes en tjeneste/funksjon som gjør at
+                arkivadministrator kan sette opp regler for når (hvilke
+                statuser) arkivdokumenter skal konverteres til
+                arkivformat.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.7.11
+              </entry>
+              <entry>
+                Det skal være konfigurerbart om dokumenter skal
+                konverteres til arkivformat når status på
+                dokumentbeskrivelse settes til «Dokumentet er
+                ferdigstilt».
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.7.12
+              </entry>
+              <entry>
+                Det skal være konfigurerbart om alle eller spesielt
+                merkede versjoner skal konverteres til arkivformat.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.7.13
+              </entry>
+              <entry>
+                Det skal finnes en tjeneste/funksjon og rapportering for
+                filformattesting av dokumentene som er lagret i kjernen.
+                Rapporten skal gi oversikt over hvilke mapper,
+                registreringer og/eller dokumentbeskrivelser som ikke
+                inneholder dokumenter lagret i godkjent arkivformat.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-030-noark-5-datamodell-sletting-av-versjoner-varianter-og-formater">
+      <title>Sletting av versjoner, varianter og formater</title>
+      <para>
+        Et viktig krav i Noark 5 er at arkiverte elektroniske dokumenter
+        ikke skal kunne slettes. Kontrollert sletting skal bare kunne
+        foretas av autoriserte brukere i forbindelse med kassasjon.
+      </para>
+      <para>
+        Dessuten kan dokumenter slettes av autoriserte brukere dersom de
+        er formelt avlevert til et arkivdepot. Det understrekes at dette
+        siste bare gjelder avleverte dokumenter, ikke dokumenter som er
+        deponert til arkivdepotet.
+      </para>
+      <para>
+        Dersom et dokument er arkivert i mer enn én versjon, skal det
+        være mulig å slette de eldre versjonene. Vanligvis er det bare
+        den siste, ferdiggjorte versjon som skal arkiveres. Men det kan
+        også være aktuelt å arkivere tidligere versjoner dersom disse
+        har dokumentasjonsverdi. Det kan f.eks. være tilfelle dersom en
+        leder har gjort vesentlige endringer i utkastet til en
+        saksbehandler. Saksbehandlers utkast kan da arkiveres som en
+        tidligere versjon av det ferdige dokumentet. Dette vil gi ekstra
+        dokumentasjon om selve saksbehandlingsforløpet.
+      </para>
+      <para>
+        Dersom tidligere versjoner er blitt arkivert unødvendig, skal
+        det være mulig å rydde opp på en effektiv måte. Slik opprydding
+        skal alltid skje før det produseres et arkivuttrekk.
+      </para>
+      <table>
+        <title>
+          Krav til sletting av dokumentversjoner
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til sletting av dokumentversjoner
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                2.7.14
+              </entry>
+              <entry>
+                Autoriserte brukere skal kunne slette en arkivert
+                inaktiv dokumentversjon. Den siste, endelige versjonen
+                skal ikke kunne slettes.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.7.15
+              </entry>
+              <entry>
+                Det skal være mulig å søke fram dokumenter som er
+                arkivert i flere versjoner.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.7.16
+              </entry>
+              <entry>
+                Det bør være mulig å utføre sletting av mange inaktive
+                dokumentversjoner samtidig, f.eks. alle inaktive
+                dokumentversjoner som funnet etter et søk.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.7.17
+              </entry>
+              <entry>
+                Sletting av arkiverte inaktive dokumentversjoner skal
+                logges.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para>
+        Dersom det opprinnelige dokumentet har innhold som skal
+        skjermes, kan det lages en variant hvor opplysninger som skal
+        skjermes, er fjernet. På den måten kan dokumentet likevel
+        offentliggjøres. Slike varianter kan slettes dersom det ikke
+        lenger er behov for dem. Det kan tenkes at det er aktuelt å
+        avlevere dokumentvarianter, så sletting må vurderes i hvert
+        enkelt tilfelle. Varianter som ikke er slettet når
+        arkivuttrekket produseres, skal avleveres.
+      </para>
+      <table>
+        <title>
+          Krav til sletting av dokumentvarianter
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til sletting av dokumentvarianter
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                2.7.18
+              </entry>
+              <entry>
+                Autoriserte brukere skal kunne slette en arkivert
+                dokumentvariant. Det siste endelige dokumentet i
+                arkivformat skal ikke kunne slettes.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.7.19
+              </entry>
+              <entry>
+                Det skal være mulig å søke fram arkiverte
+                dokumentvarianter.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.7.20
+              </entry>
+              <entry>
+                Det bør være mulig å slette mange dokumentvarianter
+                samtidig, f.eks. alle dokumentvarianter som er funnet
+                etter et søk.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.7.21
+              </entry>
+              <entry>
+                Sletting av arkiverte dokumentvarianter skal logges.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para>
+        Alle dokumenter som skal avleveres, må være konvertert til
+        format godkjent av Riksarkivaren.<footnote>
+          <para>
+            Godkjente filformater for arkivdokumenter ved avlevering
+            eller deponering fremgår av riksarkivarens forskrift § 5-17
+            (
+            <ulink url="https://lovdata.no/SF/forskrift/2017-12-19-2286/§5-17">https://lovdata.no/SF/forskrift/2017-12-19-2286/§5-17</ulink>
+            ).
+          </para>
+        </footnote> Det opprinnelige produksjonsformatet kan da
+        rutinemessig slettes. En del brukere vil nok velge å beholde
+        produksjonsformatet inntil videre, f.eks. fordi de har behov for
+        å gjenbruke tekst i et kontorstøtteverktøy. Hvor lenge dette er
+        aktuelt, er opp til hver enkelt bruker. Det er ikke noe krav at
+        produksjonsformatene må være slettet før arkivuttrekket
+        produseres, fordi dette bare vil ta med dokumenter i
+        arkivformat. Men mange brukere vil likevel ha et behov for å gå
+        gjennom og slette eldre produksjonsformater på en effektiv måte.
+      </para>
+      <table>
+        <title>
+          Krav til sletting av dokumentformater
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til sletting av dokumentformater
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                2.7.22
+              </entry>
+              <entry>
+                Autoriserte brukere skal kunne slette et arkivert
+                dokument i produksjonsformat dersom dokumentet er blitt
+                konvertert til arkivformat. Dokumentet i arkivformat
+                skal ikke kunne slettes.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.7.23
+              </entry>
+              <entry>
+                Det skal være mulig å søke fram dokumenter arkivert i
+                produksjonsformat.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.7.24
+              </entry>
+              <entry>
+                Det bør være mulig å slette mange produksjonsformater
+                samtidig, f.eks. alle produksjonsformater som er funnet
+                etter et søk.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                2.7.25
+              </entry>
+              <entry>
+                Sletting av arkiverte produksjonsformater skal logges.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+  </sect1>
+  <sect1 id="id-030-noark-5-datamodell-fellesfunksjonalitet-til-arkivstrukturen">
+    <title>Fellesfunksjonalitet til arkivstrukturen</title>
+    <sect2 id="id-030-noark-5-datamodell-skjerming">
+      <title>Skjerming</title>
+      <para>
+        Skjerming benyttes til å skjerme registrerte opplysninger eller
+        enkeltdokumenter. Skjermingen trer i kraft når en tilgangskode
+        påføres den enkelte mappe, registrering eller det enkelte
+        dokument.
+      </para>
+      <para>
+        Løsningens brukere skal være klarert for bestemte tilgangskoder
+        og autorisert for en nærmere definert del av de saker og
+        journalposter med tilhørende dokumenter som er skjermet.
+      </para>
+      <sect3 id="id-030-noark-5-datamodell-konseptuell-modell-for-skjerming">
+        <title>Konseptuell modell for skjerming</title>
+        <figure>
+          <title><emphasis>Figur 2.9 skjerming</emphasis></title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="./media/uml-skjerming-diagram.png" width="80.0%" />
+            </imageobject>
+            <textobject><phrase><emphasis>Figur 2.9
+            skjerming</emphasis></phrase></textobject>
+          </mediaobject>
+        </figure>
+        <table>
+          <title>
+            Funksjonelle krav til skjerming
+          </title>
+          <tgroup cols="4">
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <thead>
+              <row>
+                <entry>
+                  Krav nr.
+                </entry>
+                <entry>
+                  Funksjonelle krav til <emphasis>skjerming</emphasis>
+                </entry>
+                <entry>
+                  Type
+                </entry>
+                <entry>
+                  Merknad
+                </entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  2.8.1
+                </entry>
+                <entry>
+                  <para>
+                    Skjerming bør kunne arves fra overordnet nivå til
+                    ett eller flere underliggende nivå i
+                    arkivstrukturen.
+                  </para>
+                  <para>
+                    Arvede verdier skal kunne overstyres.
+                  </para>
+                </entry>
+                <entry>
+                  V
+                </entry>
+                <entry>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.2
+                </entry>
+                <entry>
+                  Det skal finnes en tjeneste/funksjon for å skjerme
+                  <emphasis>tittel</emphasis> i
+                  <emphasis>mappe</emphasis> helt eller delvis.
+                </entry>
+                <entry>
+                  O
+                </entry>
+                <entry>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.3
+                </entry>
+                <entry>
+                  Det skal finnes en tjeneste/funksjon for å skjerme
+                  <emphasis>tittel</emphasis> i en
+                  <emphasis>registrering</emphasis> helt eller delvis.
+                </entry>
+                <entry>
+                  O
+                </entry>
+                <entry>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sect3>
+    </sect2>
+    <sect2 id="id-030-noark-5-datamodell-nøkkelord">
+      <title>Nøkkelord</title>
+      <para>
+        Det bør være mulig å føye ett eller flere nøkkelord til en
+        <emphasis>klasse</emphasis>, en <emphasis>mappe</emphasis> eller
+        en <emphasis>registrering</emphasis>. Nøkkelord må ikke blandes
+        sammen med fasettert klassifikasjon basert på emneord. Mens
+        <emphasis>klassifikasjonen</emphasis> normalt skal gi
+        informasjon om dokumentets <emphasis>kontekst</emphasis>
+        (hvilken funksjon som har skapt dokumentet), kan
+        <emphasis>nøkkelordene</emphasis> brukes til å si noe om
+        dokumentets <emphasis>innhold</emphasis>. Hensikten med
+        nøkkelord er å forbedre søkemulighetene for en klasse, mappe
+        eller registrering. Nøkkelord kan knyttes til en kontrollert
+        ordliste (tesaurus). Det er ikke obligatorisk å implementere
+        nøkkelord.
+      </para>
+      <para>
+        Nøkkelord består bare av ett metadataelement: <emphasis>M022
+        noekkelord</emphasis>, og er derfor ikke definert som et eget
+        objekt men plassert direkte i tabellene for de aktuelle
+        arkivenhetene.
+      </para>
+      <para>
+        Nøkkelord er valgfritt, og kan forekomme en eller flere ganger i
+        klasse, mappe eller registrering.
+      </para>
+      <table>
+        <title>
+          Funksjonelle krav til nøkkelord
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Funksjonelle krav til <emphasis>nøkkelord</emphasis>
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                2.8.3
+              </entry>
+              <entry>
+                Det bør finnes en tjeneste/funksjon for å knytte ett
+                eller flere nøkkelord til klasser, mapper og
+                registreringer (unntatt registrering).
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-030-noark-5-datamodell-kryssreferanse">
+      <title>Kryssreferanse</title>
+      <para>
+        Dette er en referanse på tvers av hierarkiet i arkivstrukturen.
+        Referansen kan gå fra en mappe til en annen mappe, fra en
+        registrering til en annen registrering, fra en mappe til en
+        registrering og fra en registrering til en mappe. Det kan også
+        refereres fra en klasse til en annen klasse.
+      </para>
+      <para>
+        Kryssreferanse er valgfritt, og kan knyttes en eller flere
+        ganger til klasse, mappe og registrering. Referansen går en vei,
+        dvs. den kan kun være en referanse til en arkivenhet. I og med
+        at kryssreferanser knyttes til mappe og registrering, vil det si
+        at Referanser også knyttes til alle utvidelsene
+        (spesialiseringer) under disse (Saksmappe, Møtemappe og
+        Journalpost, Møteregistrering).
+      </para>
+      <sect3 id="id-030-noark-5-datamodell-konseptuell-modell-for-kryssreferanse">
+        <title>Konseptuell modell for
+        <emphasis>kryssreferanse</emphasis></title>
+        <figure>
+          <title><emphasis>Figur 2.10 kryssreferanse</emphasis></title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="./media/uml-kryssreferanse-diagram.png" width="50.0%" />
+            </imageobject>
+            <textobject><phrase><emphasis>Figur 2.10
+            kryssreferanse</emphasis></phrase></textobject>
+          </mediaobject>
+        </figure>
+        <table>
+          <title>
+            Funksjonelle krav til kryssreferanse
+          </title>
+          <tgroup cols="4">
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <thead>
+              <row>
+                <entry>
+                  Krav nr.
+                </entry>
+                <entry>
+                  Funksjonelle krav til
+                  <emphasis>kryssreferanse</emphasis>
+                </entry>
+                <entry>
+                  Type
+                </entry>
+                <entry>
+                  Merknad
+                </entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  2.8.4
+                </entry>
+                <entry>
+                  <para>
+                    Det skal finnes en tjeneste/funksjon som kan
+                    <emphasis>lagre, gjenfinne, endre og
+                    slette</emphasis> en kryssreferanse mellom:
+                  </para>
+                  <itemizedlist spacing="compact">
+                    <listitem>
+                      <para>
+                        Mapper
+                      </para>
+                    </listitem>
+                    <listitem>
+                      <para>
+                        Registreringer
+                      </para>
+                    </listitem>
+                  </itemizedlist>
+                  <para>
+                    eller til referanser mellom disse.
+                  </para>
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for sakarkiv, aktuelt for mange
+                  fagsystemer.
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.5
+                </entry>
+                <entry>
+                  <para>
+                    Det bør finnes en tjeneste/funksjon som kan
+                    <emphasis>lagre, gjenfinne, endre og
+                    slette</emphasis> en kryssreferanse mellom:
+                  </para>
+                  <itemizedlist spacing="compact">
+                    <listitem>
+                      <para>
+                        Klasser
+                      </para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  V
+                </entry>
+                <entry>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sect3>
+    </sect2>
+    <sect2 id="id-030-noark-5-datamodell-merknad">
+      <title>Merknad</title>
+      <para>
+        En eller flere merknader skal kunne knyttes til en mappe,
+        registrering eller en dokumentbeskrivelse. Merknader skal brukes
+        for å dokumentere spesielle forhold rundt saksbehandlingen og
+        arkivering av dokumenter, og denne informasjonen skal tas med i
+        arkivuttrekket. Merknad kan for eksempel brukes til å
+        dokumentere prosesstrinn knyttet til en (saks)mappe,
+        registrering eller dokumentbeskrivelse som ikke nødvendigvis
+        manifesterer seg som et dokument som skal bli en egen
+        registrering.
+      </para>
+      <sect3 id="id-030-noark-5-datamodell-konseptuell-modell-for-merknad">
+        <title>Konseptuell modell for
+        <emphasis>merknad</emphasis></title>
+        <figure>
+          <title><emphasis>Figur 2.11 merknad</emphasis></title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="./media/uml-merknad-diagram.png" width="50.0%" />
+            </imageobject>
+            <textobject><phrase><emphasis>Figur 2.11
+            merknad</emphasis></phrase></textobject>
+          </mediaobject>
+        </figure>
+        <table>
+          <title>
+            Funksjonelle krav til merknad
+          </title>
+          <tgroup cols="4">
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <thead>
+              <row>
+                <entry>
+                  Krav nr.
+                </entry>
+                <entry>
+                  Funksjonelle krav til <emphasis>merknad</emphasis>
+                </entry>
+                <entry>
+                  Type
+                </entry>
+                <entry>
+                  Merknad
+                </entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  2.8.6
+                </entry>
+                <entry>
+                  Det skal finnes en tjeneste/funksjon som kan
+                  registrere en <emphasis>merknad</emphasis> til
+                  <emphasis>mappe</emphasis> eller
+                  <emphasis>registrering</emphasis>.
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for sakarkiv, aktuelt for mange
+                  fagsystemer.
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.7
+                </entry>
+                <entry>
+                  Dersom mer enn én merknad er knyttet til en
+                  <emphasis>mappe</emphasis> eller en
+                  <emphasis>registrering</emphasis>, må metadataene
+                  grupperes sammen ved eksport og utveksling.
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for sakarkiv, aktuelt for mange
+                  fagsystemer.
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.8
+                </entry>
+                <entry>
+                  Det bør være mulig fritt å definere typer merknader.
+                </entry>
+                <entry>
+                  V
+                </entry>
+                <entry>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sect3>
+    </sect2>
+    <sect2 id="id-030-noark-5-datamodell-part">
+      <title>Part</title>
+      <para>
+        Det skal være mulig å knytte parter til mapper, registreringer
+        eller dokumentbeskrivelser.<footnote>
+          <para>
+            I tidligere versjoner av standarden var dette kalt sakspart,
+            og kunne utelukkende knyttes til saksmappe. Fra og med denne
+            versjonen er partsbegrepet generalisert, og kan knyttes til
+            flere arkivenheter for å øke fleksibiliteten i bruken av
+            ulike typer parter i løsningene.
+          </para>
+        </footnote> Partsbegrepet er juridisk, og har ulik betydning
+        innen forvaltningsretten, privatretten og strafferetten. Innen
+        forvaltningsretten er part «person som en avgjørelse retter seg
+        mot eller som saken ellers direkte gjelder», mens det i
+        strafferetten normalt bare er den som er anklaget for å ha
+        begått en straffbar handling som er part i saken.
+      </para>
+      <para>
+        Noark 5 legger opp til at det er virksomhetens behov som styrer
+        bruken av <emphasis>part</emphasis>, og en part kan være «hvem
+        som helst» som virksomheten har behov for å registrere som
+        interessent på en mappe, registrering eller dokumentbeskrivelse.
+        Forutsetningen er at man definerer ulike roller for partene, som
+        kan brukes til å styre ulike funksjoner, (innsyns)rettigheter,
+        mv.
+      </para>
+      <sect3 id="id-030-noark-5-datamodell-konseptuell-modell-for-part">
+        <title>Konseptuell modell for <emphasis>part</emphasis></title>
+        <figure>
+          <title><emphasis>Figur 2.12 part</emphasis></title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="./media/uml-part-diagram.png" width="70.0%" />
+            </imageobject>
+            <textobject><phrase><emphasis>Figur 2.12
+            part</emphasis></phrase></textobject>
+          </mediaobject>
+        </figure>
+        <table>
+          <title>
+            Krav til part
+          </title>
+          <tgroup cols="4">
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <thead>
+              <row>
+                <entry>
+                  Krav nr.
+                </entry>
+                <entry>
+                  Krav til <emphasis>part</emphasis>
+                </entry>
+                <entry>
+                  Type
+                </entry>
+                <entry>
+                  Merknad
+                </entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  2.8.9
+                </entry>
+                <entry>
+                  Det skal være mulig å tilegne <emphasis>mappe,
+                  registrering</emphasis> eller
+                  <emphasis>dokumentbeskrivelse</emphasis> et fritt
+                  antall <emphasis>part</emphasis>
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for løsninger hvor det inngår
+                  <emphasis>parter</emphasis>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.10
+                </entry>
+                <entry>
+                  Det skal finnes en tjeneste/funksjon for å ajourholde
+                  <emphasis>part</emphasis> for <emphasis>mappe,
+                  registrering</emphasis> og
+                  <emphasis>dokumentbeskrivelse</emphasis>
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for løsninger hvor det inngår
+                  <emphasis>parter</emphasis>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.11
+                </entry>
+                <entry>
+                  <emphasis>Part</emphasis> skal kunne skjermes helt
+                  eller delvis
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for løsninger hvor det inngår
+                  <emphasis>parter</emphasis>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sect3>
+    </sect2>
+    <sect2 id="id-030-noark-5-datamodell-presedens">
+      <title>Presedens</title>
+      <para>
+        Med presedens menes en (retts)avgjørelse som siden kan tjene som
+        rettesnor i lignende tilfeller eller saker. En presedens kan
+        også være en sak som er regeldannende for behandling av
+        tilsvarende saker. Det er som oftest snakk om et
+        forvaltningsmessig vedtak, dvs. et enkeltvedtak fattet i henhold
+        til det aktuelle organets forvaltningsområde, som inneholder en
+        rettsoppfatning som senere blir lagt til grunn i andre lignende
+        tilfeller. Prinsippavgjørelser knyttet til ulike saksområder
+        skal derfor kunne etableres på en hensikts­messig måte og være
+        tilgjengelig for saksbehandlere.
+      </para>
+      <para>
+        Man snakker vanligvis om presedenssaker, men det er vanligvis
+        ett eller noen få av dokumentene i saken som danner presedens.
+        Foruten å registrere hele saken, må derfor det eller de
+        dokumentene som inneholder presedensavgjørelser kunne
+        identifiseres. Hvis opplysninger om presedens er registrert, er
+        presedens obligatorisk for avlevering.
+      </para>
+      <sect3 id="id-030-noark-5-datamodell-konseptuell-modell-for-presedens">
+        <title>Konseptuell modell for
+        <emphasis>presedens</emphasis></title>
+        <figure>
+          <title><emphasis>Figur 2.13 presedens</emphasis></title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="./media/uml-presedens-diagram.png" width="80.0%" />
+            </imageobject>
+            <textobject><phrase><emphasis>Figur 2.13
+            presedens</emphasis></phrase></textobject>
+          </mediaobject>
+        </figure>
+        <para>
+          Noark 5 legger opp til at det skal kunne bygges opp et
+          presedensregister med henvisninger til Saksmapper og
+          Journalposter som danner presedens. Registeret bygges opp ved
+          at presedensmetadata knyttes til de arkivenhetene (saker eller
+          journalposter) som danner presedens.
+        </para>
+        <table>
+          <title>
+            Krav til presedens
+          </title>
+          <tgroup cols="4">
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <colspec align="left" />
+            <thead>
+              <row>
+                <entry>
+                  Krav nr.
+                </entry>
+                <entry>
+                  Krav til <emphasis>presedens</emphasis>
+                </entry>
+                <entry>
+                  Type
+                </entry>
+                <entry>
+                  Merknad
+                </entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>
+                  2.8.12
+                </entry>
+                <entry>
+                  Det bør være mulig å opprette en presedens knyttet til
+                  en sak eller en journalpost
+                </entry>
+                <entry>
+                  V
+                </entry>
+                <entry>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.13
+                </entry>
+                <entry>
+                  Det bør være mulig å opprette et register over hvilke
+                  verdier man skal kunne velge presedensHjemmel fra.
+                </entry>
+                <entry>
+                  V
+                </entry>
+                <entry>
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.14
+                </entry>
+                <entry>
+                  Det skal være mulig å registrere tidligere
+                  presedenser, dvs. avgjørelser som ble tatt før man tok
+                  i bruk IKT-baserte løsninger for journalføring og
+                  arkivering.
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for løsninger hvor presedenser inngår
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.15
+                </entry>
+                <entry>
+                  Det skal være mulig å identifisere den eller de
+                  journalpostene i en saksmappe som inneholder
+                  presedensavgjørelsen.
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for løsninger hvor presedenser inngår
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.16
+                </entry>
+                <entry>
+                  Registrering, endring og tilgang til presedenser skal
+                  styres av tilgangsrettigheter.
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for løsninger hvor presedenser inngår
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.17
+                </entry>
+                <entry>
+                  <para>
+                    Følgende statuser for <emphasis>Presedens</emphasis>
+                    er obligatoriske:
+                  </para>
+                  <itemizedlist spacing="compact">
+                    <listitem>
+                      <para>
+                        «Gjeldende»
+                      </para>
+                    </listitem>
+                    <listitem>
+                      <para>
+                        «Foreldet»
+                      </para>
+                    </listitem>
+                  </itemizedlist>
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for løsninger hvor presedenser inngår
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.18
+                </entry>
+                <entry>
+                  Foreldede presedenser skal ikke kunne slettes.
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for løsninger hvor presedenser inngår
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.19
+                </entry>
+                <entry>
+                  Det skal ikke være mulig å slette en presedens selv om
+                  klassen som presedensen tilhører skal kasseres
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for løsninger hvor presedenser inngår
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.20
+                </entry>
+                <entry>
+                  Det skal være mulig å etablere en samlet
+                  presedensoversikt i tilknytning til arkivstrukturen.
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for løsninger hvor presedenser inngår
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.21
+                </entry>
+                <entry>
+                  Det skal finnes en tjeneste/funksjon som gir mulighet
+                  for å få en fullstendig oversikt over alle presedenser
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for løsninger hvor presedenser inngår
+                </entry>
+              </row>
+              <row>
+                <entry>
+                  2.8.22
+                </entry>
+                <entry>
+                  Presedensvedtaket skal kunne presenteres i et
+                  offentlig dokument eller i en offentlig variant.
+                </entry>
+                <entry>
+                  B
+                </entry>
+                <entry>
+                  Obligatorisk for løsninger hvor presedenser inngår
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sect3>
+    </sect2>
+  </sect1>
+  <sect1 id="id-030-noark-5-datamodell-administrasjon-av-kjernen">
+    <title>Administrasjon av kjernen</title>
+    <para>
+      I dette kapitlet ligger Noark 5 kjernens krav til systemteknisk
+      administrasjon av Noark 5 kjernen. Kravene skal legge til rette
+      for at arkivansvarlige skal kunne administrere og ha kontroll på
+      arkivet, arkivstrukturen og metadataene som hører til
+      arkivenhetene i strukturen, dvs. legge inn grunnlagsdata som typer
+      mapper og registreringer, og hvilke metadata utover de
+      obligatoriske som skal kunne legges til disse.
+    </para>
+    <para>
+      Det skal også gi muligheter for feilretting utover det som ellers
+      er tillatt etter reglene for endring og frysing av metadata og
+      dokumenter i løsningen.
+    </para>
+    <para>
+      Løsningen må dessuten legge til rette for at administratorer har
+      kontroll på arkivdokumentene og hvilke formater disse er lagret i.
+      Det vil også si å kunne implementere vedtatte regler for når
+      konvertering skal skje.
+    </para>
+    <table>
+      <title>
+        Krav til administrasjon av kjernen
+      </title>
+      <tgroup cols="4">
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <thead>
+          <row>
+            <entry>
+              Krav nr.
+            </entry>
+            <entry>
+              Krav til administrasjon av <emphasis>kjernen</emphasis>
+            </entry>
+            <entry>
+              Type
+            </entry>
+            <entry>
+              Merknad
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              2.9.1
+            </entry>
+            <entry>
+              Det skal finnes en tjeneste/funksjon for å administrere
+              <emphasis>kjernen</emphasis>
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              2.9.2
+            </entry>
+            <entry>
+              Det må kunne defineres minimum én bruker som er
+              arkivadministrator, som kan logge seg eksplisitt på Noark
+              5 kjernen for å endre konfigurasjon og globale parametere
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              2.9.3
+            </entry>
+            <entry>
+              <para>
+                Det skal finnes en tjeneste/funksjon for administrator
+                for å opprette, redigere og slette arkivenheter (arkiv,
+                arkivdel, klassifikasjonssystem, klasse, mappe,
+                registrering, dokumentbeskrivelse og dokumentobjekt) og
+                tilknyttede metadata som går utover de generelle
+                begrensningene i kapittel 3.2.
+              </para>
+              <para>
+                Slike registreringer skal logges.
+              </para>
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              2.9.4
+            </entry>
+            <entry>
+              Et arkiv og arkivets metadata skal kun opprettes gjennom
+              Administratorfunksjonen for Noark 5 kjerne.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              2.9.5
+            </entry>
+            <entry>
+              Et <emphasis>underarkiv</emphasis> skal kun defineres og
+              endres gjennom Administratorfunksjonen for Noark 5 kjerne.
+            </entry>
+            <entry>
+              B
+            </entry>
+            <entry>
+              Obligatorisk dersom underarkiv brukes
+            </entry>
+          </row>
+          <row>
+            <entry>
+              2.9.6
+            </entry>
+            <entry>
+              En <emphasis>arkivdel</emphasis> og arkivdelens metadata
+              skal kun opprettes og endres gjennom
+              Administratorfunksjonen for Noark 5 kjerne.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              2.9.7
+            </entry>
+            <entry>
+              Et <emphasis>klassifikasjonssystem</emphasis> og
+              klassifikasjonssystemets metadata skal kun opprettes og
+              endres gjennom Administratorfunksjonen for Noark 5 kjerne.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              2.9.8
+            </entry>
+            <entry>
+              Det bør være mulig å parameterstyre at status «Dokumentet
+              er ferdigstilt» skal settes automatisk på
+              <emphasis>dokumentbeskrivelse</emphasis> ved andre
+              statuser på <emphasis>mappe</emphasis> eller
+              <emphasis>registrering</emphasis>
+            </entry>
+            <entry>
+              V
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              2.9.9
+            </entry>
+            <entry>
+              Kun autoriserte enheter, roller eller personer skal ha
+              rett til å arkivere en ny versjon av et dokument på en
+              <emphasis>registrering</emphasis> med status ekspedert,
+              journalført eller avsluttet.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              2.9.10
+            </entry>
+            <entry>
+              Kun autoriserte roller, enheter og personer skal kunne
+              slette inaktive versjoner, varianter og formater av et
+              dokument
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </sect1>
+</chapter>

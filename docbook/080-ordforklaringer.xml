@@ -1,0 +1,1110 @@
+<chapter id="id-080-ordforklaringer-ordforklaringer">
+  <title>Ordforklaringer</title>
+  <para>
+    Listen er begrenset til begreper som er benyttet i standarden.
+  </para>
+  <informaltable>
+    <tgroup cols="2">
+      <colspec align="left" />
+      <colspec align="left" />
+      <thead>
+        <row>
+          <entry>
+            <emphasis role="strong">Begrep</emphasis>
+          </entry>
+          <entry>
+            <emphasis role="strong">Forklaring</emphasis>
+          </entry>
+        </row>
+      </thead>
+      <tbody>
+        <row>
+          <entry>
+            AIP
+          </entry>
+          <entry>
+            Archival Information Package, som definert i OAIS
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Algoritme
+          </entry>
+          <entry>
+            Oppskrift for utføring av en oppgave, for eksempel et
+            program i en datamaskin som beskriver steg for steg hva
+            datamaskinen skal gjøre.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Anvendelig
+          </entry>
+          <entry>
+            En anvendelig <emphasis>registrering</emphasis> kan
+            gjenfinnes, hentes frem presenteres og tolkes. I ettertid
+            bør den kunne presenteres direkte i forbindelse med
+            forretningsaktiviteten eller transaksjonen som gav opphav
+            til den. <emphasis>Registreringens</emphasis> kontekstuelle
+            forbindelser bør omfatte den informasjonen som er nødvendig
+            for å forstå transaksjonene der den ble opprettet og brukt.
+            Det bør være mulig å identifisere
+            <emphasis>registreringen</emphasis> innenfor en kontekst av
+            videre forretningsaktiviteter og funksjoner. Koplinger
+            mellom <emphasis>registreringer</emphasis> som dokumenterer
+            en serie av aktiviteter, bør vedlikeholdes
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Arkivdel
+          </entry>
+          <entry>
+            En vilkårlig definert del av et arkiv (1), hvor alt
+            materiale er ordnet etter ett og samme klassifikasjonssystem
+            som primær klasse. Vil ofte være definert identisk med det
+            som kalles en arkivserie, men behøver ikke være det.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Arkivdokument
+          </entry>
+          <entry>
+            Dokument som mottas eller produseres som ledd i den
+            virksomhet et organ utøver, og som ikke er gjenstand for
+            arkivbegrensning.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Arkivenhet
+          </entry>
+          <entry>
+            Det enkelte nivået i arkivstrukturen.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Arkivformat
+          </entry>
+          <entry>
+            Standardisert format for elektronisk arkivering og
+            langtidslagring av dokumenter.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Arkivperiode
+          </entry>
+          <entry>
+            Tidsperiode for inndeling av arkiv (1) i forbindelse med
+            blant annet bortsetting.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Arkivskaper
+          </entry>
+          <entry>
+            En organisatorisk enhet eller en person som danner arkiv som
+            ledd i sin virksomhet. En arkivskaper kan være et offentlig
+            organ, en bedrift, en organisasjon, en institusjon, en
+            stiftelse etc. eller en del av en slik enhet. Et offentlig
+            organ kan være én arkivskaper og dermed ha ett arkiv
+            (sentralarkiv), eller det kan ha flere arkivskapere
+            (avdelinger, etater etc.) som skaper hver sitt arkiv
+            (underarkiver).
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Arkivstruktur
+          </entry>
+          <entry>
+            Den logiske, hierarkiske ordningen av et arkiv.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Arkivsystem
+          </entry>
+          <entry>
+            Elektronisk system som brukes til å registrere,
+            administrere, oppbevare og gjenfinne arkivdokumenter (både
+            fysiske og elektroniske).
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Arkivuttrekk
+          </entry>
+          <entry>
+            Det datainnhold som skal hentes ut av et system og inngå som
+            arkivversjonens hoveddel.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Arkivversjon
+          </entry>
+          <entry>
+            Den samlede leveransen av data og medfølgende dokumentasjon
+            som skal mottas av arkivdepotet ved avlevering eller
+            deponering.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Autentiserende metadata
+          </entry>
+          <entry>
+            Metadata som har til formål å understøtte dokumentets ekthet
+            og troverdighet, bl.a. ved å gi mottaker opplysninger som
+            kan nyttiggjøres ved kontroll av dokumentets innhold og
+            avsender.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Autentisering (begrepets betydning innen tilgangsstyring)
+          </entry>
+          <entry>
+            En funksjon som kontrollerer om de opplysninger en person
+            presenterer seg med for IT-systemet (brukernavn, passord,
+            magnetstripekort, fingeravtrykk eller lignende, avhengig av
+            den enkelte løsningens behov for sikker autentisering) gir
+            tilstrekkelig sikkerhet for at personen er den han gir seg
+            ut for å være.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Autentisitet
+          </entry>
+          <entry>
+            <para>
+              En autentisk <emphasis>registrering</emphasis> kan bevises
+              at
+            </para>
+            <itemizedlist spacing="compact">
+              <listitem>
+                <para>
+                  den er hva den hevder å være,
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  den er produsert eller sendt av den personen som
+                  hevder å ha produsert eller sendt den, og
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  den er produsert eller sendt på det påståtte
+                  tidspunktet
+                </para>
+              </listitem>
+            </itemizedlist>
+            <para>
+              For å sikre autentisitet bør virksomheter iverksette og
+              dokumentere policy og prosedyrer som styrer produksjon,
+              mottak, overføring, vedlikehold og avhending av
+              <emphasis>registreringer</emphasis>. Dette sikrer at de
+              som produserer <emphasis>registreringer</emphasis> er
+              autoriserte og identifiserbare, og at
+              <emphasis>registreringen</emphasis> beskyttes mot
+              uautorisert tilføyelse, sletting, endring, bruk og
+              hemmelighold
+            </para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Avlevering
+          </entry>
+          <entry>
+            Fysisk overføring av arkivmateriale til arkivdepot. Ved
+            avlevering fra statlig organer til Arkivverket overføres
+            råderetten over arkivet til Riksarkivaren.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Avleveringspakke
+          </entry>
+          <entry>
+            Synonymt med Arkivversjon. Defineres i OAIS under
+            betegnelesen Submission Information Package.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Autorisasjon
+          </entry>
+          <entry>
+            Autorisasjon er regelverk (som fortrinnsvis håndheves
+            elektronisk i IT-systemet) om hvilke opplysninger en
+            <emphasis>autentisert</emphasis> person får tilgang til, og
+            om hvilke handlinger han skal kunne utføre.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Avsender
+          </entry>
+          <entry>
+            Den som sender et brev, en pakke, en e-post, en elektronisk
+            melding, en SMS eller lignende.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Avskrivning
+          </entry>
+          <entry>
+            Registrering av opplysninger i journalen om når og hvordan
+            behandlingen av et inngående dokument har blitt avsluttet.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Bevaring
+          </entry>
+          <entry>
+            Å ta vare på arkivmateriale over tid. I arkivforskriften
+            betyr bevaring at materialet oppbevares for fremtiden og
+            avleveres til arkivdepot.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Bortsetting
+          </entry>
+          <entry>
+            At arkivmateriale etter en tid (vanligvis etter et bestemt
+            antall år) tas ut av aktivt arkiv og settes bort på et
+            dertil egnet sted, jf. arkivperiode.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Bortsettingsarkiv
+          </entry>
+          <entry>
+            Materiale som er satt bort etter de prinsipper som er
+            beskrevet under bortsetting. Andre fase i arkivmaterialets
+            livssyklus.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Deponering
+          </entry>
+          <entry>
+            Fysisk overføring av arkivmateriale uten overføring av
+            råderetten.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            DIP
+          </entry>
+          <entry>
+            Utleveringspakke. Refererer til OAIS: Dissemination
+            Information Package.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Dokument
+          </entry>
+          <entry>
+            Logisk avgrenset informasjonsmengde som er lagret på et
+            medium for senere lesing, lytting, fremvisning eller
+            overføring.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Dokumentbeskrivelse
+          </entry>
+          <entry>
+            Et nivå i arkivstrukturen, en arkivenhet. Metadata til
+            arkivdokument, som angir arkivdokumentets innhold.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Dokument­fangst
+          </entry>
+          <entry>
+            Identifisere dokumenter for arkivering, fange dem opp,
+            tilføre metadata (registrere) og fryse (arkivere), slik at
+            både dokumentet og tilhørende autentiserende metadata er
+            uforanderlig
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Dokumentflyt
+          </entry>
+          <entry>
+            Arkivdokumentenes gang fra ledd til ledd i saksbehandlingen.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Dokumenthåndtering
+          </entry>
+          <entry>
+            Registrering, lagring, søking, presentasjon, styring og
+            kontroll av dokumenter. Håndtering av alle typer dokumenter,
+            både uferdige dokumenter, arbeidsdokumenter og
+            arkivdokumenter, uavhengig av arkivdanning.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Dokumentobjekt
+          </entry>
+          <entry>
+            Et nivå i arkivstrukturen, en arkivenhet. Metadata til
+            dokumentfiler. Dokumentobjekt er laveste nivå i
+            arkivstrukturen.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Ekthet
+          </entry>
+          <entry>
+            Se autentisitet
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Elektronisk arkiv
+          </entry>
+          <entry>
+            Et arkiv som består av elektroniske dokumenter.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Elektronisk dokument
+          </entry>
+          <entry>
+            Et dokument lagret på et elektronisk medium, i et format
+            egnet for gjenfinning, prosessering og distribusjon ved
+            hjelp av en datamaskin.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Elektronisk signatur
+          </entry>
+          <entry>
+            Generell betegnelse på teknologi, metoder, regelverk og
+            forvaltnings/tilsynsoppgaver som til sammen sikrer
+            tilstrekkelig tillit til at elektronisk informasjon som er
+            «signert» stammer fra den avsender som er angitt, og at
+            innholdet ikke er manipulert.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Endringslogg
+          </entry>
+          <entry>
+            Fortløpende registrering av endringer i metadata som det er
+            viktig å ha dokumentert.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Format
+          </entry>
+          <entry>
+            Samme dokument kan lagres i flere formater. I
+            arkivsammenheng snakker vi primært om produksjonsformat og
+            arkivformat.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Funksjon
+          </entry>
+          <entry>
+            De overordnede ansvarsområdene til en arkivskaper.
+            Funksjoner deles opp i aktiviteter. Representerer det
+            øverste nivået i et klassifikasjonssystem.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Gradering
+          </entry>
+          <entry>
+            Påføring av kode etter sikkerhetsloven og
+            beskyttelses­instruksen for å skjerme arkivdokumenter mot
+            uautorisert innsyn.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Identifikasjon
+          </entry>
+          <entry>
+            Tildeling av en entydig verdi som identifiserer en
+            arkivenhet, og dermed også de enkelte arkivdokumenter.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Integritet
+          </entry>
+          <entry>
+            <para>
+              Innebærer at <emphasis>registreringen</emphasis> og dens
+              informasjonsinnhold er fullstendig og uendret.
+            </para>
+            <para>
+              <emphasis>Registreringen</emphasis> må beskyttes mot
+              uautorisert endring. Policy og rutiner for
+              dokumentasjonsforvaltning bør angi hvilke tilføyelser
+              eller kommentarer som kan gis
+              <emphasis>registreringen</emphasis> etter at den
+              produsert. Det bør angis under hvilke omstendigheter
+              tilføyelser eller kommentarer kan godkjennes, og hvem som
+              har tillatelse til å gjøre dem. Alle godkjente
+              kommentarer, tilføyelser eller slettinger i
+              <emphasis>registreringen</emphasis> bør være uttrykkelig
+              dokumenterte og sporbare.
+            </para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Internt dokument
+          </entry>
+          <entry>
+            Dokument som er utarbeidet for et forvaltningsorgans interne
+            saksforberedelse, enten av organet selv eller av et
+            underliggende organ, av særlige rådgivere eller sakkyndige
+            eller av et departement til bruk i et annet departement.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Journal
+          </entry>
+          <entry>
+            Register over saksdokumenter som behandles i et organ.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Journaldato
+          </entry>
+          <entry>
+            Se journalføringsdato
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Journalenhet
+          </entry>
+          <entry>
+            Journalenhet er navnet på den organisatoriske enheten som
+            har ansvaret for organets journalføring og arkivering. Andre
+            navn som brukes er journalførende enhet eller arkivtjeneste.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Journalføring
+          </entry>
+          <entry>
+            Systematisk og fortløpende registrering av opplysninger i en
+            journal. Etter arkivforskriften § 9 skal man registrere alle
+            inngående og utgående saksdokumenter som er eller blir
+            saksbehandlet og som har verdi som dokumentasjon.
+            Organinterne dokumenter registreres i den grad man finner
+            det hensikts­messig.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Journalføringsdato
+          </entry>
+          <entry>
+            <para>
+              Journal(førings)dato angir tidspunktet for når et dokument
+              er ført inn i journalen, og er et utvalgskriterium for den
+              samlede kronologisk ordnete rapporten over samtlige
+              registreringer innenfor perioden.
+            </para>
+            <para>
+              Journal(førings)dato har tradisjonelt vært den dato da et
+              innkommet dokument kom inn til eller ble lagt fram for
+              organet, det vil si mottaksdato for et innkommet dokument.
+              I Noark 5 er dette erstattet av mottaksdato.
+            </para>
+            <para>
+              Fra Noark 5 angir journalføringsdato tidspunktet for
+              arkivtjenestens kvalitetssikring av
+              dokumentregistreringen, etter at det er mottatt, sendt
+              eller ferdigstilt.
+            </para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Journalopplysninger
+          </entry>
+          <entry>
+            De opplysninger som inngår i en journal, jf.
+            arkivforskriften § 10.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Journalpost
+          </entry>
+          <entry>
+            En enkelt registrering (innførsel) i en journal, dvs.
+            opplysningene om et saksdokument med eventuelle vedlegg.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Kassasjon
+          </entry>
+          <entry>
+            Det å kassere, dvs. at arkiv­materiale som har vært
+            gjenstand for saksbehandling eller har hatt verdi som
+            dokumentasjon, blir tatt ut av arkivet og tilintetgjort, jf.
+            arkivforskriften § 16.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Klassifikasjonssystem
+          </entry>
+          <entry>
+            Et klassifikasjonssystem består av klasser som kan beskriver
+            arkivskapers funksjoner og aktiviteter. Kan også beskrive
+            emner eller objekter. En arkivnøkkel er et eksempel på et
+            klassifikasjonssystem.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Klasse
+          </entry>
+          <entry>
+            Bestanddelene i et klassifikasjonssystem. Inngår ofte i et
+            hierarki. En arkivkode er et eksempel på identifikasjonen av
+            en klasse.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Konfidensialitet
+          </entry>
+          <entry>
+            Meningsinnholdet skal ikke kunne leses av uvedkommende.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Kontekst
+          </entry>
+          <entry>
+            Omgivelsene arkivmaterialet inngår i, og må tolkes i lys av.
+            Brukes også om sammenhengen mellom arkivdokumentene.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Konvertering
+          </entry>
+          <entry>
+            Omforme et arkivdokuments format til et annet format, slik
+            at dokumentet kan leses og bearbeides med en annen
+            program­vare enn den som ble brukt til å framstille
+            dokumentet.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Kopimottaker
+          </entry>
+          <entry>
+            Mottaker som mottar en kopi av arkivdokumentet, og som
+            dermed ikke er behandlingsansvarlig.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Korrespondansepart
+          </entry>
+          <entry>
+            Virksomhet eller person som arkivskaper mottar eller sender
+            arkivdokumenter til.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Kryptering
+          </entry>
+          <entry>
+            Omforming av data slik at de blir uforståelige. Omformingen
+            skjer ved å kombinere en krypteringsnøkkel med de originale
+            dataene i henhold til en gitt algoritme. De originale
+            dataene gjenskapes ved å kombinere en dekrypteringsnøkkel
+            med de krypterte dataene.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Logging
+          </entry>
+          <entry>
+            Logging er sekvensiell lagring av data, ofte i kronologisk
+            rekkefølge.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Mappe
+          </entry>
+          <entry>
+            Et nivå i arkivstrukturen, en arkivenhet. En eller flere
+            registreringer med tilhørende arkivdokumenter som er knyttet
+            sammen under en felles identitet.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Medavsender
+          </entry>
+          <entry>
+            Avsender som ikke formelt er ansvarlig, hvis et inngående
+            dokument har flere avsendere.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Metadata
+          </entry>
+          <entry>
+            Metadata er data som tjener til å definere eller beskrive
+            andre data. I arkivsammenheng vil dette f. eks, være
+            informasjon om et dokuments struktur, innhold og kontekst.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Møte
+          </entry>
+          <entry>
+            Et møte i et beslutningsorgan for å behandle saker i en
+            saksliste.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Møteprotokoll
+          </entry>
+          <entry>
+            Protokoll, (evt. referat) fra et bestemt møte i et utvalg.
+            Omfatter opplysninger om tid, sted, fremmøte og liknende,
+            samt protokoll/referat fra behandlingen av de saker som var
+            oppe.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Møtesak
+          </entry>
+          <entry>
+            En avgrenset problemstilling som et beslutningsorgan skal
+            behandle i et møte.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Notat
+          </entry>
+          <entry>
+            Internt dokument som utarbeides i et organ som ledd i en
+            saksforberedelse. Se også internt dokument.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            OAIS
+          </entry>
+          <entry>
+            ISO 14721: 2002 Reference Model for an Open Archival
+            Information System (OAIS). Dette er en ISO-standard for
+            bevaring av arkiv.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Offentlig journal
+          </entry>
+          <entry>
+            En kopi av journalen som legges ut for allmennheten, hvor
+            opplysninger som er unntatt fra offentlighet er strøket ut.
+            Se også skjerming.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Overlappingsperiode
+          </entry>
+          <entry>
+            Overgangsfase mellom gammel og ny arkivperiode, oftest de to
+            første årene av hver ny arkivperiode.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Parameterstyre
+          </entry>
+          <entry>
+            Variabel som tildeles verdi ved en bestemt bruk. Brukes om
+            faste valg som skal eller bør være tilgjengelig i løsningen.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Periodeskille
+          </entry>
+          <entry>
+            Måten en periode avsluttes på. Ved skarpt skille lukkes alle
+            saksmapper. Ved &quot;mykt&quot; periodeskille overføres
+            uavsluttede saksmapper til ny periode.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Periodisering
+          </entry>
+          <entry>
+            Sette et kontrollert tidsskille i arkivet med jevne
+            mellomrom. Dette innebærer at alle saker med dokumenter som
+            har vært registrert innefor et fast tidsrom (en
+            arkivperiode) settes bort samtidig, og utgjør en egen enhet
+            i bortsettingsarkivet.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            PREMIS
+          </entry>
+          <entry>
+            Data Dictionary for Preservation Metadata: Final Report of
+            the PREMIS Working Group (OCLC og RLG 2005). PREMIS står for
+            Preservation Metadata: Implementation Strategies. PREMIS
+            Working Group beskriver en modell - en kjerne av metadata –
+            som kan brukes til all digital bevaring, uavhengig av type
+            dokumenter eller bevarings­strategier.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Presedens
+          </entry>
+          <entry>
+            En (retts)avgjørelse som siden kan tjene som rettesnor i
+            lignende tilfeller eller saker. En presedens kan også være
+            en sak som er regeldannende for behandling av tilsvarende
+            saker. Det er som oftest snakk om et forvaltningsmessig
+            vedtak, dvs. et enkeltvedtak fattet i henhold til det
+            aktuelle organets forvaltningsområde, som inneholder en
+            rettsoppfatning som senere blir lagt til grunn i andre
+            lignende tilfeller.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Produksjonsformat
+          </entry>
+          <entry>
+            Format som et elektronisk dokument er produsert i, dvs.
+            vanligvis det lagringsformatet som brukes av et
+            tekstbehandlingssystem
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Proveniens
+          </entry>
+          <entry>
+            Informasjon om arkivmaterialets opphav.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Pålitelig
+          </entry>
+          <entry>
+            En pålitelig <emphasis>registrering</emphasis> har et
+            innhold som en kan stole på er en fullstendig og nøyaktig
+            gjengivelse av transaksjonene, aktivitetene og faktaene som
+            skal dokumenteres, og skal kunne danne grunnlag
+            etterfølgende transaksjoner og aktiviteter.
+            <emphasis>Registreringen</emphasis> bør produseres samtidig
+            med transaksjonen eller hendelsen den angår, eller kort tid
+            etter, av personer som har direkte kjennskap til fakta,
+            eller ved hjelp av metoder som virksomheten rutinemessig
+            bruker for å utføre transaksjonen.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Record
+          </entry>
+          <entry>
+            <para>
+              Det engelske begrepet som tradisjonelt er brukt
+              tilsvarende det norske «arkivdokument». Er senere blitt
+              oversatt til «dokumentasjon», og tilsvarer en
+              <emphasis>registrering</emphasis> i Noark 5.
+            </para>
+            <para>
+              Dokument skapt eller mottatt av en person eller
+              organisasjon som ledd i virksomhetsutøvelsen, og som er
+              vedlikeholdt av den personen eller organisasjonen. (Moreq)
+            </para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Registrering
+          </entry>
+          <entry>
+            Et nivå i arkivstrukturen, en arkivenhet. Dokumentasjon av
+            en transaksjon, også metadata til registreringen.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Restanse
+          </entry>
+          <entry>
+            Mottatt journalpost som ikke er avskrevet. Se avskrivning.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Rolle
+          </entry>
+          <entry>
+            Innen tilgangskontroll er roller en gruppering av likeartede
+            arbeidsoppgaver, slik at <emphasis>autorisasjon</emphasis>
+            kan tildeles flere personer med samme rolle istedenfor at
+            autorisasjonene tildeles direkte til hver enkelt person
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Sak
+          </entry>
+          <entry>
+            <para>
+              1. Abstrakt: Et spørsmål som er til behandling, på
+              grunnlag av en henvendelse utenfra eller på initiativ fra
+              organet selv (jf. forvaltnings­loven og offentleglova).
+              Begrepet benyttes også om selve behandlingsforløpet.
+            </para>
+            <para>
+              2. Konkret: En sak omfatter de saksdokumenter,
+              registreringer, påskrifter etc. som oppstår og/eller
+              inngår i behandlingsforløpet.
+            </para>
+            <para>
+              3. I elektroniske journal- arkivløsninger (Noark): En sak
+              består av en eller flere journalposter med tilhørende
+              dokumenter, som er knyttet sammen under en felles
+              identitet (saksnummer).
+            </para>
+            <para>
+              Se saksmappe.
+            </para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Sakarkiv
+          </entry>
+          <entry>
+            Den delen av arkivet som inneholder saksdokumenter, dvs.
+            dokumenter som er kommet inn til eller lagt fram for et
+            organ, eller som organet selv har opprettet, og som gjelder
+            ansvarsområdet eller virksomheten til organet.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Saksansvarlig
+          </entry>
+          <entry>
+            Saksbehandler som er ansvarlig for behandling av saken som
+            helhet. Se også Saksbehandler.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Saksbehandler
+          </entry>
+          <entry>
+            Den person i organet som er ansvarlig for oppfølging og
+            behandling av ett eller flere dokumenter i en sak. Se også
+            Saksansvarlig.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Saksdokument
+          </entry>
+          <entry>
+            Etter offentleglova er forvaltningens saksdokumenter
+            dokumenter som er utferdiget av et forvaltningsorgan, og
+            dokumenter som er kommet inn til eller lagt frem for et
+            slikt organ. I arkivsammenheng brukes begrepet i hovedsak på
+            samme måte, men litt mer avgrenset. Et saksdokument er
+            alltid et arkivdokument, men ikke alle arkivdokumenter er
+            saksdokumenter. Et saksdokument er opprettet når det er
+            sendt ut av organet. Hvis dette ikke skjer, regnes
+            saksdokumentet som opprettet når det er ferdigstilt.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Saksgang
+          </entry>
+          <entry>
+            Behandlingsprosessen i en sak.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Saksliste
+          </entry>
+          <entry>
+            Liste over møtesaker fra kølisten som skal behandles i et
+            gitt møte.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Saksmappe
+          </entry>
+          <entry>
+            En spesialisering av arkivenheten mappe i arkivstrukturen.
+            Se sak.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Saksoppfølging
+          </entry>
+          <entry>
+            Det å følge opp behandlingen av en sak, for eksempel
+            kontroll av behandlingen i forhold til forfall,
+            restansekontroll, mv.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Sertifikat
+          </entry>
+          <entry>
+            Et sertifikat er opplysninger (som en uavhengig tredjepart
+            kan gå god for) som en mottaker behøver for å ta stilling
+            til om han skal ha tillit til avsenderen av elektronisk
+            signert materiale
+          </entry>
+        </row>
+        <row>
+          <entry>
+            SIP
+          </entry>
+          <entry>
+            Avleveringspakke. Submission Information Package
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Sjekksum
+          </entry>
+          <entry>
+            Verdi (hash value) som fremkommer ved å behandle en
+            datastrøm i henhold til en gitt algoritme. Sjekksummen
+            beregnes på en slik måte at det er liten sannsynlighet for
+            at to ulike datastrømmer resulterer i samme sjekksum, slik
+            at to datastrømmer som har samme sjekksum med høy
+            sannsynlighet er like.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Skjerming
+          </entry>
+          <entry>
+            Bruk av nøytrale kjennetegn, utelatinger eller
+            overstrykinger på den kopien eller utskriften av journalen
+            som allmennheten kan kreve innsyn i.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Tjenestegrensesnitt
+          </entry>
+          <entry>
+            Grensesnitt for utveksling av data mellom et Noark 5-system
+            og et fagsystem (utvekslingsformat)
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Transaksjon
+          </entry>
+          <entry>
+            De enkelte trinnene i en aktivitet. Det er transaksjoner som
+            skaper arkivdokumenter.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Variant
+          </entry>
+          <entry>
+            En alternativ utgave av et arkivdokument, som arkiveres i
+            tillegg til selve arkivdokumentet. I en variant av et
+            arkivdokument er innholdet endret fra det opprinnelige
+            arkivdokumentet. Den mest vanlige varianten vil være et
+            &quot;sladdet&quot; dokumentet hvor taushetsbelagt
+            informasjon er fjernet slik at det kan være offentlig
+            tilgjengelig.
+          </entry>
+        </row>
+        <row>
+          <entry>
+            Versjon
+          </entry>
+          <entry>
+            Utgave av et arkivdokument på et bestemt tidspunkt. Siste
+            versjon vil være den endelige versjonen.
+          </entry>
+        </row>
+      </tbody>
+    </tgroup>
+  </informaltable>
+</chapter>

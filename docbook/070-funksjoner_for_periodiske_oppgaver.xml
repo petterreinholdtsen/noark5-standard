@@ -1,0 +1,4191 @@
+<chapter id="id-070-funksjoner_for_periodiske_oppgaver-funksjoner-for-periodiske-oppgaver">
+  <title>Funksjoner for periodiske oppgaver</title>
+  <para>
+    Antall mapper med tilhørende arkivdokumenter i et arkiv vil stadig
+    vokse. Etter som tiden går, vil eldre mapper bli mer og mer
+    uaktuelle for arkivskaper, og det kan være behov for å fjerne dem
+    fra det aktive arkivet.
+  </para>
+  <sect1 id="id-070-funksjoner_for_periodiske_oppgaver-bevaring-og-kassasjon">
+    <title>Bevaring og kassasjon</title>
+    <para>
+      Kassasjon vil si at elektroniske dokumenter fjernes fra
+      arkivstrukturen. Dersom dokumentet ikke er tilknyttet andre
+      registreringer, innebærer en kassasjon også at dokumentet slettes
+      helt fra Noark 5-løsningen. Kassasjon av fysiske dokumenter vil si
+      at de plukkes ut fra stedet de oppbevares, og makuleres eller
+      destrueres på en betryggende måte.
+    </para>
+    <para>
+      Riksarkivaren har myndighet til å fatte bevarings- og
+      kassasjonsvedtak for offentlige arkiver. Det betyr at offentlige
+      arkivskapere ikke fritt kan kassere sine dokumenter etter eget
+      ønske. Et bevaringsvedtak innebærer at det aktuelle
+      arkivmaterialet skal bevares for all framtid, og at det må
+      overføres - eller <emphasis>avleveres</emphasis> - til et
+      arkivdepot.
+    </para>
+    <para>
+      Kassasjon er like aktuelt i elektroniske arkiver som i fysiske
+      arkiver. Langtidsoppbevaring og administrasjon (f.eks.
+      konvertering til nye formater) av store mengder elektroniske
+      dokumenter kan medføre minst like store omkostninger som
+      langtidslagring av fysiske dokumenter. Men økonomi er ikke den
+      eneste grunnen til at en fortløpende og systematisk bør kassere
+      alle dokumenter som ikke har noen bevaringsverdi - verken for
+      arkivskaper eller arkivmyndighetene. Informasjonstilfanget er
+      overveldende i dagens samfunn, og jo mer unødvendig informasjon
+      som tas vare på, jo vanskeligere kan det bli å søke fram og finne
+      den informasjonen en virkelig trenger.
+    </para>
+    <para>
+      Kassasjon betyr ikke at en må gå inn og vurdere bevaringsverdien
+      for hvert eneste dokument. For at kassasjon av elektroniske
+      dokumenter skal være praktisk gjennomførbart, må en fastsette
+      bevarings- og kassasjonskriterier på et overordnet plan - dvs. på
+      et makronivå. Internasjonal arkivteori argumenterer for
+      <emphasis>funksjonsbasert makrokassasjon</emphasis>. Det betyr at
+      arkivdokumentenes bevaringsverdi avhenger av funksjonen eller
+      aktiviteten som har skapt dokumentet - og ikke av selve innholdet
+      i dokumentet. Også i Norge er det enighet om at funksjonsbasert
+      kassasjon på makronivå kan være en viktig metode, selv om hensynet
+      til dokumentenes innhold tradisjonelt er tillagt stor
+      betydning.<footnote>
+        <para>
+          Metoder for bevaring og kassasjon er beskrevet i
+          Bevaringsutvalgets rapport (2002).
+        </para>
+      </footnote>
+    </para>
+    <sect2 id="id-070-funksjoner_for_periodiske_oppgaver-konseptuell-modell-for-kassasjon">
+      <title>Konseptuell modell for Kassasjon</title>
+      <figure>
+        <title><emphasis>Figur 6.1 Kassasjon</emphasis></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="./media/uml-kassasjon-diagram.png" width="100.0%" />
+          </imageobject>
+          <textobject><phrase><emphasis>Figur 6.1
+          Kassasjon</emphasis></phrase></textobject>
+        </mediaobject>
+      </figure>
+      <para>
+        Overordnede kassasjonsbestemmelser kan settes på arkiv- og
+        klassenivå, og skal da arves nedover i arkivstrukturen til
+        mappe, registrering og dokumentbeskrivelse. Verdiene som arves
+        skal kunne overstyres. Ved deponering/avlevering er det bare
+        kassasjonsvedtak som innebærer kassasjon som skal være med. Det
+        skal altså ikke knyttes opplysninger om kassasjon til
+        arkivenheter hvor alle tilordnede dokumenter skal bevares.
+        Kassasjon kan altså være knyttet en gang til arkivdel, klasse,
+        mappe, registrering og dokumentbeskrivelse.
+      </para>
+      <para>
+        Et <emphasis>bevarings- og kassasjonsvedtak</emphasis> forteller
+        hva som skal skje med dokumentene når
+        <emphasis>bevaringstiden</emphasis> er nådd. Obligatoriske
+        verdier er &quot;Bevares&quot;, &quot;Kasseres&quot; og
+        &quot;Vurderes senere&quot;. Bevaringstiden kan typisk være 5,
+        10 eller 30 år. <emphasis>Kassasjonsdatoen</emphasis> beregnes
+        automatisk på grunnlag av bevaringstiden. Bevaringstiden skal
+        begynne å løpe fra tidspunktet når en saksmappe er avsluttet,
+        men det skal også være mulig å fastsette andre regler for
+        beregning av kassasjonsdato.
+      </para>
+      <para>
+        Funksjonsbasert kassasjon forutsetter at klassifikasjonssystemet
+        beskriver virksomhetens funksjoner og aktiviteter. I Noark 5
+        skal det være mulig å sette bevarings- og kassasjonsvedtak på de
+        enkelte klassene i et klassifikasjonssystem. Dette skal da
+        automatisk kunne arves til alle mapper som tilordnes klassen.
+      </para>
+      <para>
+        Det skal også være mulig å sette bevarings- og kassasjonsvedtak
+        på en arkivdel. Det betyr da at alle mapper i arkivdelen arver
+        det samme vedtaket. Dersom arv skjer fra arkivdelen, skal det
+        ikke samtidig være mulig med arv fra klassene. Bevarings- og
+        kassasjonsvedtak for en hel arkivdel er først og fremst aktuelt
+        ved enkelte fagsystemer som produserer såkalte
+        &quot;enstypeserier&quot;.
+      </para>
+      <para>
+        Arv skal kunne skje videre ned til registrerings- og
+        dokumentbeskrivelsesnivå. Selv om kassasjon ofte omfatter hele
+        mapper, skal det være mulig å bevare en eller flere av
+        registreringene i mappen, og kassere resten.<footnote>
+          <para>
+            Et eksempel på dette kan være en ansettelsessak, hvor en
+            ønsker å kassere alle søknader fra de som ikke ble ansatt i
+            stillingen.
+          </para>
+        </footnote>
+      </para>
+      <table>
+        <title>
+          Funksjonelle krav til bevaring og kassasjon
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Funksjonelle krav til bevaring og kassasjon
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                6.1.1
+              </entry>
+              <entry>
+                Metadata om bevaring og kassasjon på en
+                <emphasis>klasse</emphasis> skal kunne arves til
+                <emphasis>mappe, registrering og
+                dokumentbeskrivelse</emphasis>.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk hvis kassasjon er aktuelt
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.2
+              </entry>
+              <entry>
+                Metadata om bevaring og kassasjon på en
+                <emphasis>arkivdel</emphasis> skal kunne arves til
+                <emphasis>mappe, registrering og</emphasis>
+                <emphasis>dokumentbeskrivelse</emphasis>.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk hvis kassasjon er aktuelt
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.3
+              </entry>
+              <entry>
+                Dersom arv av metadata om bevaring og kassasjon skal
+                skje fra arkivdel, skal dette overstyre arv av metadata
+                fra klassene.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk hvis kassasjon er aktuelt
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.4
+              </entry>
+              <entry>
+                <para>
+                  Det skal finnes en tjeneste / funksjon for å
+                  registrere et kassasjonsvedtak for en
+                  <emphasis>mappe</emphasis>,
+                  <emphasis>registrering</emphasis> eller
+                  <emphasis>dokumentbeskrivelse</emphasis>.
+                </para>
+                <para>
+                  Kassasjonsvedtaket skal bestå av følgende
+                  obligatoriske verdier:
+                </para>
+                <itemizedlist spacing="compact">
+                  <listitem>
+                    <para>
+                      Bevares
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Kasseres
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Vurderes senere
+                    </para>
+                  </listitem>
+                </itemizedlist>
+                <para>
+                  Andre verdier kan legges til.
+                </para>
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for påføring av kassasjonsvedtak utover
+                arkivdel og klasse.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.5
+              </entry>
+              <entry>
+                Det skal være mulig manuelt å registrere
+                kassasjonsvedtak, kassasjonshjemmel og bevaringstid for
+                en <emphasis>mappe</emphasis>,
+                <emphasis>registrering</emphasis> eller
+                <emphasis>dokumentbeskrivelse</emphasis>.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk hvis 6.1.4 oppfylles
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.6
+              </entry>
+              <entry>
+                Bevaringsdatoen for en <emphasis>mappe</emphasis>,
+                <emphasis>registrering</emphasis> eller
+                <emphasis>dokumentbeskrivelse</emphasis> skal kunne
+                beregnes automatisk på grunnlag av bevaringstid og
+                datoen mappen ble avsluttet.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk hvis 6.1.4 oppfylles
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.7
+              </entry>
+              <entry>
+                Andre regler for beregning av bevaringsdato bør kunne
+                være mulig.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.8
+              </entry>
+              <entry>
+                Bevaringsdato for en <emphasis>mappe,
+                registrering</emphasis> eller
+                <emphasis>dokumentbeskrivelse</emphasis> skal også kunne
+                registreres manuelt. Bevaringstid er da ikke
+                obligatorisk.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk hvis 6.1.4 oppfylles
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.9
+              </entry>
+              <entry>
+                Det skal være mulig å slå av funksjonen for arv fra
+                klasser og arkivdeler, slik at metadata om bevaring og
+                kassasjon ikke arves til underliggende mapper.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for funksjon for arv av kassasjonskode
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.10
+              </entry>
+              <entry>
+                Det skal være mulig å angi at arv av metadata om
+                bevaring og kassasjon også skal gå ned til registrering
+                og dokumentbeskrivelse.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for funksjon for arv av kassasjonskode
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.11
+              </entry>
+              <entry>
+                Metadata om bevaring og kassasjon som arves fra et
+                arkivobjekt til alle underliggende arkivobjekter, skal
+                kunne overskrives.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for funksjon for arv av kassasjonskode
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-070-funksjoner_for_periodiske_oppgaver-kassasjon-av-dokumenttyper">
+      <title>Kassasjon av dokumenttyper</title>
+      <para>
+        Bevaring og kassasjon er altså i utgangpunktet knyttet til
+        metadata som arves fra klassen, eller eventuelt arkivdelen, til
+        alle underliggende mapper. I tillegg skal det også være mulig å
+        foreta gjennomgående kassasjon av bestemte typer dokumenter.
+        Derfor bør det også være mulig å knytte bevaring og kassasjon
+        til registreringstyper, dokumenttyper eller andre egendefinerte
+        typer.<footnote>
+          <para>
+            Et eksempel på dette kan være reklamebilag som følger med i
+            innsendte anbud.
+          </para>
+        </footnote>
+      </para>
+      <para>
+        Kassasjon av dokumenttyper kan implementeres ved at bestemte
+        registreringstyper eller dokumenttyper automatisk knyttes til en
+        arkivdel som inneholder bevarings- og kassasjonsvedtaket for den
+        bestemte typen. Dette vedtaket skal da arves til registreringen
+        eller dokumentbeskrivelsen. Men det kan også være andre måter å
+        implementere denne funksjonaliteten uten å bruke arkivdel.
+      </para>
+      <table>
+        <title>
+          Funksjonelle krav til bevaring og kassasjon
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Funksjonelle krav til bevaring og kassasjon
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                6.1.12
+              </entry>
+              <entry>
+                Det bør finnes en tjeneste/funksjon som automatisk
+                knytter en bestemt type registreringer eller
+                dokumentbeskrivelser til et bevarings- og
+                kassasjonsvedtak.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.13
+              </entry>
+              <entry>
+                Metadata om bevaring og kassasjon skal da arves til alle
+                opprettede registreringer eller dokumentbeskrivelser av
+                samme type.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatoriske hvis 6.1.12 oppfylles
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-070-funksjoner_for_periodiske_oppgaver-oversikt-over-dokumenter-som-skal-kasseres-eller-vurderes-på-ny">
+      <title>Oversikt over dokumenter som skal kasseres eller vurderes
+      på ny</title>
+      <para>
+        Før kassasjonen gjennomføres, skal det være mulig å få
+        presentert en oversikt over dokumenter som skal kasseres. En
+        slik oversikt skal inneholde de viktigste metadataene, inkludert
+        alle metadata for bevaring og kassasjon. Fra denne oversikten
+        skal det også være mulig å åpne selve dokumentet, slik at en kan
+        få kontrollert dokumentinnholdet. Dersom oversikten inneholder
+        dokumenter som ikke skal kasseres i denne omgang, skal det være
+        mulig å endre metadata direkte fra oversikten. Oversikten skal
+        kunne begrenses til å omfatte et utvalg dokumenter, f.eks.
+        knyttet til en bestemt klasse.
+      </para>
+      <para>
+        På samme måte skal det være mulig å få presentert en oversikt
+        over dokumenter som skal vurderes for bevaring og kassasjon på
+        et senere tidspunkt. Dette er først og fremst aktuelt for
+        arkiv­materiale som dokumenterer enkeltpersoners eller
+        virksomheters rettigheter, og hvor det er usikkert om
+        dokumentasjonsbehovet er varig eller ikke. For andre typer
+        materiale er det ikke ønskelig at muligheten for vurdering på et
+        senere tidspunkt brukes. Også fra denne oversikten skal det være
+        mulig å endre metadata direkte.
+      </para>
+      <para>
+        En slik funksjonalitet er bare nødvendig å ha i de tilfeller en
+        arkivdeler inneholder både informasjon som skal kasseres og
+        informasjon som skal bevares. Det er obligatorisk for alminnelig
+        sakarkivsystem å ha slik funksjonalitet. Det kan tenkes
+        løsninger der det ikke vil være nødvendig med en slik avansert
+        funksjonalitet, der det ikke vil våre nødvendig med funksjon for
+        å åpne dokumenter fra presentasjonen av kassable dokumenter
+        eller det å kunne lage en særskilt oversikt over kassable
+        dokumenter.
+      </para>
+      <table>
+        <title>
+          Funksjonelle krav til bevaring og kassasjon
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Funksjonelle krav til bevaring og kassasjon
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                6.1.14
+              </entry>
+              <entry>
+                Det skal være mulig å få presentert en oversikt over
+                dokumenter som skal kasseres etter et bestemt tidspunkt.
+                En slik oversikt skal kunne begrenses til et mindre
+                utvalg dokumenter.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.15
+              </entry>
+              <entry>
+                Det skal være mulig å få presentert en oversikt over
+                dokumenter som skal vurderes på nytt for bevaring eller
+                kassasjon etter et bestemt tidspunkt. En slik oversikt
+                skal kunne begrenses til et mindre utvalg dokumenter.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.16
+              </entry>
+              <entry>
+                Oversikten skal inneholde de viktigste metadata for
+                dokumentene, inkludert metadata for bevaring og
+                kassasjon.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.17
+              </entry>
+              <entry>
+                Det bør være mulig å åpne et dokument for presentasjon
+                av innhold direkte fra denne oversikten.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.18
+              </entry>
+              <entry>
+                Autoriserte brukere bør kunne endre metadata for
+                bevaring og kassasjon for de enkelte dokumenter direkte
+                fra oversikten.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-070-funksjoner_for_periodiske_oppgaver-sletting-av-dokumenter-og-metadata">
+      <title>Sletting av dokumenter og metadata</title>
+      <para>
+        Kriteriet for at et dokument skal kunne kasseres er at metadata
+        for kassasjonsvedtak har verdien &quot;Kasseres&quot;, og at
+        dagens dato har passert bevaringsdatoen. Løsningen bør
+        kontrollere at presedenssaker aldri tillates kassert.
+      </para>
+      <para>
+        Kassasjon av elektroniske dokumenter innebærer at referansen
+        mellom metadata og dokumenter slettes, slik at dokumentene ikke
+        lenger kan hentes fram ved hjelp av metadata. Dette skjer ved at
+        all metadata om dokumentobjektet fjernes. Alle versjoner,
+        varianter eller formater av dokumentet skal omfattes av
+        kassasjonen. Dersom samme dokument (dokumentbeskrivelse) er
+        knyttet til flere registreringer, må ikke dokumentet slettes fra
+        filsystemet. Finnes det ingen slik tilknytning, skal også
+        dokumentet slettes.
+      </para>
+      <para>
+        Kassasjon av dokumenter er altså en kritisk funksjon som mange
+        vil kvie seg for å utføre. Det bør derfor være mulig å angre en
+        kassasjon og gjenopprette tilknytningen til de kasserte
+        dokumentene, jf. muligheten som operativsystemene har til å
+        hente fram igjen dokumenter som er &quot;kastet i
+        papirkurven&quot;.
+      </para>
+      <para>
+        Selve funksjonen for å utføre kassasjon skal kunne begrenses til
+        å omfatte utvalgte dokumenter, f.eks. alle dokumenter som
+        tilhørere en bestemt klasse. Det skal være mulig å utføre
+        kassasjonen som en automatisk prosess, men det skal også være
+        mulig å be om å få spørsmål om kassasjon er aktuelt for hvert
+        eneste dokument.
+      </para>
+      <para>
+        Kassasjon av dokumenter betyr ikke at metadata skal slettes.
+        Arkivforskriften har et bevaringspåbud for
+        &quot;journaldatabaser&quot;. Det betyr altså at metadata om
+        kasserte dokumenter i utgangspunktet skal bevares, og avleveres
+        til depot. Det skal likevel være mulig å angi at kassasjon også
+        innebærer sletting av tilhørende metadata. Dette vil da være
+        særlig aktuelt ved bestemte typer fagsystemer eller
+        &quot;enstypeserier&quot;. I slike tilfeller skal verken
+        metadata eller dokumenter bevares.
+      </para>
+      <table>
+        <title>
+          Funksjonelle krav til bevaring og kassasjon
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Funksjonelle krav til bevaring og kassasjon
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                6.1.19
+              </entry>
+              <entry>
+                Det skal finnes en funksjon for å kassere alle
+                dokumenter som har verdien &quot;Kasseres&quot; som
+                kassasjonsvedtak, og hvor bevaringsdatoen er eldre enn
+                dagens dato. En slik funksjon skal kunne begrenses til
+                et mindre utvalg dokumenter.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk i løsninger hvor kassasjon skal skje og ved
+                behov for skille mellom kassable og ikke kassable
+                dokumenter.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.20
+              </entry>
+              <entry>
+                Det skal ikke være mulig å sette kassasjonsvedtak
+                &quot;Kasseres&quot; på en mappe som er registrert som
+                presedenssak.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.21
+              </entry>
+              <entry>
+                Kassasjonen skal kunne utføres automatisk for hele
+                utvalget dokumenter, men det skal også være mulig å be
+                om spørsmål om kassasjon skal utføres for hvert enkelt
+                dokument.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk når 6.1.19 oppfylles
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.22
+              </entry>
+              <entry>
+                Bare autoriserte brukere kan starte en funksjon for
+                kassasjon av dokumenter.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.23
+              </entry>
+              <entry>
+                Alle versjoner, varianter og formater av dokumentet skal
+                omfattes av kassasjonen.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.24
+              </entry>
+              <entry>
+                Kassasjon skal innebære at all metadata om
+                dokumentobjektet slettes. Selve dokumentet skal slettes
+                fra filsystemet dersom dokumentet (dokumentbeskrivelsen)
+                ikke er knyttet til andre registreringer.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.25
+              </entry>
+              <entry>
+                Funksjonen for kassasjon bør være i to trinn, slik at
+                det i første omgang er mulig å gjenopprette de kasserte
+                dokumentene. Endelig sletting av dokumentobjekt og
+                dokument skal kunne skje på et senere tidspunkt.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.26
+              </entry>
+              <entry>
+                Metadata om dokumentet ned til dokumentbeskrivelse, skal
+                i utgangspunktet ikke slettes selv om dokumentet
+                kasseres.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.27
+              </entry>
+              <entry>
+                For hvert dokument som blir kassert, skal det på
+                dokumentbeskrivelsesnivå logges dato for kassasjon og
+                hvem som utførte kassasjonen.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-070-funksjoner_for_periodiske_oppgaver-kassasjonsliste">
+      <title>Kassasjonsliste</title>
+      <para>
+        Hensikten med rapporten <emphasis>Kassasjonsliste</emphasis> er
+        todelt, både å være en hjelp i selve kassasjonsarbeidet og å gi
+        en oversikt over hvilke saker som er kassert.
+      </para>
+      <table>
+        <title>
+          Krav til rapporten Kassasjonsliste
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til rapporten <emphasis>Kassasjonsliste</emphasis>
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                6.1.28
+              </entry>
+              <entry>
+                <para>
+                  <emphasis>Selektering:</emphasis>
+                </para>
+                <para>
+                  Rapporten skal kunne selekteres på følgende
+                  metadataelementer i <emphasis>Saksmappe</emphasis>:
+                </para>
+                <itemizedlist spacing="compact">
+                  <listitem>
+                    <para>
+                      <emphasis>kassasjonsdato</emphasis> (intervall
+                      skal kunne angis)
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      <emphasis>kassasjonsvedtak</emphasis>
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      <emphasis>administrativEnhet</emphasis> (Her skal
+                      det kunne angis om underliggende enheter skal
+                      inkluderes)
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      <emphasis>journalenhet</emphasis>.
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      <emphasis>referanseArkivdel</emphasis>
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      <emphasis>arkivperiodeStartDato</emphasis> og
+                      <emphasis>arkivperiodeSluttDato</emphasis> fra
+                      arkivdel
+                    </para>
+                  </listitem>
+                </itemizedlist>
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for løsninger som skal legge til rette for
+                kassasjon
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.1.29
+              </entry>
+              <entry>
+                <para>
+                  Rapporten skal inneholde følgende opplysninger, så
+                  fremt de finnes i løsningen:
+                </para>
+                <para>
+                  <emphasis role="strong">Saksmappeinformasjon</emphasis>
+                </para>
+                <para>
+                  Fra <emphasis>Saksmappe:</emphasis>
+                </para>
+                <para>
+                  <emphasis>mappeID</emphasis>
+                </para>
+                <para>
+                  <emphasis>tittel</emphasis>
+                </para>
+                <para>
+                  <emphasis>opprettetDato</emphasis>
+                </para>
+                <para>
+                  <emphasis>kassasjonsvedtak</emphasis>
+                </para>
+                <para>
+                  <emphasis>kassasjonsdato</emphasis>
+                </para>
+                <para>
+                  <emphasis>administrativEnhet</emphasis>
+                </para>
+                <para>
+                  <emphasis>referanseArkivdel</emphasis>
+                </para>
+                <para>
+                  Fra <emphasis>klasse</emphasis>
+                </para>
+                <para>
+                  <emphasis>klasseID og tittel</emphasis>
+                </para>
+                <para>
+                  Fra <emphasis>arkivdel:</emphasis>
+                </para>
+                <para>
+                  <emphasis>referanseForelder</emphasis>
+                </para>
+                <para>
+                  <emphasis>arkivperiodeStartDato</emphasis>
+                </para>
+                <para>
+                  <emphasis>arkivperiodeSluttDato</emphasis>
+                </para>
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for løsninger som skal legge til rette for
+                kassasjon
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+  </sect1>
+  <sect1 id="id-070-funksjoner_for_periodiske_oppgaver-periodisering-kontrollert-tidsskille">
+    <title>Periodisering (kontrollert tidsskille)</title>
+    <para>
+      Ved fysisk arkivering har det ofte vært ønskelig å skille ut det
+      eldste og mest uaktuelle materialet fra det som er i aktivt bruk.
+      Dette ble gjerne plassert et sted hvor kostnadene for lagring var
+      lavere enn der det aktive arkivet ble oppbevart. Det tradisjonelle
+      begrepet for dette er <emphasis>bortsetting.</emphasis> Arkiver
+      som er bortsatt, befinner seg fremdeles hos arkivskaper. Slike
+      arkiver er i et mellomstadium, organet har fremdeles et behov for
+      å hente fram dokumenter fra bortsettingsarkivet - men dette
+      behovet vil ikke forekomme så ofte.
+    </para>
+    <para>
+      Det anbefales at bortsetting knyttes til faste, tidsavgrensede
+      perioder kalt <emphasis>arkivperioder</emphasis>. En arkivperiode
+      kan typisk være på 5 år, men både kortere og lengre perioder er
+      fullt mulig. Ved fysisk arkivering innebærer
+      <emphasis>periodisering</emphasis> både at dokumenter flyttes fra
+      et oppbevaringssted til et annet, og at denne flyttingen fremgår
+      av arkivstrukturen og metadataene som er knyttet til dokumentene.
+    </para>
+    <para>
+      Periodisering vil i mange tilfelle også være hensiktsmessig i et
+      elektronisk arkiv. Her er det ikke hensynet til fysisk
+      oppbevaringsplass som er det avgjørende, men behovet for oversikt
+      og rask gjenfinning ved søk. Etter hvert som antall mapper vokser,
+      vil det bli stadig mer upraktisk å ha eldre avsluttede mapper
+      liggende sammen med de som ennå er åpne eller nettopp avsluttet.
+      Derfor kan vi også ved elektronisk arkivering med fordel
+      organisere arkivet i en <emphasis>aktiv</emphasis> periode, og en
+      eller flere <emphasis>avsluttede</emphasis> perioder. Denne
+      oppdelingen omfatter da altså både de elektroniske dokumentene og
+      tilhørende metadata.
+    </para>
+    <para>
+      Prinsippene for periodisering som ble introdusert i Noark-4
+      videreføres i Noark 5. Her skilles det mellom to hovedtyper
+      periodisering: skarpt periodeskille og skille ved
+      overlappingsperiode.
+    </para>
+    <para>
+      <emphasis>Skarpt periodeskille</emphasis> vil si at alle åpne
+      mapper (pågående saker) i en avsluttet periode må lukkes, og så
+      opprettes på nytt i en ny periode (arvtakeren) ved neste
+      registrering. Dette betyr altså at dokumenter som hører sammen vil
+      befinne seg i to forskjellige mapper, og disse vil tilhøre hver
+      sin periode. Disse mappene må derfor bindes sammen med en
+      referanse. Skarpt periodeskille anbefales ikke ved elektronisk
+      arkiv.
+    </para>
+    <para>
+      Periodisering med <emphasis>overlappingsperiode</emphasis> (også
+      kalt &quot;mykt&quot; periodeskille) innebærer at dersom en mappe
+      ikke er avsluttet ved periodens slutt, skal hele mappen - med alle
+      tidligere registreringer - flyttes over til en ny, aktiv periode
+      ved neste registrering. Denne overflyttingen skal skje automatisk
+      så lenge overlappingsperioden varer. Ved overlappingsperiodens
+      slutt vil de fleste aktive saker være overført til ny periode.
+    </para>
+    <para>
+      Ved periodisering spiller <emphasis>arkivdel</emphasis> en sentral
+      rolle. Arkivdelene representerer forskjellige perioder, og det er
+      mappenes tilhørighet til arkivdel som avgjør hvilken periode de
+      befinner seg i. En arkivperiode kan være representert ved flere
+      arkivdeler, som da dekker samme periode eller tidsrom. Arkivdelens
+      <emphasis>arkivstatus</emphasis> gir informasjon om det dreier seg
+      om en aktiv periode, overlappingsperiode eller avsluttet periode.
+      Arkivdelene må dessuten ha en referanse seg imellom, slik at en
+      kan knytte sammen forløper og arvtaker.
+    </para>
+    <para>
+      Dokumenter som skal periodiseres etter forskjellige prinsipper -
+      f.eks. funksjonsordnede saksmapper som periodiseres ved
+      overlappingsperiode og personalmapper som fortløpende periodiseres
+      når de er uaktuelle - må tilhøre hver sin arkivdel. Flere
+      arkivdeler kan altså være aktive på én gang, og de uaktuelle
+      periodene kan utgjøre flere &quot;generasjoner&quot; med
+      arkivperioder.
+    </para>
+    <table>
+      <title>
+        Strukturelle krav til periodisering
+      </title>
+      <tgroup cols="4">
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <thead>
+          <row>
+            <entry>
+              Krav nr.
+            </entry>
+            <entry>
+              Strukturelle krav til periodisering
+            </entry>
+            <entry>
+              Type
+            </entry>
+            <entry>
+              Merknad
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              6.2.1
+            </entry>
+            <entry>
+              En arkivdel skal kunne inneholde en tekstlig beskrivelse
+              av hvilke prinsipper den skal periodiseres etter.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.2.2
+            </entry>
+            <entry>
+              En arkivdel skal inneholde referanser til eventuelle
+              forløpere og arvtakere. (forgjengere og etterkommere?)
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <para>
+      En arkivdel som inneholder en <emphasis>aktiv periode</emphasis>,
+      er åpen for all registrering. Nye mapper skal kunne knyttes til
+      arkivdelen etter hvert som de opprettes.
+    </para>
+    <para>
+      En arkivdel som inneholder en <emphasis>avsluttet
+      periode</emphasis>, er stengt for nye mapper, og mappene som
+      allerede finnes skal være avsluttet. En avsluttet arkivdel er
+      altså &quot;frosset&quot; for all ny tilvekst av mapper og
+      dokumenter, og stort sett også for endring av metadata.
+    </para>
+    <para>
+      En arkivdel som inneholder en
+      <emphasis>overlappingsperiode</emphasis> står i en mellomstilling.
+      Nye mapper kan ikke tilknyttes, men eksisterende mapper kan
+      fremdeles være åpne. Det tillates at det legges en ny registrering
+      til en mappe i overlappingsperioden. Men løsningen skal da
+      <emphasis>automatisk</emphasis> overføre hele denne mappen til
+      arkivdelen som er arvtaker. Det betyr altså at hele mappen med
+      alle registreringer og tilknyttede dokumenter skifter tilhørighet
+      fra en arkivdel til en annen automatisk. Før statusen til
+      overlappingsperioden settes til avsluttet, må det kontrolleres at
+      det ikke finnes flere åpne mapper igjen. Dersom det er tilfelle,
+      må mappene enten avsluttes eller overføres manuelt til arvtakeren.
+      Det skal være mulig å overføre alle åpne mapper i en samlet,
+      automatisert prosess.
+    </para>
+    <para>
+      Selv om det ikke er tillatt å knytte nye mapper til en avsluttet
+      arkivdel, skal det være mulig å flytte avsluttede mapper til en
+      slik arkivdel. Dersom det ikke benyttes overlappingsperiode,
+      f.eks. i forbindelse med periodisering av personmapper, kan det
+      være aktuelt å opprette en tom arkivdel med status som en
+      avsluttet periode. Personmappene kan da flyttes hit fortløpende
+      etter hvert som de blir uaktuelle.
+    </para>
+    <para>
+      Flytting av mapper til en avsluttet arkivdel kan skje manuelt,
+      dvs. at en endrer tilknytningen til arkivdel for hver enkelt
+      mappe. Men det bør også finnes en funksjon for å flytte en gruppe
+      med mapper til en avsluttet arkivdel under ett. Dette kan f.eks.
+      utføres for alle mapper som er søkt fram etter bestemte kriterier.
+    </para>
+    <para>
+      Bruk av periodisering og særlig med overlappingsperiode er ikke
+      aktuelt for alle typer løsninger. For alminnelige sakarkivsystemer
+      er det derimot obligatorisk å ha slik funksjonalitet. For noen vil
+      det kun være aktuelt med skarpe periodeskiller. I slike tilfeller
+      faller alle krav til overlappingsperiode bort.
+    </para>
+    <table>
+      <title>
+        Funksjonelle krav til periodisering
+      </title>
+      <tgroup cols="4">
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <thead>
+          <row>
+            <entry>
+              Krav nr.
+            </entry>
+            <entry>
+              Funksjonelle krav til periodisering
+            </entry>
+            <entry>
+              Type
+            </entry>
+            <entry>
+              Merknad
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              6.2.3
+            </entry>
+            <entry>
+              Det skal være mulig å knytte nyopprettede mapper til en
+              arkivdel som inneholder en aktiv arkivperiode.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.2.4
+            </entry>
+            <entry>
+              En arkivdel som inneholder en overlappingsperiode, skal
+              være sperret for tilføyelse av nyopprettede mapper. Men
+              eksisterende mapper i en overlappingsperiode skal være
+              åpne for nye registreringer.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.2.5
+            </entry>
+            <entry>
+              Dersom en ny registrering føyes til en mappe som tilhører
+              en arkivdel i overlappingsperiode, skal mappen automatisk
+              overføres til arkivdelens arvtaker.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.2.6
+            </entry>
+            <entry>
+              En arkivdel som inneholder en avsluttet arkivperiode, skal
+              være sperret for tilføyelse av nye mapper. Alle mapper
+              skal være lukket, slik at heller ingen registreringer og
+              dokumenter kan føyes til.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.2.7
+            </entry>
+            <entry>
+              Det skal være umulig å avslutte en arkivdel i
+              overlappingsperiode dersom den fremdeles inneholder åpne
+              mapper.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.2.8
+            </entry>
+            <entry>
+              Det skal være mulig å få en oversikt over mapper som
+              fremdeles er åpne i en overlappingsperiode.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.2.9
+            </entry>
+            <entry>
+              Det skal være mulig å overføre åpne mapper fra en arkivdel
+              i en overlappingsperiode til arkivdelens arvtaker.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.2.10
+            </entry>
+            <entry>
+              Det bør være mulig å overføre åpne mapper fra en arkivdel
+              i en samlet, automatisert prosess.
+            </entry>
+            <entry>
+              V
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.2.11
+            </entry>
+            <entry>
+              Det skal være mulig å flytte avsluttede mapper til en
+              arkivdel som inneholder en avsluttet periode.
+            </entry>
+            <entry>
+              B
+            </entry>
+            <entry>
+              Obligatorisk for funksjon for periodisering
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.2.12
+            </entry>
+            <entry>
+              Dersom dokumentene i en arkivdel er ikke-elektroniske
+              (fysiske), skal det også være mulig å registrere
+              oppbevaringssted.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </sect1>
+  <sect1 id="id-070-funksjoner_for_periodiske_oppgaver-migrering-mellom-noark-løsninger">
+    <title>Migrering mellom Noark-løsninger</title>
+    <para>
+      Med <emphasis>migrering</emphasis> menes i denne sammenheng
+      flytting av komplette datasett fra en teknisk plattform til en
+      annen (ny versjon eller ny løsning), hvor dataene i så stor grad
+      som mulig skal være uendret etter at dataene er flyttet.
+    </para>
+    <para>
+      Informasjonen som er lagret i en Noark 5-løsning skal kunne
+      eksporteres - eller trekkes ut - til et systemuavhengig format.
+      Eksporten skal omfatte både arkivstrukturen, metadata og eventuelt
+      tilknyttede elektroniske dokumenter. Det skilles mellom to
+      varianter av eksport - migreringsuttrekk og arkivuttrekk.
+    </para>
+    <para>
+      Migreringsuttrekk skal kunne brukes for migrering av data ved
+      oppgradering til ny versjon av samme løsning, eller ved overgang
+      til en annen Noark-løsning. Det bør også være mulig å overføre
+      aktive arkivdeler fra ett system til et annet, f.eks. i
+      forbindelse med organisasjonsendringer. Dette betyr at en
+      Noark-løsning også må kunne importere data fra et
+      migreringsuttrekk.
+    </para>
+    <para>
+      Migrering av data innebærer at en Noark-løsning både må kunne
+      håndtere eksport og import. En slik migrering kan være aktuell ved
+      oppgradering til ny versjon. En bruker som går over til en ny
+      Noark-løsning fra en annen leverandør, skal kunne overføre sine
+      gamle data til den nye løsningen uten at det oppstår noen
+      problemer. Det bør også være mulig å importere deler av data fra
+      en løsning inn i en annen løsning som allerede er i bruk. Dette
+      kan være aktuelt ved omorganiseringer hvor for eksempel deler av
+      et organs ansvarsområde overføres til et annet organ.
+    </para>
+    <para>
+      Dersom en eller flere arkivdeler flyttes fra en løsning til en
+      annen vil det være behov for en avtale som regulerer det faktiske
+      innholdet i migreringsuttrekket. Dette med bakgrunn i eventuelle
+      forskjeller mellom løsningene.
+    </para>
+    <table>
+      <title>
+        Krav til migrering mellom Noark-løsninger
+      </title>
+      <tgroup cols="4">
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <thead>
+          <row>
+            <entry>
+              Krav nr:
+            </entry>
+            <entry>
+              Krav til migrering mellom Noark-løsninger
+            </entry>
+            <entry>
+              Type
+            </entry>
+            <entry>
+              Merknad
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              6.3.1
+            </entry>
+            <entry>
+              Det skal være mulig å eksportere alle metadata som er
+              definert i denne standarden med tilhørende dokumenter
+              basert på avleveringsformatet.
+            </entry>
+            <entry>
+              O
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.3.2
+            </entry>
+            <entry>
+              Det bør være mulig å importere alle metadata som er
+              definert i denne standarden med tilhørende dokumenter
+              basert på avleveringsformatet.
+            </entry>
+            <entry>
+              V
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.3.3
+            </entry>
+            <entry>
+              Det bør være mulig å eksportere deler av arkivstrukturen,
+              f.eks. en arkivdel eller en klasse.
+            </entry>
+            <entry>
+              V
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.3.4
+            </entry>
+            <entry>
+              Det bør være mulig å importere deler av arkivstrukturen,
+              f.eks. en arkivdel eller en klasse.
+            </entry>
+            <entry>
+              V
+            </entry>
+            <entry>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.3.5
+            </entry>
+            <entry>
+              Det skal produseres en logg over alle metadataelementer og
+              dokumenter som ikke kan importeres og over andre feil som
+              eventuelt oppstår under importen.
+            </entry>
+            <entry>
+              B
+            </entry>
+            <entry>
+              Obligatorisk ved import
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.3.6
+            </entry>
+            <entry>
+              Når det foretas en import skal det genereres en loggfil
+              med informasjon om hvordan importen har gått, f.eks.
+              antall metadataelementer og dokumenter. Loggfilen skal
+              også inneholde en liste over alle metadataelementer og
+              dokumenter som det ikke har vært mulig å importere.
+            </entry>
+            <entry>
+              B
+            </entry>
+            <entry>
+              Obligatorisk ved import
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </sect1>
+  <sect1 id="id-070-funksjoner_for_periodiske_oppgaver-avlevering">
+    <title>Avlevering</title>
+    <para>
+      En <emphasis>avlevering</emphasis> vil si at arkivmateriale
+      overføres fra arkivskaper til arkivdepot. Offentlige organer skal
+      avlevere arkivmateriale som det er fattet bevaringsvedtak for.
+      Hovedregelen er at arkivmaterialet skal avleveres 25 år etter at
+      det er produsert, fordi en da regner med at det har gått ut av
+      administrativt bruk. En avlevering innebærer at råderetten for
+      materialet overføres fra arkivskaper til arkivdepot. Etter
+      avlevering er det arkivdepotet som må vedlikeholde og
+      tilgjengeliggjøre materialet.
+    </para>
+    <para>
+      Når papirarkiver avleveres flyttes arkivmaterialet fra
+      arkivskapers lokaler til arkivdepot. Elektronisk arkivmateriale
+      leveres som et <emphasis>arkivuttrekk</emphasis> som består av
+      dokumentfiler med tilhørende metadata. Arkivskaper har ansvaret
+      for å produsere arkivuttrekket og sende en kopi til arkivdepotet.
+      I tillegg til arkivuttrekket skal det også følge med en overordnet
+      dokumentasjon av uttrekket som følger Riksarkivarens
+      ADDML-standard. Til sammen utgjør dette en arkivversjon. En
+      nærmere beskrivelse av innholdet i en arkivversjon følger
+      nedenfor.
+    </para>
+    <para>
+      I de fleste tilfeller vil elektronisk arkivmateriale først bli
+      overført som <emphasis>deponering</emphasis>, og senere skifte
+      status til avlevering når det er 25 år gammelt. Ordningen med
+      deponering forut for avlevering er etablert for å sikre at
+      arkivuttrekk blir fremstilt mens løsningene fortsatt er i operativ
+      drift. Slike tidlige overføringer av materiale formaliseres ikke
+      som avleveringer fordi arkivskaperen fortsatt må ha ansvaret for å
+      betjene seg selv og egne brukere. Arkivdepotet kan normalt ikke
+      overta ansvaret for betjeningen av aktive løsninger. Arkivskaper
+      kan altså ikke slette materiale det er foretatt deponering fra før
+      det har fått status som avlevert.
+    </para>
+    <para>
+      Statusskiftet fra deponering til avlevering vil normalt skje når
+      den yngste delen av materialet er 25 år gammelt. Dersom
+      arkivuttrekket består av årgangsfiler, kan dette skiftet skje
+      suksessivt for hver enkelt årgang ved 25 års alder når forholdene
+      ligger praktisk til rette for dette.
+    </para>
+    <para>
+      Ved overgangen fra deponering til avlevering kan det være tale om
+      å fremstille og overføre en ny arkivversjon. Dette vil være
+      aktuelt dersom informasjonen i produksjonssystemet er blitt
+      korrigert etter deponeringen, for eksempel ved at kassasjoner er
+      gjennomført eller at det er foretatt endringer i skjermingen av
+      metadata eller dokumenter. Fremstillingen av et arkivuttrekk
+      forutsettes imidlertid å være organisert slik at det bare omfatter
+      avsluttede deler eller perioder fra vedkommende løsning.
+    </para>
+    <para>
+      I dette kapitlet vil det ikke bli skilt mellom deponering og
+      avlevering. Når vi her snakker om begrepet avlevering, vil det
+      omfatte både deponering og avlevering.
+    </para>
+    <sect2 id="id-070-funksjoner_for_periodiske_oppgaver-overordnede-krav-riksarkivarens-bestemmelser-og-oais">
+      <title>Overordnede krav: Riksarkivarens bestemmelser og
+      OAIS</title>
+      <para>
+        <emphasis>Forskrift til arkivloven av 17. desember 2017 om
+        utfyllende tekniske og arkivfaglige bestemmelser om behandling
+        av offentlige arkiver (riksarkivarens forskrift), kapittel
+        5</emphasis> inneholder overordnede krav til elektronisk
+        arkivmateriale som skal avleveres eller overføres som depositum
+        til Arkivverket.
+      </para>
+      <para>
+        En deponering/avlevering fra Noark 5 skal bestå av
+        arkivdokumenter, journalrapporter, metadata til arkivdokumentene
+        og endringslogg. Dette er altså data som eksporteres fra
+        produksjonssystemet, og samlebetegnelsen på dette er et
+        <emphasis>arkivuttrekk</emphasis>. I tillegg skal avleveringen
+        inneholde dokumentasjon av selve arkivuttrekket. Denne
+        dokumentasjonen utgjøres av en fil som heter
+        <emphasis role="strong">arkivuttrekk.xml</emphasis>, samt av
+        XML-skjemaer til alle XML-filene i uttrekket. Riksarkivarens
+        bestemmelser bruker begrepet <emphasis>arkivversjon</emphasis>
+        for en samlet leveranse som består både av arkivuttrekk og
+        dokumentasjon.
+      </para>
+      <para>
+        Arkivdokumentene skal avleveres i gyldige
+        <emphasis>arkivformater</emphasis>. Dette er formater som er
+        fastsatt i § 5-17 i riksarkivarens forskrift.
+      </para>
+      <para>
+        Resten av innholdet i arkivversjonen utgjøres av strukturert
+        informasjon, og skal avleveres i XML-format.
+      </para>
+      <para>
+        I tilegg til selve avleveringspakken skal det også separat
+        overføres en fil kalt
+        <emphasis role="strong">info.xml,</emphasis> som inneholder
+        overordnet informasjon om deponeringen eller avleveringen, jf. §
+        5-31 i riksarkivarens forskrift.
+      </para>
+      <para>
+        ISO 14721 OAIS (Open Archival Information System) er en
+        internasjonal standard for langtidslagring av digitale objekter.
+        OAIS er ingen implementeringsmodell, men en referanse- og
+        begrepsmodell. Standarden beskriver hvilke funksjoner som må
+        finnes i et elektronisk arkiv, og hvordan en skal organisere
+        informasjon som avleveres, langtidslagres og tilgjengeliggjøres
+        for publikum. Sentralt i OAIS er at alle objekter som skal
+        bevares, må utgjøre selvstendige og selvforklarende enheter.
+        Disse enhetene kalles <emphasis>informasjonspakker</emphasis>
+        (Information Packages). Et arkivuttrekk skal inngå i en
+        hovedtype av slike pakker, nemlig en avleveringspakke eller SIP
+        (Submission Information Package). OAIS definerer også andre
+        typer pakker. For arkivering i depot beskrives en AIP (Archival
+        Information Package) og for tilgjengeliggjøring defineres en DIP
+        (Disseminatin Information Package). Merk altså at en
+        arkivversjon slik dette begrepet brukes i Riksarkivarens
+        bestemmelser, tilsvarer OAIS-standardens avleveringspakke (SIP).
+        I resten av dette kapitlet vil derfor begrepet
+        <emphasis>avleveringspakke</emphasis> bli brukt.
+      </para>
+      <para>
+        En avleveringspakke består av to hovedtyper informasjon,
+        <emphasis>innholdsinformasjon</emphasis> (Content Information)
+        og <emphasis>bevaringsbeskrivende informasjon</emphasis>
+        (Preservation Description Information). Innholdsinformasjonen i
+        en Noark 5 avleveringspakke er arkivdokumenter og
+        journalrapporter. Det er dokumentene og journalene - og det
+        budskapet innholdet i disse formidler - som er gjenstand for
+        bevaring.
+      </para>
+      <para>
+        Den bevaringsbeskrivende informasjonen utgjøres av de
+        metadataene og loggene som er beskrevet i Noark 5. En viktig
+        oppgave for den bevaringsbeskrivende informasjonen er å
+        opprettholde integriteten og autentisiteten til selve innholdet.
+        I tillegg trengs det også en del av den bevaringsbeskrivende
+        informasjonen består av en tredje type informasjon, nemlig
+        <emphasis>representasjonsinformasjon</emphasis> (Representation
+        Information). Dette kalles også for tekniske metadata, og er
+        nødvendig for at vi skal kunne tolke, forstå og bruke
+        elektronisk informasjon. I en Noark 5 avleveringspakke tilhører
+        XML-skjemaene denne typen.
+      </para>
+      <para>
+        OAIS grupperer den bevaringsbeskrivende informasjonen - dvs.
+        metadataene - i fem typer:
+      </para>
+      <orderedlist numeration="arabic" spacing="compact">
+        <listitem>
+          <para>
+            <emphasis>Referanseinformasjon</emphasis> (Reference
+            Information). Alle dokumenter i avleveringspakkenen må ha en
+            entydig identifikasjon. Grupper av metadata (arkivenheter)
+            må også kunne identifiseres entydig gjennom sin systemID.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis>Proveniensinformasjon</emphasis> (Provenance
+            Information). Dokumentasjon av arkivdokumentenes
+            opprinnelse, f.eks. hvem som er arkivskaper.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis>Kontekstinformasjon</emphasis> (Context
+            Information). De fleste metadataene i avleveringspakkeen
+            dokumenterer omgivelsene rundt arkivdokumentene. Dokumentene
+            må knyttes til de aktiviteter og prosesser som har skapt
+            dem. Det må informeres om <emphasis>når</emphasis>
+            dokumentene ble skapt, <emphasis>hvem</emphasis> som skapte
+            dem og <emphasis>hva</emphasis> de inneholder. Og ikke minst
+            er det viktig å knytte dokumentene til andre dokumenter de
+            hører sammen med, f.eks. hvilke dokumenter som inngår i en
+            felles mappe eller hvilke dokumenter som har oppstått ved
+            utførelsen av samme type aktivitet.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis>Integritets- og autentisitetsbevarende
+            informasjon</emphasis> (Fixity Information). Både dokumenter
+            og filer med metadata må påføres en sjekksum som gir garanti
+            for at integriteten og autentisiteten opprettholdes, dvs. at
+            dokumentene er det de utgir seg for å være, og at innholdet
+            i dokumenter og metadata ikke blir endret etter at de er
+            overført til arkivdepotet.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis>Tilgangsinformasjon</emphasis> (Access Rights
+            Information). Enkelte dokumenter skal være unntatt
+            offentlighet eller klausulert for innsyn av andre grunner,
+            også etter at de er overført til depotet.
+          </para>
+        </listitem>
+      </orderedlist>
+      <table>
+        <title>
+          Overordnede krav til arkivuttrekk
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Overordnede krav til arkivuttrekk
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                6.4.1
+              </entry>
+              <entry>
+                Det skal være mulig å produsere arkivuttrekk bestående
+                av arkivdokumenter, journalrapporter, metadata,
+                endringslogg og XML-skjemaer.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.2
+              </entry>
+              <entry>
+                Arkivuttrekket skal utgjøre en avleveringspakke
+                (Submission Information Packages), slik dette er
+                definert i ISO 14571 OAIS.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.3
+              </entry>
+              <entry>
+                Formatet på metadata, endringslogg og journalrapporter i
+                arkivuttrekket skal være XML (XML 1.0).
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.4
+              </entry>
+              <entry>
+                Tegnsettet til alle XML-filer skal være UTF-8.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.5
+              </entry>
+              <entry>
+                Metadataelementer som ikke har verdi, skal utelates fra
+                arkivuttrekket. I uttrekket skal det med andre ord ikke
+                forekomme tomme elementer med kun start- og slutt-tagg.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.6
+              </entry>
+              <entry>
+                Alfanumeriske verdier i arkivuttrekket skal
+                representeres vha. XML Schema 1.0 -datatypen string.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.7
+              </entry>
+              <entry>
+                Datoer uten klokkeslett i arkivuttrekket skal
+                representeres vha. XML Schema 1.0 -datatypen date.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.8
+              </entry>
+              <entry>
+                Datoer med klokkeslett i arkivuttrekket skal
+                representeres vha. XML Schema 1.0 -datatypen dateTime.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.9
+              </entry>
+              <entry>
+                Heltall i arkivuttrekket skal representeres vha. XML
+                Schema 1.0-datatypen integer.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.10
+              </entry>
+              <entry>
+                Format på arkivdokumenter i arkivuttrekket skal være et
+                av arkivformatene definert i § 5-17 i
+                <emphasis>riksarkivarens forskrift.</emphasis>
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.11
+              </entry>
+              <entry>
+                Organiseringen av filene i arkivuttrekket skal følge
+                <emphasis>riksarkivarens forskrift kapittel
+                5,</emphasis> så langt disse er relevante.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-070-funksjoner_for_periodiske_oppgaver-noark-5-avleveringspakke">
+      <title>Noark 5 avleveringspakke</title>
+      <para>
+        Alle arkivuttrekk skal overføres til depot som del av en
+        arkivversjon eller avleveringspakke. En avleveringspakke er en
+        selvdokumenterende enhet, som inneholder arkivdokumenter,
+        journalrapporter, metadata og endringslogg for en avgrenset
+        tidsperiode. Dersom det kun er fysiske arkivdokumenter som skal
+        avleveres, vil ikke avleveringspakken inneholde arkivdokumenter.
+        Ved avlevering fra fagsystemer som ikke inneholder
+        korrespondansedokumenter, vil ikke journalrapporter inngå i
+        pakken.
+      </para>
+      <para>
+        En enkelt avlevering skal omfatte innholdet i en
+        <emphasis>arkivperiode</emphasis>, og kan bestå av en eller
+        flere avsluttede arkivdeler. (En periode bestående av både
+        emneordnet og objektordnet arkivmateriale, vil typisk utgjøre to
+        arkivdeler.) Det er bare mapper som er blitt avsluttet i løpet
+        av perioden som skal avleveres, sammen med alle tilhørende
+        registreringer og arkivdokumenter.
+      </para>
+      <para>
+        Innholdet i endringsloggen skal bare referere til metadata og
+        arkivdokumenter i den pakken hvor loggen inngår.
+        Journalrapportene skal dekke samme tidsrom som resten av
+        innholdet i avleveringspakken.
+      </para>
+      <para>
+        Fra enkelte fagsystemer kan det være aktuelt å produsere uttrekk
+        basert på en startdato og en sluttdato, uten hensyn til om
+        mappene er avsluttet eller hvilken arkivdel mappene tilhører.
+        Aktuelt seleksjonskriterium kan da f.eks. være journaldato.
+      </para>
+      <para>
+        Det er ikke ønskelig at data &quot;vaskes&quot; før uttrekket
+        produseres, f.eks. ved at brukere med administrasjonsrettigheter
+        går direkte inn i databasen og gjør endringer. Det kan lett føre
+        til at nødvendige data går tapt, og det kan også stilles
+        spørsmål ved autentisiteten til slike uttrekk. Dersom det f.eks.
+        finnes mapper eller registreringer som er merket med
+        &quot;Utgår&quot; på grunn av feilregistrering skal de likevel
+        være med i uttrekket. Dokumentfiler som er knyttet til
+        registreringen som utgår skal ikke være med i arkivuttrekket.
+      </para>
+      <para>
+        Hele klassifikasjonsstrukturen skal tas med i uttrekket, også
+        klasser som er &quot;ubrukte&quot; fordi ingen mapper er
+        tilknyttet klassen (arkivkoden). Klassifikasjonssystemet gir
+        nyttig informasjon om arkivskaperens funksjoner og aktiviteter
+        (arbeidsområder), og tilfører således viktig kontekstinformasjon
+        til pakken. Unntak kan gjøres dersom klassifikasjonssystemet er
+        svært omfattende, f.eks. ved objektbasert klassifikasjon. Dersom
+        det er brukt sekundær klassifikasjon, skal også det sekundære
+        klassifikasjonssystemet inngå. Men klassene i dette systemet
+        skal ikke inneholde noen mapper. Alle mapper skal ligge under
+        sin primære klassifikasjon, men kan samtidig ha referanse til en
+        eller flere sekundære klasser.
+      </para>
+      <table>
+        <title>
+          Krav til innholdet i en avleveringspakke
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til innholdet i en avleveringspakke
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                6.4.12
+              </entry>
+              <entry>
+                Et arkivuttrekk skal omfatte en avsluttet arkivperiode,
+                og bestå av innholdet i en eller flere avsluttede
+                arkivdeler.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.13
+              </entry>
+              <entry>
+                Hele klassifikasjonsstrukturen, dvs. alle klasser i et
+                klassifikasjonssystem, skal inngå i hver enkelt
+                avleveringspakke. Sekundære klassifikasjonssystemer kan
+                også være med, men klassene her skal ikke inneholde
+                mapper.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.14
+              </entry>
+              <entry>
+                Det bør være mulig å produsere et arkivuttrekk på
+                grunnlag av en startdato og en sluttdato, uavhengig av
+                tilhørighet til arkivdel og om mappene er avsluttet
+                eller ikke.
+              </entry>
+              <entry>
+                V
+              </entry>
+              <entry>
+                Kravet gjelder særlig ved migrering.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.15
+              </entry>
+              <entry>
+                <para>
+                  Filene i en avleveringspakke skal ligge under en
+                  felles overordnet filkatalog kalt
+                  <emphasis role="strong">avleveringspakke.</emphasis>
+                </para>
+                <para>
+                  Avleveringspakken skal inneholde følgende filer:
+                </para>
+                <itemizedlist spacing="compact">
+                  <listitem>
+                    <para>
+                      <emphasis role="strong">arkivuttrekk.xml</emphasis>
+                      (dokumentasjon av innholdet i arkivuttrekket)
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      <emphasis role="strong">arkivstruktur.xml</emphasis>
+                      (metadata om dokumentene)
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      <emphasis role="strong">endringslogg.xml</emphasis>
+                      (logging av endrede metadata)
+                    </para>
+                  </listitem>
+                </itemizedlist>
+                <para>
+                  Dersom avleveringspakken inneholder arkivuttrekk med
+                  journalføringspliktig informasjon, skal den i tillegg
+                  inneholde følgende filer:
+                </para>
+                <itemizedlist spacing="compact">
+                  <listitem>
+                    <para>
+                      <emphasis role="strong">loependeJournal.xml</emphasis>
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      <emphasis role="strong">offentligJournal.xml</emphasis>
+                    </para>
+                  </listitem>
+                </itemizedlist>
+                <para>
+                  XML-skjemaene til alle XML-filer i avleveringspakken
+                  skal også være inkludert. For virksomhetsspesifikke
+                  metadata skal det medfølge egne XML-skjemaer.
+                </para>
+                <para>
+                  Dokumentene skal ligge i en underkatalog kalt
+                  <emphasis role="strong">DOKUMENT</emphasis>. Denne
+                  katalogen kan struktureres i nye underkataloger etter
+                  fritt valg. Dokumentfilene endelse skal angi
+                  arkivformat: <emphasis role="strong">pdf</emphasis>,
+                  <emphasis role="strong">tif</emphasis>,
+                  <emphasis role="strong">txt</emphasis> osv.
+                </para>
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-070-funksjoner_for_periodiske_oppgaver-xml-skjemaer">
+      <title>XML-skjemaer</title>
+      <para>
+        Hver XML-fil som inngår i arkivuttrekket, skal ha medfølgende
+        skjema som definerer struktur og innhold. Disse skjemaene skal
+        følge XML skjema-standarden XML Schema 1.0<footnote>
+          <para>
+            XML Schema 1.0 er en W3C standard
+            (<ulink url="http://www.w3.org/">http://www.w3.org/</ulink>).
+          </para>
+        </footnote> og benytte tegnsettet UTF-8.
+      </para>
+      <para>
+        For de XML-filene som er en obligatorisk del av arkivuttrekket,
+        vil de nødvendige XML-skjemaene følge som vedlegg til Noark
+        5-standarden. Det er disse skjemaene som skal benyttes i
+        avleveringspakken og de vil være tilgjengelige fra Arkivverkets
+        hjemmesider for nedlasting. Varianter av de offisielle
+        XML-skjemaene skal ikke forekomme som en del av pakken.
+      </para>
+      <para>
+        Tabellen under angir hvilke XML-filer som hører sammen med
+        hvilke XML-skjemaer.
+      </para>
+      <table>
+        <title>
+          Xml-filer og tilhørende xml-skjemaer
+        </title>
+        <tgroup cols="2">
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                <emphasis role="strong">XML-fil</emphasis>
+              </entry>
+              <entry>
+                <emphasis role="strong">XML-skjema</emphasis>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                arkivuttrekk.xml
+              </entry>
+              <entry>
+                addml.xsd
+              </entry>
+            </row>
+            <row>
+              <entry>
+                arkivstruktur.xml
+              </entry>
+              <entry>
+                arkivstruktur.xsd
+              </entry>
+            </row>
+            <row>
+              <entry>
+              </entry>
+              <entry>
+                metadatakatalog.xsd
+              </entry>
+            </row>
+            <row>
+              <entry>
+                endringslogg.xml
+              </entry>
+              <entry>
+                endringslogg.xsd
+              </entry>
+            </row>
+            <row>
+              <entry>
+              </entry>
+              <entry>
+                metadatakatalog.xsd
+              </entry>
+            </row>
+            <row>
+              <entry>
+                loependeJournal.xml
+              </entry>
+              <entry>
+                loependeJournal.xsd
+              </entry>
+            </row>
+            <row>
+              <entry>
+              </entry>
+              <entry>
+                metadatakatalog.xsd
+              </entry>
+            </row>
+            <row>
+              <entry>
+                offentligJournal.xml
+              </entry>
+              <entry>
+                offentligJournal.xsd
+              </entry>
+            </row>
+            <row>
+              <entry>
+              </entry>
+              <entry>
+                metadatakatalog.xsd
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para>
+        I tabellen angir skjemanavnet hvilket skjema som er
+        hovedskjemaet til den enkelte XML-fil. Metadatakatalog-skjemaet
+        <emphasis role="strong">metadatakatalog.xsd</emphasis>
+        forekommer flere ganger i tabellen. Årsaken er at skjemaet
+        inngår i hovedskjemaet til flere XML-filer.
+      </para>
+      <para>
+        Merk at navnene slik de er brukt i tabellen, er obligatoriske,
+        også når det gjelder bruken av små bokstaver.
+      </para>
+      <table>
+        <title>
+          Krav til XML-skjemaene
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til XML-skjemaene
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                6.4.16
+              </entry>
+              <entry>
+                Alle XML-filer som inngår i en avleveringspakke, skal
+                være definert vha. medfølgende XML-skjema.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.17
+              </entry>
+              <entry>
+                XML-skjemaene skal følge XML skjema-standarden XML
+                Schema 1.0
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.18
+              </entry>
+              <entry>
+                For arkivuttrekk.xml, arkivstruktur.xml,
+                endringslogg.xml, loependeJournal.xml og
+                offentligJournal.xml skal kun de tilhørende skjemaene
+                som er tilgjengelige fra Arkivverket, benyttes i
+                avleveringspakken. Varianter av skjemaene skal ikke
+                benyttes.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.19
+              </entry>
+              <entry>
+                Navngivingen i skjemaene slik det er vist i tabellen
+                over XML-filer og tilhørende skjemaer, er obligatorisk.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-070-funksjoner_for_periodiske_oppgaver-dokumentasjon-av-innholdet-i-avleveringspakken-arkivuttrekk.xml">
+      <title>Dokumentasjon av innholdet i avleveringspakken:
+      <emphasis>arkivuttrekk.xml</emphasis></title>
+      <para>
+        Et arkivuttrekk skal inneholde en fil med navn
+        <emphasis role="strong">arkivuttrekk.xml</emphasis> som
+        beskriver arkivuttrekket og filene i det. Filen
+        <emphasis role="strong">arkivuttrekk.xml</emphasis> følger
+        Riksarkivarens standard for beskrivelse av arkivuttrekk -
+        Archival Data Description Markup Language (ADDML)<footnote>
+          <para>
+            Per 1. mars 2011 er det versjon 8.2 av ADDML som er
+            gjeldende.
+          </para>
+        </footnote>, og er det som i ADDML-terminologi kalles en
+        datasettbeskrivelse.
+      </para>
+      <para>
+        ADDML finnes som et XML-skjema (addml.xsd) hvor alle elementer
+        har engelske navn. Bruken av engelske navn har blitt valgt for å
+        gjøre det mulig for andre enn norske arkivdepoter å ta i bruk
+        standarden.
+      </para>
+      <para>
+        I noen deler av ADDML er det mulig å definere tilleggselementer.
+        Slik kan bruken av standarden til en viss grad tilpasses behovet
+        til de som velger å bruke ADDML. Riksarkivaren har definert noen
+        slike tilleggselementer som sammen med de faste elementene og
+        regler for bruk, utgjør Riksarkivarens ADDML-krav til
+        beskrivelse av arkivuttrekk generelt. Disse tilleggselementene
+        har også engelske navn.
+      </para>
+      <para>
+        Siden 2009 har Arkivverket hatt en samarbeidsavtale med
+        Riksarkivet i Sverige om forvaltningen av ADDML. En av
+        hovedårsakene til at engelske navn er valgt for de nevnte
+        tilleggselementene, er at samarbeidsavtalen med det svenske
+        Riksarkivet åpner for at tilleggselementer kan bli faste
+        elementer i fremtidige revisjoner av ADDML, hvis partene i
+        avtalen blir enige om det.
+      </para>
+      <para>
+        For arkivuttrekk fra Noark 5-løsninger er det laget en mal for
+        arkivuttrekk.xml. Noen av elementene i Noark 5-malen er
+        generelle arkivuttrekkselementer, mens noen er spesielle for
+        Noark 5-uttrekk. De spesielle elementene er gitt norske navn for
+        å passe sammen med begreper i selve Noark 5-standarden.
+        Arkivuttrekk fra Noark 5-løsninger skal følge Riksarkivarens
+        Noark 5-mal.
+      </para>
+      <para>
+        Datasettbeskrivelsen arkivuttrekk.xml skal inneholde følgende
+        informasjon om et Noark 5-uttrekk:
+      </para>
+      <orderedlist numeration="arabic">
+        <listitem>
+          <para>
+            <emphasis role="strong">Arkivskapernavn</emphasis>
+          </para>
+          <para>
+            Kan være flere enn én
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis role="strong">Navn på
+            systemet/løsningen</emphasis>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis role="strong">Navn på arkivet</emphasis>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis role="strong">Start- og sluttdato for
+            arkivuttrekket</emphasis>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis role="strong">Hvilken type periodisering som er
+            utført i forrige periode og denne periode</emphasis>
+          </para>
+          <para>
+            Den som er ansvarlig for å produsere arkivuttrekket, skal
+            angi hva slags type periodisering som ble foretatt før det
+            ble produsert - enten skarpt periodeskille eller mykt skille
+            (med bruk av overlappingsperiode). Dette har betydning for
+            innholdet i uttrekket. En eventuell foregående periodisering
+            skal også dokumenteres.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis role="strong">Opplysning om det finnes skjermet
+            informasjon i uttrekket</emphasis>
+          </para>
+          <para>
+            Det skal angis om det finnes skjermet informasjon i
+            uttrekket. Dersom det er tilfelle, må alle nødvendige
+            metadata for skjerming følge med.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis role="strong">Opplysning om uttrekket omfatter
+            dokumenter som er kassert</emphasis>
+          </para>
+          <para>
+            Det skal angis om det er foretatt kassasjon av dokumenter.
+            Dersom kassasjonen er utført før uttrekket produseres, vil
+            arkivdokumentene ikke være med. Men dreier det seg om
+            kassasjon i et sakarkiv, skal metadata for de kasserte
+            dokumentene likevel inngå i uttrekket.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis role="strong">Opplysning om uttrekket inneholder
+            dokumenter som skal kasseres på et senere
+            tidspunkt</emphasis>
+          </para>
+          <para>
+            Det skal anmerkes om det finnes dokumenter i uttrekket som
+            skal kasseres på et senere tidspunkt. I slike tilfeller kan
+            det tenkes at arkivdepotet selv utfører kassasjonen, men det
+            kan også være aktuelt med et nytt uttrekk når kassasjon er
+            utført hos arkivskaper.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis role="strong">Opplysning om det finnes
+            virksomhetsspesifikke metadata i
+            arkivstruktur.xml</emphasis>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis role="strong">Antall mapper i
+            arkivstruktur.xml</emphasis>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis role="strong">Antall registreringer i
+            arkivstruktur.xml, loependeJournal.xml og
+            offentligJournal.xml</emphasis>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis role="strong">Antall dokumentfiler i
+            uttrekket</emphasis>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis role="strong">Sjekksummer for alle XML-filer og
+            XML-skjemaer i arkivuttrekket</emphasis>
+          </para>
+          <para>
+            Unntatt er arkivuttrekk.xml og addml.xsd
+          </para>
+        </listitem>
+      </orderedlist>
+      <table>
+        <title>
+          Krav til opplysninger om avleveringen
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til opplysninger om avleveringen
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                6.4.20
+              </entry>
+              <entry>
+                Filene arkivuttrekk.xml og addml.xsd skal være med som
+                en del av arkivuttrekket.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved produksjon av arkivuttrekk
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.21
+              </entry>
+              <entry>
+                I arkivuttrekk fra Noark 5-løsninger skal struktur og
+                innhold i arkivuttrekk.xml være i henhold til
+                Riksarkivarens Noark 5-mal for arkivuttrekk.xml.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved produksjon av arkivuttrekk
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.22
+              </entry>
+              <entry>
+                <para>
+                  Følgende typer informasjon skal med i
+                  arkivuttrekk.xml:
+                </para>
+                <itemizedlist spacing="compact">
+                  <listitem>
+                    <para>
+                      Arkivskapernavn
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Navn på systemet/løsningen
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Navn på arkivet
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Start- og sluttdato for arkivuttrekket
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Hvilken type periodisering som er utført i forrige
+                      periode og denne periode
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Opplysning om det finnes skjermet informasjon i
+                      uttrekket
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Opplysning om uttrekket omfatter dokumenter som er
+                      kassert
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Opplysning om uttrekket inneholder dokumenter som
+                      skal kasseres på et senere tidspunkt
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Opplysning om det finnes virksomhetsspesifikke
+                      metadata i arkivstruktur.xml
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Antall mapper i arkivstruktur.xml
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Antall registreringer i arkivstruktur.xml,
+                      loependeJournal.xml og offentligJournal.xml
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Antall dokumentfiler i uttrekket
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Sjekksummer for alle XML-filer og XML-skjemaer i
+                      arkivuttrekket, unnttatt arkivuttrekk.xml og
+                      addml.xsd
+                    </para>
+                  </listitem>
+                </itemizedlist>
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved produksjon av arkivuttrekk
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.23
+              </entry>
+              <entry>
+                For uttrekk hvor arkivstruktur.xml inneholder
+                virksomhetsspesifikke metadata, skal informasjon om de
+                XML-skjemaene som definerer disse være med i
+                arkivuttrekk.xml. Denne informasjonen skal være i
+                strukturen under dataobjektet arkivstruktur på samme
+                måte som de øvrige skjemaene til arkivstruktur.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved produksjon av arkivuttrekk
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para>
+        <emphasis role="strong">Om malen</emphasis>
+      </para>
+      <para>
+        I Riksarkivarens Noark 5-mal for arkivuttrekk.xml er strukturen
+        i beskrivelsen av et Noark 5-uttrekk opprettet på forhånd. Selve
+        malen og XML-skjemaet for ADDML (addml.xsd) er tilgjengelige på
+        Arkivverkets nettsider.
+      </para>
+      <para>
+        De stedene hvor Noark 5-løsningen må angi verdier, er angitt ved
+        hjelp av hakeparenteser. Et eksempel på dette er ved angivelse
+        av arkivuttrekkets periode:
+      </para>
+      <programlisting language="XML">
+.
+.
+&lt;content&gt;
+  &lt;additionalElements&gt;
+    &lt;additionalElement name=&quot;archivalPeriod&quot;&gt;
+      &lt;properties&gt;
+        &lt;property name=&quot;startDate&quot;&gt;
+          &lt;value&gt;[ÅÅÅÅ-MM-DD]&lt;/value&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;endDate&quot;&gt;
+          &lt;value&gt;[ÅÅÅÅ-MM-DD]&lt;/value&gt;
+        &lt;/property&gt;
+      &lt;/properties&gt;
+    &lt;/additionalElement&gt;
+  &lt;/additionalElements&gt;
+&lt;/content&gt;
+.
+.
+</programlisting>
+      <para>
+        Her brukes et tilleggselement – archivalPeriod – til å omkapsle
+        informasjonen om start- og sluttdatoen til uttrekket. Start- og
+        sluttdatoen angis som egenskaper ved perioden, henholdsvis
+        startDate og endDate. Det er løsningens oppgave å bytte ut
+        [ÅÅÅÅ-MM-DD] med aktuell dato. Merk at parentesene ikke skal med
+        i den faktiske verdien.
+      </para>
+      <para>
+        Strukturen i malen er i hovedsak todelt – den første delen
+        inneholder overordnet informasjon om uttrekket som passer inn i
+        den generelle delen av datasettbeskrivelsen. Den andre delen
+        beskriver det som er Noark 5-spesifikt. Eksemplet over er tatt
+        fra den generelle delen - <emphasis>reference</emphasis>.
+      </para>
+      <para>
+        Det Noark 5-spesifikke er organisert i en struktur av
+        dataobjekter
+        (<emphasis>dataObjects</emphasis>/<emphasis>dataObject</emphasis>)
+        med tilhørende egenskaper
+        (<emphasis>properties</emphasis>/<emphasis>property</emphasis>).
+        Den første delen i denne dataobjektstrukturen inneholder
+        overordnet informasjon om uttrekk som ikke ble registrert i den
+        generelle delen. Den andre delen inneholder informasjon om de
+        filene som arkivuttrekket består av. Eksempler på typer
+        informasjon som er med om den enkelte fil, er sjekksummer og
+        kvantitative opplysninger.
+      </para>
+      <para>
+        Tabellen under viser påkrevde elementer i arkivuttrekk.xml og og
+        hvilket navn de er gitt i malen.
+      </para>
+      <table>
+        <title>
+          Påkrevde elementer i arkivuttrekk.xml
+        </title>
+        <tgroup cols="3">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                <emphasis role="strong">Navn i listen over påkrevde
+                typer informasjon</emphasis>
+              </entry>
+              <entry>
+                <emphasis role="strong">Navn i
+                arkivstruktur.xml</emphasis>
+              </entry>
+              <entry>
+                <emphasis role="strong">Kommentar/ plassering i
+                mal</emphasis>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                Arkivskapernavn
+              </entry>
+              <entry>
+                recordCreator
+              </entry>
+              <entry>
+                I generell del. Kan forekomme flere ganger.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                Navn på systemet/løsningen
+              </entry>
+              <entry>
+                systemName
+              </entry>
+              <entry>
+                I generell del
+              </entry>
+            </row>
+            <row>
+              <entry>
+                Navn på arkivet
+              </entry>
+              <entry>
+                archive
+              </entry>
+              <entry>
+                I generell del
+              </entry>
+            </row>
+            <row>
+              <entry>
+                Startdato for uttrekket
+              </entry>
+              <entry>
+                archivalPeriod - startDate
+              </entry>
+              <entry>
+                I generell del
+              </entry>
+            </row>
+            <row>
+              <entry>
+                Sluttdato for uttrekket
+              </entry>
+              <entry>
+                archivalPeriod - endDate
+              </entry>
+              <entry>
+                I generell del
+              </entry>
+            </row>
+            <row>
+              <entry>
+                Periodisering – forrige periode
+              </entry>
+              <entry>
+                periode - inngaaendeSkille
+              </entry>
+              <entry>
+                I Noark 5-del –additionalInfo
+              </entry>
+            </row>
+            <row>
+              <entry>
+                Periodisering – denne periode
+              </entry>
+              <entry>
+                periode - utgaaendeSkille
+              </entry>
+              <entry>
+                I Noark 5-del –additionalInfo
+              </entry>
+            </row>
+            <row>
+              <entry>
+                Opplysning om det finnes skjermet informasjon i
+                uttrekket
+              </entry>
+              <entry>
+                inneholderSkjermetInformasjon
+              </entry>
+              <entry>
+                I Noark 5-del –additionalInfo
+              </entry>
+            </row>
+            <row>
+              <entry>
+                Opplysning om uttrekket omfatter dokumenter som er
+                kassert
+              </entry>
+              <entry>
+                omfatterDokumenterSomErKassert
+              </entry>
+              <entry>
+                I Noark 5-del –additionalInfo
+              </entry>
+            </row>
+            <row>
+              <entry>
+                Opplysning om uttrekket inneholder dokumenter som skal
+                kasseres på et senere tidspunkt
+              </entry>
+              <entry>
+                inneholderDokumenterSomSkalKasseres
+              </entry>
+              <entry>
+                I Noark 5-del –additionalInfo
+              </entry>
+            </row>
+            <row>
+              <entry>
+                Opplysning om det finnes virksomhetsspesifikke metadata
+                i arkivstruktur.xml
+              </entry>
+              <entry>
+                inneholderVirksomhetsspesifikkeMetadata
+              </entry>
+              <entry>
+                I Noark 5-del – additionalInfo
+              </entry>
+            </row>
+            <row>
+              <entry>
+                Antall mapper i arkivstruktur.xml
+              </entry>
+              <entry>
+                numberOfOccurrences - mappe
+              </entry>
+              <entry>
+                I Noark 5-del -dataObject for arkivstruktur
+              </entry>
+            </row>
+            <row>
+              <entry>
+                Antall registreringer i arkivstruktur.xml,
+                loependeJournal.xml og offentligJournal.xml
+              </entry>
+              <entry>
+                numberOfOccurrences - registrering
+              </entry>
+              <entry>
+                I Noark 5-del -dataObject for arkivstruktur,
+                loependeJournal og offentligJournal
+              </entry>
+            </row>
+            <row>
+              <entry>
+                Antall dokumentfiler i uttrekket
+              </entry>
+              <entry>
+                antallDokumentfiler
+              </entry>
+              <entry>
+                I Noark 5-del – additionalInfo
+              </entry>
+            </row>
+            <row>
+              <entry>
+                Sjekksummer for alle XML-filer og XML-skjemaer i
+                arkivuttrekket
+              </entry>
+              <entry>
+                checksum
+              </entry>
+              <entry>
+                I Noark 5-del – dataObject – file for alle filer i
+                uttrekket, men kun i første forekomst av
+                metadatakatalog.xsd i beskrivelsen
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-070-funksjoner_for_periodiske_oppgaver-metadata-om-arkivdokumentene-arkivstruktur.xml">
+      <title>Metadata om arkivdokumentene:
+      <emphasis>arkivstruktur.xml</emphasis></title>
+      <para>
+        Metadata om de arkivdokumentene som inngår i avleveringspakken,
+        skal ligge samlet i én fil kalt
+        <emphasis role="strong">arkivstruktur.xml</emphasis>. Metadata
+        for alle arkivenheter, og for de objektene som kan inngå i disse
+        arkivenhetene, skal nøstes inn i hverandre slik at de utgjør en
+        samlet hierarkisk struktur. Alle metadataelementer som er merket
+        med &quot;A&quot; i kolonnen &quot;Avl.&quot; skal tas med i
+        uttrekket dersom de er tilordnet verdier i løsningen. Tomme
+        elementer skal altså ikke være med. Vedlegg 2 &quot;Metadata
+        gruppert på objekter&quot; gir en samlet oversikt over alle
+        definerte metadata i Noark 5.
+      </para>
+      <para>
+        I denne hierarkiske strukturen vil ikke alle grenene gå ned til
+        laveste nivå. Det vil finnes klasser som ikke inneholder mapper,
+        det vil finnes mapper uten registreringer (f.eks. dersom mappen
+        utgår fordi alle registreringer er flyttet over til en annen
+        mappe), det vil finnes registreringer uten dokumentbeskrivelse
+        (når arkivdokumentet er fysisk) og det vil finnes
+        dokumentbeskrivelser uten dokumentobjekt (når dokumentet er
+        kassert).
+      </para>
+      <para>
+        Dersom arkivdokumenter i et sakarkiv er kassert, skal metadata
+        for disse dokumentene likevel være med. Dette gjelder alle
+        metadata ned til dokumentbeskrivelse, men ikke dokumentobjekter.
+        På dokumentbeskrivelsen skal det logges at kassasjon er utført
+        (<emphasis>M630 kassertDato</emphasis> og <emphasis>M631
+        kassertAv</emphasis>).
+      </para>
+      <table>
+        <title>
+          Krav til metadata i arkivuttrekket
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til metadata i arkivuttrekket
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                6.4.24
+              </entry>
+              <entry>
+                En avleveringspakke skal inneholde en fil med metadata
+                for arkivdokumentene som inngår i pakken. Alle
+                metadataelementene skal være nøstet inn i en
+                sammenhengende, hierarkisk struktur.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.25
+              </entry>
+              <entry>
+                Alle metadataelementer som er merket med &quot;A&quot; i
+                kolonnen &quot;Avl.&quot; i vedlegget &quot;Metadata
+                gruppert på objekter&quot; skal være med i
+                arkivuttrekket, såfremt de er tilordnet verdier.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.26
+              </entry>
+              <entry>
+                Alle forekomster av arkivenheter i arkivstrukturen skal
+                være identifisert med en entydig identifikasjon. Denne
+                identifikasjonen skal være entydig for alle arkivuttrekk
+                som produseres av en arkivskaper.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.27
+              </entry>
+              <entry>
+                Metadata for arkivdokumenter som er kassert før
+                arkivuttrekket produseres, skal være med i uttrekket.
+                Disse metadataene skal omfatte alle arkivenheter ned til
+                dokumentbeskrivelse, og her skal det også ligge
+                logginformasjon om kassasjonen.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for sakarkiver.
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-070-funksjoner_for_periodiske_oppgaver-logging-av-endringer-i-metadata-endringslogg.xml">
+      <title>Logging av endringer i metadata:
+      <emphasis>endringslogg.xml</emphasis></title>
+      <para>
+        En del logginformasjon er obligatorisk, og skal derfor følge med
+        ved deponering/avlevering. Det er opp til hvert enkelt organ å
+        avgjøre hvor omfattende logging det er behov for utover det som
+        er obligatorisk. Obligatoriske logginger er kravsatt i egne
+        krav. Det skilles mellom to hovedtyper logging, nemlig
+        <emphasis>logging av hendelser</emphasis> og <emphasis>logging
+        av endringer.</emphasis>
+      </para>
+      <para>
+        Nedenfor følger en oversikt over de vanligste hendelsene som
+        skal logges, og hvilken arkivenhet loggingen omfatter:
+      </para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Opprettelse av arkivenheter (arkiv, arkivdel,
+            klassifikasjonssystem, klasse, mappe, registrering,
+            dokumentbeskrivelse, dokumentobjekt)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Avslutning av arkivenheter (arkiv, arkivdel,
+            klassifikasjonssystem, klasse og mappe)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Arkivering av et dokument (registrering)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Avskrivning av et dokument (journalpost)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Dokumentflyt (journalpost)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Endring i skjerming
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Påføring av merknader (mappe, registrering,
+            dokumentbeskrivelse)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Verifisering av elektronisk signatur (journalpost,
+            dokumentbeskrivelse, dokumentobjekt)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Kassasjon av et dokument (dokumentbeskrivelse)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Sletting av uaktuelle versjoner (dokumentbeskrivelse)
+          </para>
+        </listitem>
+      </itemizedlist>
+      <para>
+        De obligatoriske hendelsene som skal logges, er definert som
+        egne metadataelementer (fra M600 til M659), og inngår derfor i
+        filen <emphasis role="strong">arkivstruktur.xml</emphasis>
+        sammen med øvrige metadata.
+      </para>
+      <para>
+        Det er ikke meningen at alle loggede endringer av
+        metadataverdier skal avleveres. Det er bare i de tilfeller at
+        endringen har viktig kontekstuell betydning, at slik
+        logginformasjon skal være med. Slike endringer kan ha
+        innvirkning på dokumentenes autentisitet, og det er derfor
+        avgjørende at de blir avlevert sammen med andre metadata om
+        dokumentene. De kan også synliggjøre endringer i
+        saksbehandlingsprosesser, og vil ikke minst kunne ha verdi i
+        forhold til framtidig tilgjengeliggjøring. Eksempler på slike
+        endringer er:
+      </para>
+      <orderedlist numeration="arabic" spacing="compact">
+        <listitem>
+          <para>
+            Omklassifikasjon av en mappe
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Flytting av en registrering fra en mappe til en annen mappe
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Endring av saksansvarlig
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Endring av saksbehandler
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Reversering av statusverdier
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Endringer av metadata etter at et dokument er arkivert
+          </para>
+        </listitem>
+      </orderedlist>
+      <para>
+        Metadata om endringer skal ikke grupperes inn i de tilhørende
+        arkivenhetene, men avleveres som en egen fil kalt
+        <emphasis role="strong">endringslogg.xml</emphasis>. Følgende
+        informasjon skal logges:
+      </para>
+      <orderedlist numeration="arabic" spacing="compact">
+        <listitem>
+          <para>
+            Referanse til en entydig identifikasjon for den arkivenheten
+            som inneholder metadataelementet som er endret
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Navn på metadataelementet som er endret
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Dato og klokkeslett for når endringen ble foretatt
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Navn på den som foretok endringen
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Den opprinnelige verdien slik den var før endringen ble
+            gjort
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Ny verdi etter at endringen er utført
+          </para>
+        </listitem>
+      </orderedlist>
+      <para>
+        Endringsloggen skal bare vise til arkivenheter som befinner seg
+        i samme avleveringspakke, dvs. til identifikasjoner som er
+        representert i filen arkivstruktur.xml i samme pakken. Hvilke
+        metadata det skal logges endringer for, og når logging av disse
+        endringene skal utføres, er beskrevet i et eget vedlegg 3:
+        &quot;Oversikt over metadata hvor det skal logges at det gjøres
+        endringer i innholdet &quot;.
+      </para>
+      <table>
+        <title>
+          Krav til Endringslogg
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til <emphasis>Endringslogg</emphasis>
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                6.4.28
+              </entry>
+              <entry>
+                En avleveringspakke skal inneholde en endringslogg for
+                metadata som har fått en ny verdi. Hvilke metadata dette
+                gjelder, og når logging av disse endringene skal
+                utføres, går fram av vedlegg 3 &quot;Oversikt over
+                metadata hvor det skal logges at det gjøres endringer i
+                innholdet.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering til arkivdepot
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-070-funksjoner_for_periodiske_oppgaver-journalrapporter-loependejournal.xml-og-offentligjournal.xml">
+      <title>Journalrapporter: <emphasis>loependeJournal.xml</emphasis>
+      og <emphasis>offentligJournal.xml</emphasis></title>
+      <para>
+        Både en <emphasis>løpende journal</emphasis> og en
+        <emphasis>offentlig journal</emphasis> skal avleveres som to
+        forskjellige filer med navn
+        <emphasis role="strong">loependeJournal.xml</emphasis> og
+        <emphasis role="strong">offentligJournal.xml</emphasis>. Begge
+        disse journalene skal inneholde de samme journalpostene, men i
+        offentlig journal er opplysninger som skal skjermes erstattet
+        med ****** (asterisker). Det kan være aktuelt å skjerme
+        saksmappe- og journalposttittel (hele eller deler av den), navn
+        på avsender/mottaker og eventuelt klasseidentifikasjonen
+        (arkivkoden) og/eller klassetittelen (forklaringen på
+        arkivkoden) dersom det f.eks. dreier seg om personidentifikasjon
+        og/eller et personnavn. Det er bare fra sakarkiver og
+        fagsystemer med korrespondansedokumenter at det skal avleveres
+        journalrapporter. Dersom ingen informasjon i uttrekket er
+        skjermet, et det tilstrekkelig med løpende journal.
+      </para>
+      <para>
+        I norsk arkivteori betraktes journalen som et arkivdokument,
+        ikke som rene metadata. En av grunnene til at journalen også
+        skal avleveres, er at den viser rekkefølgen i registreringen av
+        journalpostene. Dessuten kan journalen være et enklere
+        alternativ å publisere for arkivdepotene enn de samlede metadata
+        i filen <emphasis role="strong">arkivstruktur.xml</emphasis>.
+        Men journalen inneholder bare et begrenset utvalg metadata, og
+        kan på ingen måte erstatte innholdet i arkivstruktur.xml.
+      </para>
+      <para>
+        Journalrapportene skal være i XML-format, og skal inneholde et
+        &quot;journalhode&quot; med overordnet informasjon om
+        utskriftene. Seleksjonskriterium skal være
+        <emphasis>journaldato,</emphasis> med eventuelt andre kriterier
+        i tillegg. Seleksjonskriteriene skal oppgis i
+        &quot;journalhodet&quot;. Ved bruk av mykt periodeskille, vil
+        journalen vanligvis inneholde journalposter som tilhører flere
+        arkivdeler. De enkelte &quot;journalinnføringer&quot; skal være
+        sortert på journalpostens løpenummer (<emphasis>journalår og
+        sekvensnummer).</emphasis> Det er bare registreringer av typen
+        <emphasis>journalpost</emphasis> som skal være med i journalen.
+      </para>
+      <para>
+        I en avleveringspakke skal journalen normalt dekke en
+        <emphasis>arkivperiode</emphasis>, dvs. den perioden innholdet i
+        en avsluttet arkivdel omfatter. Men ved bruk av mykt
+        periodeskille vil ikke journalpostene i journalen være identisk
+        med journalpostene i fila
+        <emphasis role="strong">arkivstruktur.xml.</emphasis> Denne fila
+        skal bare inneholde journalposter som er knyttet til avsluttede
+        saksmapper. I journalen vil det også forekomme journalposter som
+        er knyttet til saker som ikke er avsluttet, og som derfor er
+        overført til den avsluttede arkivdelens arvtaker.
+      </para>
+      <table>
+        <title>
+          Krav til journalrapportene
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til journalrapportene
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                6.4.29
+              </entry>
+              <entry>
+                En avleveringspakke skal inneholde både en løpende
+                journal og en offentlig journal. Journalene skal omfatte
+                samme tidsrom som arkivperioden.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for arkiver med korrespondanse-dokumenter
+                som det kan være aktuelt å avlevere til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.30
+              </entry>
+              <entry>
+                Journalrapportene skal inneholde alle registreringer av
+                typen journalpost som er journalført i løpet av
+                arkivperioden. Journalpostene skal være sortert
+                kronologisk etter løpenummer (journalår og
+                sekvensnummer).
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for arkiver med korrespondanse­dokumenter
+                som det kan være aktuelt å avlevere til arkivdepot
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-070-funksjoner_for_periodiske_oppgaver-virksomhetsspesifikke-metadata">
+      <title>Virksomhetsspesifikke metadata</title>
+      <para>
+        Dersom Noark 5-løsningen inneholder metadataelementer som ikke
+        er spesifisert i Noark 5, er det likevel mulig å ta disse med i
+        arkivuttrekket. Slike virksomhetsspesifikke metadata blir en del
+        av arkivstrukturen og tas derfor med i
+        <emphasis role="strong">arkivstruktur.xml</emphasis>. De
+        virksomhetsspesifikke metadataene kan knyttes til arkivenhetene
+        mappe, registrering eller sakspart gjennom det overordnede
+        elementet <emphasis>virksomhetsspesifikkeMetadata</emphasis> som
+        er av XML Schema-datatypen <emphasis>anyType</emphasis>.
+      </para>
+      <para>
+        Alle virksomhetsspesifikke metadataelementer må være definert i
+        ett eller flere XML-skjemaer, og referanse til aktuelle skjemaer
+        må finnes i arkivstruktur.xml. I tillegg må de
+        virksomhetsspesifikke metadataelementene være tilordnet et
+        <emphasis>namespace</emphasis> gjennom tilhørende XML-skjema.
+      </para>
+      <para>
+        Virksomhetsspesifikk informasjon kan også avleveres som
+        frittstående fagsystemuttrekk. Dette er først og fremst aktuelt
+        der hvor informasjonen ikke lar seg knytte til arkivstrukturen
+        som metadata.
+      </para>
+      <para>
+        <emphasis>Merk: Deponering/avlevering av frittstående
+        fagsystemuttrekk må avtales spesielt med arkivdepotet, og blir
+        ikke beskrevet i denne standarden.</emphasis>
+      </para>
+      <para>
+        Innholdet og betydningen av hvert virksomhetsspesifikt
+        metadataelement skal dokumenteres mer inngående dersom det ikke
+        er innlysende hva elementene inneholder. En slik dokumentasjon
+        skal inngå som en del av aktuelt XML-skjema.
+      </para>
+      <table>
+        <title>
+          Krav til virksomhetsspesifikke metadata
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til virksomhetsspesifikke metadata
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                6.4.31
+              </entry>
+              <entry>
+                Hvis virksomhetsspesifikke metadata skal inngå som en
+                del av arkivuttrekket, skal de knyttes til mappe,
+                registrering eller sakspart i arkivstruktur.xml gjennom
+                elementet
+                <emphasis>virksomhetsspesifikkeMetadata</emphasis>.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved bruk av virksomhets-spesifikke metadata
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.32
+              </entry>
+              <entry>
+                Alle virksomhetsspesifikke metadataelementer skal være
+                definert i ett eller flere medfølgende XML-skjemaer.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved bruk av virksomhets-spesifikke metadata
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.33
+              </entry>
+              <entry>
+                Når virksomhetsspesifikke metadata inngår som en del av
+                arkivuttrekket, skal det finnes referanse til aktuelle
+                skjemaer i arkivstruktur.xml.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved bruk av virksomhets-spesifikke metadata
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.34
+              </entry>
+              <entry>
+                Virksomhetsspesifikke metadataelementer skal være
+                tilordnet et <emphasis>namespace</emphasis> gjennom
+                tilhørende XML-skjema.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved bruk av virksomhets-spesifikke metadata
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.35
+              </entry>
+              <entry>
+                Innholdet og betydningen av hvert virksomhetsspesifikt
+                metadataelement skal dokumenteres mer inngående i
+                aktuelt XML skjema dersom det ikke er innlysende hva
+                elementet inneholder. Denne dokumentasjonen skal være i
+                form av XML Schema elementene
+                <emphasis>annotation</emphasis> og
+                <emphasis>documentation</emphasis> knyttet til
+                definisjonen av det enkelte metadataelementet i aktuelt
+                skjema.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved bruk av virksomhets-spesifikke metadata
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+    <sect2 id="id-070-funksjoner_for_periodiske_oppgaver-arkivdokumentene">
+      <title>Arkivdokumentene</title>
+      <para>
+        Arkivdokumentene skal avleveres/deponeres i arkivformater som er
+        godtatt av Riksarkivaren. Det betyr at alle dokumenter må være
+        konvertert til et arkivformat før arkivuttrekket produseres. I
+        Noark 5-løsningen kan de samme dokumentene også eksistere i
+        produksjonsformat, men disse skal ikke være med i uttrekket.
+      </para>
+      <para>
+        Hvert enkelt dokument skal eksporteres som én dokumentfil. I
+        denne versjonen av Noark 5 er det ikke tillatt å avlevere
+        dokumenter som består av flere filer (f.eks. som en tekstfil i
+        XML-format med tilknyttet grafikk/bilder som egne separate
+        filer).
+      </para>
+      <para>
+        Dersom ett dokument er arkivert i flere versjoner - og dersom de
+        foregående versjonene ikke har blitt slettet før eksporten -
+        skal alle versjonene være med i uttrekket, forutsatt at de er
+        lagret i godkjent arkivformat. I slike tilfeller vil hver
+        arkiverte versjon av dokumentet utgjøre en egen dokumentfil. Det
+        samme er tilfellet med varianter som blir arkivert sammen med
+        originaldokumentet, f.eks. offentlige varianter hvor informasjon
+        som er unntatt offentligheten er &quot;sladdet&quot;.
+      </para>
+      <para>
+        Dokumenter i et sakarkiv som er arkivert uten journalføring,
+        skal være med i avleveringen/deponeringen dersom de ikke har
+        blitt kassert før uttrekket blir produsert. I arkivstrukturen
+        vil disse dokumentene være knyttet til registreringer av type
+        <emphasis>registrering</emphasis>.
+      </para>
+      <para>
+        Arkivdokumentene skal lagres i en egen underkatalog i
+        avleveringspakken, og denne underkatalogen kan struktureres i
+        nye underkataloger etter behov. Referansen fra arkivstrukturen
+        til dokumentfilene vil ligge i dokumentobjektet, dvs. på laveste
+        nivå i strukturen. Alle dokumentfiler som det blir referert til
+        i <emphasis role="strong">arkivstruktur.xml</emphasis>, skal
+        være med i uttrekket. Dessuten må ikke uttrekket inneholde noen
+        dokumentfiler som mangler referanse fra dokumentobjektet.
+        Referansen fra arkivstrukturen skal være relativ til
+        dokumentfilene, dvs. inneholde hele &quot;stien&quot; til
+        dokumentet - f.eks. slik:
+        <emphasis>dokumenter/2010/januar/123456789.pdf.</emphasis>
+      </para>
+      <para>
+        Dokumentobjektet skal også inneholde informasjon om hvilket
+        format arkivdokument blir avlevert på, og størrelsen i antall
+        bytes på dokumentfilen. I tillegg skal dokumentobjektet
+        inneholde sjekksummen til dokumentet det refererer til. Det
+        siste er viktig for å kunne opprettholde dokumentets
+        autentisitet og integritet, også etter at det er eksportert fra
+        sitt opprinnelige produksjonssystem. Algoritmen som er brukt for
+        å generere sjekksummen skal også dokumenteres.
+      </para>
+      <para>
+        Dersom arkivdokumentet har vært konvertert fra et format til et
+        annet, skal dokumentobjektet inneholde metadata om
+        konverteringen. Dette vil først og fremst dreie seg om
+        konverteringer fra produksjonsformat til arkivformat. Men også
+        konvertering fra ett arkivformat til et annet skal logges. Er
+        dokumentet konvertert flere ganger, skal alle konverteringer
+        dokumenteres. Dersom dokumentet har oppstått i det samme
+        arkivformatet som det ble avlevert i, skal dokumentobjektet
+        naturlig nok ikke inneholde noen metadata om konvertering.
+      </para>
+      <para>
+        Kravene nedenfor er obligatoriske for alle Noark-løsninger som
+        inneholder elektroniske arkivdokumenter som skal avleveres til
+        arkivdepot.
+      </para>
+      <table>
+        <title>
+          Krav til arkivdokumentene
+        </title>
+        <tgroup cols="4">
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <colspec align="left" />
+          <thead>
+            <row>
+              <entry>
+                Krav nr.
+              </entry>
+              <entry>
+                Krav til arkivdokumentene
+              </entry>
+              <entry>
+                Type
+              </entry>
+              <entry>
+                Merknad
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                6.4.36
+              </entry>
+              <entry>
+                En avleveringspakke skal inneholde arkivdokumenter i
+                arkivformat. Hvert dokument skal eksporteres som én
+                dokumentfil
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering av elektroniske
+                arkivdokumenter til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.37
+              </entry>
+              <entry>
+                Hver arkivert versjon av et dokument skal eksporteres
+                som en egen dokumentfil.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering av elektroniske
+                arkivdokumenter til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.38
+              </entry>
+              <entry>
+                Hver arkivert variant av et dokument skal eksporteres
+                som en egen dokumentfil.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering av elektroniske
+                arkivdokumenter til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.39
+              </entry>
+              <entry>
+                I et sakarkiv skal også dokumenter som er knyttet til
+                registreringer av typen
+                <emphasis>registrering</emphasis> (dvs. dokumenter som
+                er arkivert uten journalføring) inngå i arkivuttrekket.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk for sakarkiver hvor dokumenter er arkivert
+                uten journalføring.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.40
+              </entry>
+              <entry>
+                Hvert dokumentobjekt i
+                <emphasis role="strong">arkivstruktur.xml</emphasis>
+                skal ha en referanse til en dokumentfil i
+                avleveringspakken. Det skal ikke forekomme referanser
+                til dokumenter som ikke finnes i pakken, og det må ikke
+                være dokumenter i pakken som det ikke blir referert til.
+                Referansen fra arkivstrukturen skal være relativ til
+                dokumentfilene, dvs. inneholde hele &quot;stien&quot;
+                til dokumentet.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering av elektroniske
+                arkivdokumenter til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.41
+              </entry>
+              <entry>
+                Hvert dokumentobjekt i
+                <emphasis role="strong">arkivstruktur.xml</emphasis>
+                skal inneholde informasjon om dokumentets format og
+                størrelse. Det skal også inneholde sjekksummen for hvert
+                enkelt dokument, samt algoritmen som ble brukt for å
+                generere sjekksummen.
+              </entry>
+              <entry>
+                B
+              </entry>
+              <entry>
+                Obligatorisk ved avlevering av elektroniske
+                arkivdokumenter til arkivdepot
+              </entry>
+            </row>
+            <row>
+              <entry>
+                6.4.42
+              </entry>
+              <entry>
+                Dersom dokumentet er blitt konvertert fra et format til
+                et annet (f.eks. fra produksjonsformat til arkivformat)
+                skal det tilhørende dokumentobjektet i
+                <emphasis role="strong">arkivstruktur.xml</emphasis>
+                inneholde informasjon om konverteringen. Er dokumentet
+                blitt konvertert flere ganger, skal alle konverteringene
+                dokumenteres.
+              </entry>
+              <entry>
+                O
+              </entry>
+              <entry>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </sect2>
+  </sect1>
+  <sect1 id="id-070-funksjoner_for_periodiske_oppgaver-liste-for-bortsetting-avlevering-og-overføring">
+    <title>Liste for bortsetting, avlevering og overføring</title>
+    <para>
+      Hensikten med rapporten er å få en oversikt over de delene av
+      arkiv­materialet som skal overføres til bortsettingsarkiv,
+      avleveres til arkivdepot eller overføres til annet offentlig
+      organ. Rapporten kan brukes som bortsettingsliste for organet selv
+      ved periodisering, som overføringsliste ved overføring av
+      arkiv­materialet mellom offentlige organ og som avleveringsliste
+      ved avlevering til arkivdepot.
+    </para>
+    <para>
+      Avleveringslisten skal følge med ved avleveringen til arkivdepot.
+    </para>
+    <para>
+      Overføringslisten skal utformes som en avleveringsliste til
+      arkivdepot.Organet skal beholde en kopi selv både av
+      overføringslister og avleveringslister. Disse bør inngå i organets
+      arkivplan.
+    </para>
+    <table>
+      <title>
+        Krav til rapporten Liste for bortsetting, avlevering og
+        overføring
+      </title>
+      <tgroup cols="4">
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <thead>
+          <row>
+            <entry>
+              Krav nr.
+            </entry>
+            <entry>
+              Krav til rapporten <emphasis>Liste for bortsetting,
+              avlevering og overføring</emphasis>
+            </entry>
+            <entry>
+              Type
+            </entry>
+            <entry>
+              Merknad
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              6.5.1
+            </entry>
+            <entry>
+              <para>
+                <emphasis>Selektering:</emphasis>
+              </para>
+              <para>
+                Rapporten skal valgfritt kunne selekteres på følgende
+                metadataelementer:
+              </para>
+              <itemizedlist spacing="compact">
+                <listitem>
+                  <para>
+                    <emphasis>arkivperiodeStartDato og
+                    arkivperiodeSluttDato</emphasis> fra
+                    <emphasis>arkivdel</emphasis> (en eller
+                    flere)<emphasis>,</emphasis> eller
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    referanse<emphasis>Arkivdel</emphasis> fra
+                    <emphasis>Saksmappe</emphasis> (en eller flere).
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <emphasis>journalenhet</emphasis> fra
+                    <emphasis>Saksmappe</emphasis> (en eller flere)
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <emphasis>administrativEnhet</emphasis> fra
+                    <emphasis>Saksmappe</emphasis> (Her skal det kunne
+                    angis om underliggende enheter skal inkluderes.)
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <emphasis>saksstatus</emphasis> i
+                    <emphasis>Saksmappe</emphasis>
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <emphasis>avskrivningsdato</emphasis> fra
+                    <emphasis>Journalpost</emphasis> (Her skal også
+                    verdien «tomt felt» kunne angis)
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    kassasjonsvedtak
+                  </para>
+                </listitem>
+              </itemizedlist>
+            </entry>
+            <entry>
+              B
+            </entry>
+            <entry>
+              Obligatorisk for løsninger som skal foreta bortsetting,
+              avlevering og overføring
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.5.2
+            </entry>
+            <entry>
+              <para>
+                <emphasis>Rapportens innhold:</emphasis>
+              </para>
+              <para>
+                Rapporten skal inneholde følgende opplysninger, så fremt
+                de finnes i
+              </para>
+              <para>
+                løsningen:
+              </para>
+              <para>
+                <emphasis role="strong">Saksmappeinformasjon</emphasis>
+              </para>
+              <para>
+                Fra <emphasis>Saksmappe:</emphasis>
+              </para>
+              <para>
+                <emphasis>mappeID</emphasis>
+              </para>
+              <para>
+                <emphasis>opprettetdato</emphasis>
+              </para>
+              <para>
+                <emphasis>tittel</emphasis>
+              </para>
+              <para>
+                <emphasis>saksstatus</emphasis>
+              </para>
+              <para>
+                <emphasis>kassasjonsvedtak</emphasis>
+              </para>
+              <para>
+                <emphasis>kassasjonsdato</emphasis>
+              </para>
+              <para>
+                <emphasis>referanseArkivdel</emphasis>
+              </para>
+              <para>
+                Fra <emphasis>klasse</emphasis>
+              </para>
+              <para>
+                <emphasis>klasseID og tittel</emphasis>
+              </para>
+              <para>
+                Fra <emphasis>arkivdel:</emphasis>
+              </para>
+              <para>
+                <emphasis>referanseArkiv</emphasis>
+              </para>
+              <para>
+                <emphasis>arkivperiodeStartDato</emphasis>
+              </para>
+              <para>
+                <emphasis>arkivperiodeSluttDato</emphasis>
+              </para>
+            </entry>
+            <entry>
+              B
+            </entry>
+            <entry>
+              Obligatorisk for løsninger som skal foreta bortsetting,
+              avlevering og overføring
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.5.3
+            </entry>
+            <entry>
+              For hver ny klasseID skal klassifikasjonssystemets tekst
+              (det avledete metadataelementet
+              <emphasis>tittel)</emphasis> tas med på en egen linje som
+              overskrift.
+            </entry>
+            <entry>
+              B
+            </entry>
+            <entry>
+              Obligatorisk for løsninger som skal foreta bortsetting,
+              avlevering og overføring
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.5.4
+            </entry>
+            <entry>
+              Hvis rapporten inneholder dokumenter som er gradert, skal
+              antall graderte dokumenter markeres ved saken.
+            </entry>
+            <entry>
+              B
+            </entry>
+            <entry>
+              Obligatorisk for løsninger som skal foreta bortsetting,
+              avlevering og overføring
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </sect1>
+  <sect1 id="id-070-funksjoner_for_periodiske_oppgaver-arkivoversikt">
+    <title>Arkivoversikt</title>
+    <para>
+      Hensikten med rapporten <emphasis>arkivoversikt</emphasis> er å gi
+      en oversikt over hvilke arkivdeler arkivet er delt opp i, med
+      angivelse av hvilken arkivperiode den/de inngår i,
+      klassifikasjonssystem, status og fysisk plassering. Dette er
+      viktig for oversikten i arkivet.
+    </para>
+    <table>
+      <title>
+        Krav til rapporten <emphasis>arkivoversikt</emphasis>
+      </title>
+      <tgroup cols="4">
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <colspec align="left" />
+        <thead>
+          <row>
+            <entry>
+              Krav nr.
+            </entry>
+            <entry>
+              Krav til rapporten <emphasis>arkivoversikt</emphasis>
+            </entry>
+            <entry>
+              Type
+            </entry>
+            <entry>
+              Merknad
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              6.6.1
+            </entry>
+            <entry>
+              <para>
+                <emphasis>Selektering:</emphasis>
+              </para>
+              <para>
+                Rapporten skal valgfritt kunne selekteres etter
+                metadataelementene:
+              </para>
+              <itemizedlist spacing="compact">
+                <listitem>
+                  <para>
+                    <emphasis>referanseForelder</emphasis> i
+                    <emphasis>arkivdel,</emphasis> eller
+                  </para>
+                </listitem>
+                <listitem>
+                  <para>
+                    <emphasis>arkivperiodeStartDato og
+                    arkivperiodeSluttDato</emphasis> i
+                    <emphasis>arkivdel</emphasis>
+                  </para>
+                </listitem>
+              </itemizedlist>
+            </entry>
+            <entry>
+              B
+            </entry>
+            <entry>
+              Obligatorisk for sakarkiver
+            </entry>
+          </row>
+          <row>
+            <entry>
+              6.6.2
+            </entry>
+            <entry>
+              <para>
+                <emphasis>Rapportens innhold:</emphasis>
+              </para>
+              <para>
+                Følgende metadataelementer skal være med i rapporten, så
+                fremt de finnes i løsningen:
+              </para>
+              <para>
+                Fra <emphasis>arkiv:</emphasis>
+              </para>
+              <para>
+                <emphasis>tittel</emphasis>
+              </para>
+              <para>
+                <emphasis>arkivskapernavn</emphasis>
+              </para>
+              <para>
+                <emphasis>arkivstatus</emphasis>
+              </para>
+              <para>
+                <emphasis>opprettetDato</emphasis>
+              </para>
+              <para>
+                <emphasis>avsluttetDato</emphasis>
+              </para>
+              <para>
+                <emphasis>Fra klassifikasjonssystem</emphasis>
+              </para>
+              <para>
+                <emphasis>klassifikasjonstype</emphasis>
+              </para>
+              <para>
+                <emphasis>tittel</emphasis>
+              </para>
+              <para>
+                Fra <emphasis>arkivdel:</emphasis>
+              </para>
+              <para>
+                <emphasis>tittel</emphasis>
+              </para>
+              <para>
+                <emphasis>referanseForelder</emphasis>
+              </para>
+              <para>
+                <emphasis>referanseKlassifikasjonssystem</emphasis>
+              </para>
+              <para>
+                <emphasis>arkivdelstatus</emphasis>
+              </para>
+              <para>
+                <emphasis>referanseArvtaker</emphasis>
+              </para>
+              <para>
+                <emphasis>referanseForløper</emphasis>
+              </para>
+              <para>
+                <emphasis>fysiskeDokumenter</emphasis>
+              </para>
+              <para>
+                <emphasis>referanseDokumentbeskrivelse</emphasis>
+              </para>
+              <para>
+                <emphasis>opprettetDato</emphasis>
+              </para>
+              <para>
+                <emphasis>avsluttetDato</emphasis>
+              </para>
+              <para>
+                <emphasis>arkivperiodeStartDato</emphasis>
+              </para>
+              <para>
+                <emphasis>arkivperiodeSluttDato</emphasis>
+              </para>
+              <para>
+                <emphasis>oppbevaringssted</emphasis>
+              </para>
+              <para>
+                <emphasis>beskrivelse</emphasis>
+              </para>
+              <para>
+                <emphasis>eksportertDato</emphasis>
+              </para>
+              <para>
+                <emphasis>ansvarligEksport</emphasis>
+              </para>
+            </entry>
+            <entry>
+              B
+            </entry>
+            <entry>
+              Obligatorisk for sakarkiver
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </sect1>
+</chapter>
