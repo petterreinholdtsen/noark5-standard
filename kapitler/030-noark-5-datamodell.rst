@@ -41,33 +41,43 @@ I enkelte system kan det være behov for en forenklet struktur, og visse nivå i
 
 I et elektronisk arkiv eksisterer ikke mappene som fysiske enheter. Arkivstrukturen i et elektronisk arkiv er bygd opp av forskjellige metadata. Hver enhet i strukturen har sine bestemte metadata, og de forskjellige nivåene er også koblet sammen med metadata. Metadata er altså aggregert på flere nivåer, slik at metadata på øverste nivå vil være knyttet til alle dokumenter i arkivet, mens metadata på laveste nivå bare er knyttet til et enkeltdokument.
 
-.. table:: **Overordnede krav til arkivstrukturen**
+.. list-table:: **Overordnede krav til arkivstrukturen**
+   :widths: 1 8 1 4
+   :header-rows: 1
 
-  +-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-  | Krav nr.                                        | Overordnede krav til arkivstrukturen            | Type                                            | Merknad                                         |
-  +=================================================+=================================================+=================================================+=================================================+
-  | 2.1.1                                           | For at en løsning skal kunne godkjennes etter   | O                                               | Innebærer at det må implementeres slik at data  |
-  |                                                 | Noark 5 må den konseptuelle modellen av         |                                                 | skal kunne presenteres og hentes ut på den      |
-  |                                                 | arkivstrukturen og de funksjonelle muligheter   |                                                 | måten.                                          |
-  |                                                 | den gir, kunne implementeres i det aktuelle     |                                                 |                                                 |
-  |                                                 | systemets (fysiske) datastrukturer.             |                                                 |                                                 |
-  +-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-  | 2.1.2                                           | Arkivdokumenter skal inngå i en arkivstruktur   | O                                               |                                                 |
-  |                                                 | som minst inneholder følgende arkivenheter:     |                                                 |                                                 |
-  |                                                 |                                                 |                                                 |                                                 |
-  |                                                 | *arkiv*, *arkivdel*, *registrering,             |                                                 |                                                 |
-  |                                                 | dokumentbeskrivelse* og *dokumentobjekt*.       |                                                 |                                                 |
-  +-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-  | 2.1.3                                           | Journalføringspliktige saksdokumenter skal      | B                                               | Obligatorisk for sakarkiver.                    |
-  |                                                 | inngå i et sakarkiv, med en arkivstruktur som   |                                                 |                                                 |
-  |                                                 | minst skal inneholde følgende arkivenheter:     |                                                 |                                                 |
-  |                                                 |                                                 |                                                 |                                                 |
-  |                                                 | *arkiv*, *arkivdel*, *klassifikasjonssystem*,   |                                                 |                                                 |
-  |                                                 | *klasse*, *mappe, registrering,                 |                                                 |                                                 |
-  |                                                 | dokumentbeskrivelse* og *dokumentobjekt*.       |                                                 |                                                 |
-  +-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
-  | 2.1.4                                           | For fysiske arkiver kan *dokumentobjekt* utgå.  | V                                               |                                                 |
-  +-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+-------------------------------------------------+
+  * - Krav nr.
+    - Overordnede krav til arkivstrukturen
+    - Type
+    - Merknad
+  * - 2.1.1
+    - For at en løsning skal kunne godkjennes etter Noark 5 må den
+      koseptuelle modellen av arkivstrukturen og de funksjonelle
+      mulighetene den gir, kunne implemenenteres i det aktuelle
+      systemets (fysiske) datastrukturer.
+    - O
+    - Innebærer at det må implementeres slik at data skal kunne
+      presenteres og hentes ut på den måten.
+  * - 2.1.2
+    - Arkivdokumenter skal inngå i en arkivstruktur som minst
+      inneholder følgende arkivenheter:
+
+      *arkiv*, *arkivdel*, *registrering*, *dokumentbeskrivelse* og
+      *dokumentobjekt*.
+    - O
+    -
+  * - 2.1.3
+    - Journalføringspliktige saksdokumenter skal inngå i et sakarkiv,
+      med en arkivstruktur som minst skal inneholde følgende
+      arkivenheter:
+
+      *arkiv*, *arkivdel*, *klassifikasjonssystem*, *klasse*, *mappe*,
+      *registrering*, *dokumentbeskrivelse* og *dokumentobjekt*.
+    - B
+    - Obligatorisk for sakarkiver.
+  * - 2.1.4
+    - For fysiske arkiver kan *dokumentobjekt* utgå.
+    - V
+    -
 
 Metadata
 --------

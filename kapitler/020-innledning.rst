@@ -159,9 +159,9 @@ Kravtyper i Noark 5
 
 Alle gjeldende krav framgår av kravtabellene. Kravtabellene er satt opp på denne måten:
 
-+----------+----------------------------+------+---------+
-| Krav nr. | <hva det stilles krav til> | Type | Merknad |
-+----------+----------------------------+------+---------+
++----------+---------------------------------------+----------+-------------+
+| Krav nr. | <hva det stilles krav til>            | Type     | Merknad     |
++----------+---------------------------------------+----------+-------------+
 
 **Krav. nr.:**
     Kravnummereringen er inndelt i <kapittelnr>. <underkapittelnr>, <løpenummer innen underkapittel> (5.7.6 betyr f. eks. kapittel 5, underkapittel 7, og krav nr. 6).
