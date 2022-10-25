@@ -62,4 +62,11 @@ jobs:
         set -e
         set -x
         eatmydata make
+        eatmydata make avledet/krav.tsv
         eatmydata make avledet/spesifikasjon.en.pdf
+    - name: Archive generated documents
+      uses: actions/upload-artifact@v3
+      with:
+        name: debs
+        retention-days: 7
+        path: avledet/*
