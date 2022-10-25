@@ -53,7 +53,7 @@ jobs:
       run: |
         set -e
         set -x
-        eatmydata apt --yes --quiet install make plantuml pandoc dblatex xmlto po4a dbtoepub python3-yaml texlive-xetex texlive-lang-cyrillic
+        eatmydata apt --yes --quiet install make plantuml pandoc dblatex xmlto po4a dbtoepub python3-yaml texlive-xetex texlive-lang-cyrillic texlive-lang-european
 
     - name: Build PDF
       env:
