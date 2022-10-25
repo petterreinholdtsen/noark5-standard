@@ -41,6 +41,12 @@ jobs:
         apt --yes --quiet install --no-install-suggests eatmydata
         eatmydata apt --yes --quiet install --no-install-suggests git
 
+    - uses: actions/checkout@v3
+      with:
+        # "fetch-depth: 0" fetches all of history, this is needed by
+        # our build system to determine the version from tags
+        fetch-depth: 0
+
     - name: Install build dependencies
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -55,4 +61,6 @@ jobs:
       run: |
         set -e
         set -x
+        pwd
+        ls -lah
         eatmydata make
